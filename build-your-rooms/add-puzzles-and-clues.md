@@ -26,6 +26,18 @@ Use this guide to give Game Masters a clear, ordered Room flow.
 
 Use the attachment actions beside **Clue** to add an image, audio, or video Clue from the Room's Media Library.
 
+## Add a Clue from the Room Dashboard
+
+You can also add or edit a Clue while you run the Room.
+
+1. On the Room Dashboard, select the Puzzle.
+2. Select **+** (Add Clue) at the top of the Clues list.
+3. Choose a **Content type**: **Text**, **Image**, **Audio**, or **Video**.
+4. Type the Clue text, or choose the file from **Room media**.
+5. Select **Create Clue**.
+
+A media Clue can only use a file that is already in the Room's Media Library. To add a new file, upload it first in [Manage Room Media](manage-room-media.md). You can't add or edit Clues while the Room Dashboard is offline.
+
 ## Arrange the Room flow
 
 - Reorder Puzzles to match the normal solve sequence.

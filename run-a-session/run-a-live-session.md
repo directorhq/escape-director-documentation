@@ -31,6 +31,7 @@ Use the speed controls only for testing or a deliberate operational correction. 
 
 - Choose the current Puzzle to open its answer, description, and Clues.
 - Select a prepared Clue to send it to Live View.
+- Select **+** in the Clues list to add a text or media Clue during the game. See [Add Puzzles and Clues](../build-your-rooms/add-puzzles-and-clues.md#add-a-clue-from-the-room-dashboard).
 - Use the message box for a necessary custom message.
 - Use **Images**, **Videos**, or **Audios** for Room media. Audio plays from the Room Dashboard controls; confirm the Room Station's output device and level.
 - Use **Mic** only when live audio is part of the Room's operating plan.
