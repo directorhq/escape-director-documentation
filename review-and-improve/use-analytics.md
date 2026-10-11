@@ -66,6 +66,8 @@ Each Room has one target, shared by everyone on the account.
 
 Select **Ask Analytics** to ask about your Rooms in plain language. Start with a suggested review or type your own question.
 
+<figure><img src="../.gitbook/assets/analytics-ai-assistant.png" alt="Ask Analytics panel open beside the Analytics page for The Alchemist's Study, answering which Game Master gives the most clues and on which days, with Show calculation and suggested follow-up questions"><figcaption><p>Ask Analytics answers beside the page and shows the numbers behind each answer.</p></figcaption></figure>
+
 Ask Analytics can split a figure by day of the week, weekday or weekend, time of day, or Game Master, and follow it week by week or month by month. For example, you can ask which days a Game Master who often adds time usually works. It shows the numbers behind each answer. When your data can't answer a question, it says so instead of guessing.
 
 ## You're ready when...
