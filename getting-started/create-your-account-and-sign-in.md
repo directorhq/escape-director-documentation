@@ -14,7 +14,7 @@ Use an email inbox you can open now and a password you can store securely.
 
 1. Go to [www.escapedirector.com](https://www.escapedirector.com/).
 2. Select **Start Free Trial**.
-3. Enter your name, email address, and password.
+3. Enter your name, email address, and password. Your business name is optional.
 4. Submit the form.
 
 ## Verify your email address
