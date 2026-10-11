@@ -14,7 +14,7 @@ Select **Account Settings** in the application navigation or account menu, then 
 
 ## Update your profile
 
-Open **Profile** to update the account name or phone number. The email address is shown for reference; contact support when it must change. Select **Save** when the unsaved-changes bar appears.
+Open **Profile** to update the account name, or add an optional business name and phone number. Clear an optional field to remove it. The email address is shown for reference; contact support when it must change. Select **Save** when the unsaved-changes bar appears.
 
 ## Review membership and billing
 
