@@ -13,7 +13,11 @@ Use Analytics to see how your Rooms play across completed, non-excluded Room Ses
 3. Choose the Room, or the Rooms or Game Masters to compare, and a period such as **Last 90 days** or **All time**.
 4. Read each card's figures together with its footer, which says what was counted and how many games it is based on.
 
+<figure><img src="../.gitbook/assets/analytics-cards.png" alt="Analytics page for The Alchemist's Study over the last 12 months, with the One room, Compare rooms and Compare Game Masters switch, the Room at a glance card and the Escape rate and clues over time card"><figcaption><p>The switch, Room and period at the top apply to every card on the page.</p></figcaption></figure>
+
 **Compare rooms** shows two to five Rooms side by side. **Compare Game Masters** shows two to five Game Masters within one Room. Everyone on the account can see Game Master comparisons.
+
+<figure><img src="../.gitbook/assets/analytics-compare-game-masters.png" alt="Compare Game Masters view for The Alchemist's Study, with a Game Masters side by side table listing games, escapes, clues per game and average time left for five Game Masters"><figcaption><p>Compare Game Masters keeps one Room and adds a row for each Game Master.</p></figcaption></figure>
 
 Cards show the numbers without judging them. A Room or Game Master with fewer than 10 games is marked in comparison tables rather than hidden.
 
@@ -37,6 +41,8 @@ Older games that were saved before Escape Director recorded game clock times use
 - Select **Add card** to see a preview of every card and add one. Extra cards include **Each clue**, **How the room opens**, **Pauses and time added**, **First-timers and experienced players**, **Rooms side by side**, and **Game Masters side by side**.
 - Open a card's menu and choose **Move up** or **Move down** to change its place.
 - Choose **Remove from dashboard** to remove a card. Select **Undo** if you removed the wrong one.
+
+<figure><img src="../.gitbook/assets/analytics-add-card.png" alt="Add a card window showing a preview of every card, grouped under How the room plays, Where groups need help, Who is playing, and Rooms and Game Masters"><figcaption><p>Add card shows a preview of each card and marks the ones already on the page.</p></figcaption></figure>
 
 ## Change one card's settings
 
