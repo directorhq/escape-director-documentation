@@ -4,7 +4,7 @@ description: Update your profile, manage sign-in security and billing, and check
 
 # Use Account Settings
 
-Account Settings is a separate workspace with sections for **Profile**, **Security**, **Membership**, and **This browser**. Use **Back to...** to return to the application page you came from.
+Account Settings is a separate workspace with sections for **Profile**, **Security**, **Membership**, **Beta features**, and **This browser**. Use **Back to...** to return to the application page you came from.
 
 ## Open Account Settings
 
@@ -19,6 +19,8 @@ Open **Profile** to update the account name, or add an optional business name an
 ## Review membership and billing
 
 Open **Membership** to check status, plan, and the current period or cancellation date. Select **Manage billing** to open Stripe's billing portal for supported subscription and payment-method actions. Use **Update card** when the status requires payment action.
+
+**Media storage** shows how much of your 25 GB media storage your Rooms and Leaderboards use. See [Storage limits](../build-your-rooms/manage-room-media.md#storage-limits).
 
 {% hint style="warning" %}
 Review the effective date shown by Stripe before confirming a cancellation or plan change.
@@ -39,6 +41,16 @@ Use **Forgot Password** from the sign-in page when the current password is unava
 Changing the password signs out every other browser and tablet immediately, including a Room Station. Change it between games, not during one.
 {% endhint %}
 
+## Try beta features
+
+Open **Beta features** to try new features before everyone else.
+
+- Turn a feature on or off with its switch. The change applies to your whole account.
+- Select **Learn more** when a feature has it to read how the feature works.
+- Turning a feature off hides it again. Anything you made with it stays saved.
+
+When the list is empty, there are no beta features to try right now.
+
 ## Check this browser
 
 Open **This browser** to see:
@@ -48,6 +60,12 @@ Open **This browser** to see:
 - which Rooms are currently prepared.
 
 This state belongs to the current browser profile. It does not prove that another Room Station is ready.
+
+## Check notifications
+
+Select the bell at the top of the app to open **Notifications**. A dot on the bell means something is unread.
+
+Notifications include new product updates and a reminder when your free trial ends within 7 days. Select a notification to open it. Select **Mark as read** or **Mark all read** to clear the dot.
 
 ## Sign out
 

@@ -6,6 +6,7 @@ description: Find the right Product Guide, troubleshoot a live Room Session, or 
 
 ## Start with the current task
 
+- Quick answers: [Common Questions](common-questions.md)
 - Room setup: [Build Your Rooms](../build-your-rooms/README.md)
 - Before guests arrive: [Prepare Your Room Station](../prepare-for-a-shift/prepare-your-room-station.md)
 - Live game problem: [Troubleshoot a Live Session](../run-a-session/troubleshoot-a-live-session.md)
