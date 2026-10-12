@@ -22,7 +22,7 @@ Work from top to bottom:
 3. Set whether the timer is shown, then adjust its color, size, and position.
 4. Set whether live messages are shown, add the optional **Message at game start**, and adjust contrast, width, and position.
 5. Set whether the remaining Clue counter is shown, then adjust its size and position.
-6. Check the built-in **Preview** while you work.
+6. Check the built-in **Preview** while you work. Use **Screen size** above it to match the TV or monitor in your Room: pick a common size, or choose **Custom size** and enter the width and height. The size saves with the Room.
 
 Details and screen changes save automatically. Wait for **Autosave on** before leaving the editor.
 
