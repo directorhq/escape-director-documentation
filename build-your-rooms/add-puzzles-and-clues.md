@@ -37,7 +37,7 @@ You can also add and edit Puzzles and Clues from the Room Dashboard, even during
 3. Turn **Can be marked complete** off for a Clue Section.
 4. Select **Create Puzzle** or **Save changes**.
 
-During a game, a change to **Can be marked complete** applies to the next game. To delete a Puzzle, delete its Clues first.
+During a game, a change to **Can be marked complete** applies to the next game. On the Room Dashboard, you can delete a Puzzle only after you delete its Clues. In the editor, deleting a Puzzle also deletes its Clues.
 
 ### Add a Clue from the Room Dashboard
 

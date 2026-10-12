@@ -31,15 +31,15 @@ After saving, confirm that the Room appears on **All Rooms** and that **Edit** o
 
 ## Delete a Room
 
-1. Open **All Rooms**.
-2. Select **⋮** (Room actions) on the Room, then **Delete room**.
-3. Type the Room name to confirm, then select **Delete room**.
-
 {% hint style="danger" %}
 Deleting a Room is permanent. It deletes the Room's Puzzles, Clues, media, Automations, and every game played in it. Its games leave Room Statistics, Analytics, and Leaderboards. Edit the Room instead unless you want all of this gone.
 {% endhint %}
 
 You need a connection to delete a Room. If the Room Station still has finished games waiting to sync, reconnect and let them sync first.
+
+1. Open **All Rooms**.
+2. Select **⋮** (Room actions) on the Room, then **Delete room**.
+3. Type the Room name to confirm, then select **Delete room**.
 
 ## You're ready when...
 
