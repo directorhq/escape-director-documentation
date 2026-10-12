@@ -41,7 +41,7 @@ Use screenshots to orient readers and clarify consequential interactions, not as
 Use a small, consistent set of fictional demo Rooms so that instructions and screenshots feel like one continuous walkthrough.
 
 - Use `Demo · Clockwork Heist` for account setup, Room configuration, Live View, Room Station preparation, live-session operation, and ordinary statistics examples.
-- Use `Demo · Analytics Lab` when Analytics needs a larger or more varied dataset.
+- For Analytics, use the fictional Rooms and Game Masters in the local test account (for example `The Alchemist's Study`), which has enough games to fill every card.
 - Use other demo Rooms only when a Product Guide specifically teaches Room comparison.
 
 Keep example names, Puzzle order, Clues, media, Game Masters, and Session details consistent between related pages wherever the application state allows it.
