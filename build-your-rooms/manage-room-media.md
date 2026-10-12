@@ -17,6 +17,14 @@ Use this guide to upload, preview, find, and safely remove the media Game Master
 
 <figure><img src="../.gitbook/assets/room-images-library.png" alt="Room editor Media Library showing All, Images, Audio, and Video filters, search, upload, and playable audio cards"><figcaption><p>The consolidated Media Library keeps every Room file searchable and previews audio and video before live use.</p></figcaption></figure>
 
+## Storage limits
+
+All your Rooms and Leaderboards share 25 GB of media storage. Each file can be up to 5 GB.
+
+- See how much you've used in **Account Settings → Membership → Media storage**. It warns you when storage is nearly full.
+- If an upload doesn't fit, Escape Director tells you how much space it needs and how much is free. Delete media you no longer use, then try again.
+- Deleting a file frees its space. Deleting a Room frees the space its media used.
+
 ## Find and verify a file
 
 - Select **All**, **Images**, **Audio**, or **Video** to narrow the library.

@@ -29,13 +29,21 @@ After the Room is created, changes on **Details** save automatically. Wait for t
 
 After saving, confirm that the Room appears on **All Rooms** and that **Edit** opens the Room editor.
 
+## Delete a Room
+
+{% hint style="danger" %}
+Deleting a Room is permanent. It deletes the Room's Puzzles, Clues, media, Automations, and every game played in it. Its games leave Room Statistics, Analytics, and Leaderboards. Edit the Room instead unless you want all of this gone.
+{% endhint %}
+
+You need a connection to delete a Room. If the Room Station still has finished games waiting to sync, reconnect and let them sync first.
+
+1. Open **All Rooms**.
+2. Select **⋮** (Room actions) on the Room, then **Delete room**.
+3. Type the Room name to confirm, then select **Delete room**.
+
 ## You're ready when...
 
 The correct Room name, starting time, and Clues per game appear in the editor, and the autosave status is clear.
-
-{% hint style="danger" %}
-Deleting a Room can remove its associated configuration, media, and history. Edit an incorrect Room instead of deleting it unless you intend to remove it.
-{% endhint %}
 
 ## Next
 
