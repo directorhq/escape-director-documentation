@@ -19,8 +19,8 @@ messages, choose **Existing device** and map its messages.
   The SDK is open source under the MIT License, so you can use and
   change it for your props however you like.
 - **A supported board:** the SDK includes adapters for the Arduino UNO R4 WiFi
-  and GIGA R1 WiFi, paired over USB and Wi-Fi. Other boards work once they have
-  a board adapter; see the SDK's
+  and GIGA R1 WiFi, paired over USB and Wi-Fi. Other boards with USB and Wi-Fi
+  work once they have a board adapter; see the SDK's
   [board porting guide](https://github.com/directorhq/escape-director-device-sdk/blob/main/BOARD_PORTING.md).
 - **Room Connector**, up to date and running on the Room Station computer.
   Room Connector handles the USB connection during setup.

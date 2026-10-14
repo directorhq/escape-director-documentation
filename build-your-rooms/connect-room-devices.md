@@ -16,8 +16,8 @@ antenna. Start on the same non-guest network as the Room Station; the devices
 must be allowed to communicate with one another.
 
 Escape Director firmware runs on the Arduino GIGA R1 WiFi and UNO R4 WiFi.
-With your own firmware, the SDK also runs on other boards that have a board
-adapter, and a device that already sends HTTP or MQTT messages can keep its
+With your own firmware, the SDK also runs on other boards with USB and Wi-Fi
+that have a board adapter, and a device that already sends HTTP or MQTT messages can keep its
 firmware; see [Which controllers and props work](../help/common-questions.md#devices-and-props). Keep the controller's prop outputs
 disconnected while installing firmware and setting up wiring.
 

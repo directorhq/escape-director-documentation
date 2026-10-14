@@ -46,7 +46,7 @@ The file may be over 5 GB, or your storage may be full. Delete media you no long
 There are three ways to connect a prop:
 
 - **Escape Director firmware:** set up inputs and outputs in the app without writing code, on an Arduino UNO R4 WiFi or GIGA R1 WiFi. See [Connect Room Devices](../build-your-rooms/connect-room-devices.md).
-- **Your own firmware:** keep your puzzle logic and add the open-source Device SDK. It includes adapters for the UNO R4 WiFi and GIGA R1 WiFi, and other boards work once they have a board adapter. See [Build Your Own Controller](../build-your-rooms/build-your-own-controller.md).
+- **Your own firmware:** keep your puzzle logic and add the open-source Device SDK. It includes adapters for the UNO R4 WiFi and GIGA R1 WiFi, and other boards with USB and Wi-Fi work once they have a board adapter. See [Build Your Own Controller](../build-your-rooms/build-your-own-controller.md).
 - **An existing device:** any device that already sends HTTP or MQTT messages keeps its firmware; you map its messages in Escape Director. See [Connect Existing Devices](../build-your-rooms/connect-existing-devices.md).
 
 ## Running games
