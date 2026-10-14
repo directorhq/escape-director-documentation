@@ -45,8 +45,8 @@ The file may be over 5 GB, or your storage may be full. Delete media you no long
 **Which controllers and props work with Escape Director?**
 There are three ways to connect a prop:
 
+- **Your own firmware:** keep your puzzle logic and add the open-source Device SDK. It includes adapters for the UNO R4 WiFi and GIGA R1 WiFi, and other Arduino boards with USB, Wi-Fi and enough memory can use it through a small board adapter ([board porting guide](https://github.com/directorhq/escape-director-device-sdk/blob/main/BOARD_PORTING.md)). Other platforms can speak the SDK's [MQTT protocol](https://github.com/directorhq/escape-director-device-sdk/blob/main/protocol.md) directly. See [Build Your Own Controller](../build-your-rooms/build-your-own-controller.md).
 - **Escape Director firmware:** set up inputs and outputs in the app without writing code, on an Arduino UNO R4 WiFi or GIGA R1 WiFi. See [Connect Room Devices](../build-your-rooms/connect-room-devices.md).
-- **Your own firmware:** keep your puzzle logic and add the open-source Device SDK. It includes adapters for the UNO R4 WiFi and GIGA R1 WiFi, and other boards with USB and Wi-Fi work once they have a board adapter. See [Build Your Own Controller](../build-your-rooms/build-your-own-controller.md).
 - **An existing device:** any device that already sends HTTP or MQTT messages keeps its firmware; you map its messages in Escape Director. See [Connect Existing Devices](../build-your-rooms/connect-existing-devices.md).
 
 ## Running games
