@@ -26,6 +26,8 @@ Open **Membership** to check status, plan, and the current period or cancellatio
 Review the effective date shown by Stripe before confirming a cancellation or plan change.
 {% endhint %}
 
+To add or remove a site, see [Manage Locations](manage-locations.md).
+
 ## Change your password
 
 Open **Security**. Escape Director shows the sign-in method first. Accounts that sign in only through a linked provider do not have an Escape Director password form.
