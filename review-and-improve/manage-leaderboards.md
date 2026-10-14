@@ -35,7 +35,7 @@ Work through the page in order:
 2. Add Rooms, drag them into presentation order, and select a Room to preview it.
 3. Under **Standings**, choose how many teams to show and the ranking period. Rank, team, time, and Clues are automatic; select the optional **Players** and **Date** columns in the table preview.
 4. Under **Appearance**, choose the default background, any Room-specific background exceptions, and the fallback color used when there is no image.
-5. Check the **Draft preview** at the right. Open the full preview when you need to judge it at display size.
+5. Check the **Draft preview** at the right. To match your lobby display, type its width and height in the preview header, such as 1080 × 1920 for a screen turned on its side. The size only changes the preview, so it never asks you to publish. Select the reset button to go back to 1920 × 1080. Open the full preview when you need to judge it at display size.
 
 Changes save to a draft automatically; they do not change the public leaderboard until you select **Publish** or **Publish changes**. Use **Reset to published** to discard the current draft and restore the live configuration. After publishing, use **View live** to check the public link on the actual lobby display.
 
