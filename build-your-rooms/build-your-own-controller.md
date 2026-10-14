@@ -18,8 +18,10 @@ messages, choose **Existing device** and map its messages.
   [latest release on GitHub](https://github.com/directorhq/escape-director-device-sdk/releases/latest).
   The SDK is open source under the MIT License, so you can use and
   change it for your props however you like.
-- **Supported boards:** Arduino UNO R4 WiFi or GIGA R1 WiFi, paired over USB
-  and Wi-Fi. Other boards need an adapter; see `BOARD_PORTING.md` in the SDK.
+- **A supported board:** the SDK includes adapters for the Arduino UNO R4 WiFi
+  and GIGA R1 WiFi, paired over USB and Wi-Fi. Other boards with USB and Wi-Fi
+  work once they have a board adapter; see the SDK's
+  [board porting guide](https://github.com/directorhq/escape-director-device-sdk/blob/main/BOARD_PORTING.md).
 - **Room Connector**, up to date and running on the Room Station computer.
   Room Connector handles the USB connection during setup.
 - **Chrome** on the same computer and a USB data cable.
