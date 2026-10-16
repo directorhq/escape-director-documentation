@@ -25,7 +25,7 @@ Complete [Prepare Your Room Station](../prepare-for-a-shift/prepare-your-room-st
 2. Select **Start** under the timer.
 3. Confirm the Live View timer begins counting down.
 
-Use the speed controls only for testing or a deliberate operational correction. Use **+/- Minutes** when the group should receive or lose a specific amount of time.
+Use the speed controls only for testing or a deliberate operational correction. To give the group more time or take some away, type the number of minutes (a negative number takes time away), then select the **Minute(s)** button beside it.
 
 ## Help players
 

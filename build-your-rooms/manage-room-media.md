@@ -15,7 +15,7 @@ Use this guide to upload, preview, find, and safely remove the media Game Master
 5. Wait for the upload progress to finish.
 6. Confirm the new file appears in the matching media group.
 
-<figure><img src="../.gitbook/assets/room-images-library.png" alt="Room editor Media Library showing All, Images, Audio, and Video filters, search, upload, and playable audio cards"><figcaption><p>The consolidated Media Library keeps every Room file searchable and previews audio and video before live use.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/room-images-library.png" alt="Room editor Media library showing All, Images, Audio, and Video filters, search, upload, and playable audio cards"><figcaption><p>The consolidated Media library keeps every Room file searchable and previews audio and video before live use.</p></figcaption></figure>
 
 ## Storage limits
 
@@ -59,4 +59,4 @@ Every required image, video, and audio file is easy to find, appears in the inte
 
 ## Next
 
-[Prepare for a Shift](../prepare-for-a-shift/README.md)
+[Configure Room Automations](configure-room-automations.md) when the Room needs repeatable sequences. Otherwise, go to [Prepare for a Shift](../prepare-for-a-shift/README.md).

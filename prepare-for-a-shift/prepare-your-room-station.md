@@ -6,6 +6,10 @@ description: Check the Room Dashboard, Live View, media, Game Master, and starti
 
 Use this checklist on the computer that will run the Room.
 
+## Supported setup
+
+Run each Room from one Windows or Mac computer, using Google Chrome or Microsoft Edge. The Room Dashboard and Live View can be separate windows on that computer, with Live View on the players' screen.
+
 ## Before guests arrive
 
 1. Open **All Rooms** and choose the correct Room.
@@ -14,7 +18,7 @@ Use this checklist on the computer that will run the Room.
 4. Confirm the Room Dashboard stays available on the Game Master's screen.
 5. Check the starting time and reported Clue count.
 6. Select a Puzzle and confirm its answer, description, and Clues are present.
-7. Open **Audio Mixer** and test required audio at a safe volume.
+7. Open the **Audio mixer** and test required audio at a safe volume.
 8. Verify any images or videos needed early in the Room Session.
 9. Confirm the **Session Log** starts in the expected state.
 10. Select **Reset Room** if the previous test or Room Session changed the state.
@@ -23,13 +27,9 @@ Use this checklist on the computer that will run the Room.
 
 ## Check offline readiness when required
 
-When the production application shows an offline readiness status, wait for the current Room to finish preparing before relying on it without a connection. Offline readiness belongs to this browser and its prepared Room revision.
+Open the Room once while you're online. In **All Rooms**, wait until its card shows **Offline ready until** a date and time before you rely on it without an internet connection. A Room is ready offline only in the browser where you opened it. If you change the Room, open it again while online so the newest version is ready.
 
 Open **Account Settings → This browser** to confirm when offline access expires and which Rooms are downloaded to this browser.
-
-{% hint style="warning" %}
-Normal localhost development does not represent production offline preparation. Qualify offline operation with the production application and supported browser profile.
-{% endhint %}
 
 ## You're ready when...
 

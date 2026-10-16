@@ -40,9 +40,9 @@ Use screenshots to orient readers and clarify consequential interactions, not as
 
 Use a small, consistent set of fictional demo Rooms so that instructions and screenshots feel like one continuous walkthrough.
 
-- Use `Demo · Clockwork Heist` for account setup, Room configuration, Live View, Room Station preparation, live-session operation, and ordinary statistics examples.
+- Every Room, Game Master, team, and account shown must be fictional.
+- Prefer `Demo · Clockwork Heist` for new account setup, Room configuration, Live View, Room Station preparation, live-session, and ordinary statistics screenshots. Existing screenshots with other fictional Rooms (such as `The Curator's Vault` or `Sublevel 13`) stay until the UI changes enough to need a retake.
 - For Analytics, use the fictional Rooms and Game Masters in the local test account (for example `The Alchemist's Study`), which has enough games to fill every card.
-- Use other demo Rooms only when a Product Guide specifically teaches Room comparison.
 
 Keep example names, Puzzle order, Clues, media, Game Masters, and Session details consistent between related pages wherever the application state allows it.
 
@@ -107,6 +107,10 @@ Documentation is not a universal merge or release gate. Every customer-visible c
 ## Editorial voice
 
 Write in a calm, operational second-person voice.
+
+- Use American spelling (color, center, canceled) and US date and time formats.
+- Keep the language as simple as possible: short sentences and everyday words.
+- Use the product terms defined in [`CONTEXT.md`](../CONTEXT.md), and the exact capitalization the app shows for a label (for example, the **Media library** tab).
 
 - Tell the reader what to do using the exact visible interface label, then state the expected result when it is not obvious.
 - Use `owner` or `Game Master` only when responsibility matters; otherwise use `you`.

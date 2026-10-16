@@ -42,3 +42,7 @@ Changes save to a draft automatically; they do not change the public leaderboard
 ## You're ready when...
 
 The correct Room and period show only the successful Room Sessions intended for public ranking, and the lobby display reports that the draft and public leaderboard match.
+
+## Next
+
+[Prepare for a Shift](../prepare-for-a-shift/README.md) before the next group arrives.

@@ -9,12 +9,14 @@ Escape Director. Workspace-wide workflow is defined in
 - [`README.md`](README.md) and [`SUMMARY.md`](SUMMARY.md): structure and the
   reader's paths through the content.
 - [`docs/content-design.md`](docs/content-design.md): voice, style, and
-  terminology rules.
+  spelling rules.
+- [`CONTEXT.md`](CONTEXT.md): the product terms guides use and the words to
+  avoid.
 
 ## Guardrails
 
 - Write for customers (Room owners and Game Masters), not developers. Use the
-  domain language in `docs/content-design.md`; never expose internal terms,
+  domain language in `CONTEXT.md`; never expose internal terms,
   Linear context, API details, or credentials.
 - Keep navigation consistent: new pages belong in an existing section, are
   linked from its `README.md`, and appear in `SUMMARY.md` when appropriate.

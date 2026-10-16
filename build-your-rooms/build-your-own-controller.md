@@ -106,9 +106,8 @@ sketch while keeping your puzzle logic, and how to check its work.
    commands you want. For example: _"Add the SDK to my vault_keypad sketch.
    Make one prop that completes when 4-7-1-9 is entered on the keypad, with
    Reset and Open latch commands. Compile it for the UNO R4 WiFi."_
-3. Review the changes, then upload the firmware and follow
-   [Pair the controller](#2-pair-the-controller) or
-   [Update your firmware](#5-update-your-firmware).
+3. Review the changes, then upload the firmware and follow step 2,
+   **Pair the controller**, or step 5, **Update your firmware**, above.
 4. Test every command yourself. An agent can compile and upload the firmware,
    for example with Arduino CLI, but it can't check the wiring or the prop.
 
@@ -122,7 +121,7 @@ sketch while keeping your puzzle logic, and how to check its work.
 ## Troubleshooting
 
 **Controller description changed:** the firmware reports a different description.
-Follow [Update your firmware](#5-update-your-firmware).
+Follow step 5, **Update your firmware**, above.
 
 **Controller description is invalid:** expand **Developer details**, fix the
 listed declarations in your sketch and upload it again. If the controller
