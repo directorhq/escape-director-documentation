@@ -41,10 +41,13 @@ const localTarget = (rawTarget) => {
   return decodeURIComponent(withoutFragment);
 };
 
-const outsideRepository = (sourceFile, target) =>
-  path
-    .relative(repositoryRoot, path.resolve(path.dirname(sourceFile), target))
-    .startsWith("..");
+const outsideRepository = (sourceFile, target) => {
+  const relative = path.relative(
+    repositoryRoot,
+    path.resolve(path.dirname(sourceFile), target),
+  );
+  return relative === ".." || relative.startsWith(`..${path.sep}`);
+};
 
 const targetExists = async (sourceFile, target) => {
   const resolved = path.resolve(path.dirname(sourceFile), target);
