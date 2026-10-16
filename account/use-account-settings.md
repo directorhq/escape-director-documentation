@@ -1,5 +1,5 @@
 ---
-description: Update your profile, manage sign-in security and billing, and check this browser's offline readiness.
+description: Update your profile, manage sign-in security and billing, check this browser's offline readiness, or delete your account.
 ---
 
 # Use Account Settings
@@ -42,6 +42,23 @@ Use **Forgot Password** from the sign-in page when the current password is unava
 {% hint style="danger" %}
 Changing the password signs out every other browser and tablet immediately, including a Room Station. Change it between games, not during one.
 {% endhint %}
+
+## Delete your account
+
+Deleting your account removes it and everything in it for good. Only do this when you are sure: no one can bring it back.
+
+1. Open **Security** and select **Delete account**.
+2. Read the list of what will be deleted: your Rooms with their Puzzles, Clues and Automations, game records and Analytics, Locations, Game Master profiles, Leaderboards, and uploaded files.
+3. Enter your password. If you sign in with Google, select **Sign in with Google** first; you come back to the same dialog.
+4. Type `DELETE` and select **Delete account**.
+
+When it is done, you land on the Escape Director home page and can no longer sign in.
+
+{% hint style="danger" %}
+Your membership ends right away and you are not charged again. The rest of the current billing period is not refunded. Every computer signed in to the account is signed out, including Room Stations, so delete the account when no games are running.
+{% endhint %}
+
+Stripe keeps your past invoices and payments because tax law requires it. To stop paying but keep your Rooms and history, cancel in **Membership → Manage billing** instead.
 
 ## Try beta features
 
