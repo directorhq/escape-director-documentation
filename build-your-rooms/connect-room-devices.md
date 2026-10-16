@@ -10,7 +10,8 @@ You do not need Arduino IDE or the SDK for this path. Choose **Your own firmware
 
 ## Before you start
 
-Use Chrome on the computer that will operate the Room. Have your controller,
+Use Chrome on the computer that will operate the Room: a Mac, or a Windows 11
+PC with an Intel or AMD processor. Have your controller,
 a USB data cable and Wi-Fi password ready. For a GIGA R1 WiFi, attach its external
 antenna. Start on the same non-guest network as the Room Station; the devices
 must be allowed to communicate with one another.
@@ -29,16 +30,25 @@ disconnected while installing firmware and setting up wiring.
    The first time you open it, macOS may say it can’t verify Room Connector.
    Choose **Done**, open **System Settings → Privacy & Security**, and choose
    **Open Anyway**. You only need to do this once for each version.
+   On Windows, download it when prompted and run the installer. If Windows
+   shows **Windows protected your PC**, choose **More info**, then **Run
+   anyway**. Room Connector opens in the system tray, at the bottom right of
+   the screen.
 3. When Chrome asks to open Room Connector, allow it. Choose **Connect** in
    Room Connector's window.
 4. If Chrome asks to access devices on your local network, allow access for
    Escape Director. This lets the page reach Room Connector on this computer.
-5. Return to the Devices tab and confirm Room Connector says **Connected**.
+5. On Windows, if Windows Security asks whether Room Connector (it may be shown
+   as Node.js) can use the network, allow **Private networks** only. Keep the
+   firewall on.
+6. Return to the Devices tab and confirm Room Connector says **Connected**.
 
 <figure><img src="../.gitbook/assets/devices-overview.webp" alt="Devices tab for The Curator's Vault: Room Connector connected and three Devices available"><figcaption><p>Room Connector is connected and every Device in the Room shows its status.</p></figcaption></figure>
 
 Keep Room Connector running on this computer while operating the Room. You do
-not need to reinstall it when you refresh the page.
+not need to reinstall it when you refresh the page. On Windows, turn on **Start
+at login** in Room Connector's tray menu if this computer runs the Room every
+day.
 
 ## 2. Add and pair your controller
 
@@ -114,7 +124,11 @@ operate the Room. Finish any running game before updating.
 
 On a Mac, quit Room Connector, replace the existing app in Applications with the
 new download, then open it again. Restarting the old app does not update it.
-Keep your existing setup; you should not need to pair again.
+
+On Windows, choose **Quit Room Connector** from its tray menu, run the new
+installer, then open Room Connector again.
+
+Your setup stays saved, so you should not need to pair again.
 
 ## If setup is interrupted
 
