@@ -31,7 +31,7 @@ A named challenge in a Room, with an optional answer, description, and ordered C
 _Avoid_: Task, level
 
 **Clue Section**:
-A Puzzle used only to group general Clues. It can't be marked complete and doesn't count toward Puzzle completion.
+A Puzzle used only to group general Clues, with **Can be marked complete** turned off so it doesn't count toward Puzzle completion.
 _Avoid_: Optional Puzzle, untracked Puzzle
 
 **Clue**:

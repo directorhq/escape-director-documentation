@@ -40,7 +40,7 @@ If an asset is missing, do not replace Room configuration during the active game
 
 ## The timer needs correction
 
-- To add or take away time on purpose, type the minutes and select the **Minute(s)** button.
+- To add time, type a positive number of minutes. To take time away, type a negative number. Then select the **Minute(s)** button.
 - Confirm the new value on both the Room Dashboard and Live View.
 - Avoid speed controls during a real Room Session unless the operating plan specifically requires them.
 

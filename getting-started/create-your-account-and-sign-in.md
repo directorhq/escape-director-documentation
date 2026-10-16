@@ -17,7 +17,7 @@ Use an email inbox you can open now and a password you can store securely, or a 
 3. Enter your name, email address, and password. Your business name is optional.
 4. Submit the form.
 
-To use your Google account instead, select **Continue with Google** and choose the account. You don't need to verify your email address, and you sign in later with **Continue with Google** too.
+To use your Google account instead, select **Continue with Google** and choose the account. Skip the email verification steps below, and sign in later with **Continue with Google**.
 
 ## Verify your email address
 
