@@ -52,7 +52,7 @@ Deleting your account removes it and everything in it for good. Only do this whe
 3. Enter your password. If you sign in with Google, select **Sign in with Google** first; you come back to the same dialog.
 4. Type `DELETE` and select **Delete account**.
 
-When it is done, you land on the Escape Director home page and can no longer sign in.
+When it is done, you land on the Escape Director home page and can no longer sign in. All media in your Rooms, such as videos, sounds and images, is deleted from our storage too. Room Stations clear the room files they saved for offline play within 2 days.
 
 {% hint style="danger" %}
 Your membership ends right away and you are not charged again. The rest of the current billing period is not refunded. Every computer signed in to the account is signed out, including Room Stations, so delete the account when no games are running.
