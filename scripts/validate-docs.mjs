@@ -41,6 +41,11 @@ const localTarget = (rawTarget) => {
   return decodeURIComponent(withoutFragment);
 };
 
+const outsideRepository = (sourceFile, target) =>
+  path
+    .relative(repositoryRoot, path.resolve(path.dirname(sourceFile), target))
+    .startsWith("..");
+
 const targetExists = async (sourceFile, target) => {
   const resolved = path.resolve(path.dirname(sourceFile), target);
 
@@ -74,6 +79,11 @@ const validateMarkdownFile = async (filePath) => {
 
   for (const rawTarget of targets) {
     const target = localTarget(rawTarget);
+    // Links above the repository point into the local workspace (for example
+    // the shared ../AGENTS.md), which a clone or CI checkout does not contain.
+    if (target && outsideRepository(filePath, target)) {
+      continue;
+    }
     if (target && !(await targetExists(filePath, target))) {
       errors.push(
         `${path.relative(repositoryRoot, filePath)}: missing ${rawTarget}`,
