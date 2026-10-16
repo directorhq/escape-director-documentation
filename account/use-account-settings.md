@@ -48,7 +48,7 @@ Changing the password signs out every other browser and tablet immediately, incl
 Deleting your account removes it and everything in it for good. Only do this when you are sure: no one can bring it back.
 
 1. Open **Security** and select **Delete account**.
-2. Read the list of what will be deleted: your Rooms with their Puzzles, Clues and Automations, game records and Analytics, Locations, Game Master profiles, Leaderboards, and uploaded files.
+2. Read the list of what will be deleted: your Rooms with their Puzzles, Clues and Automations, game records and Analytics, Locations, Game Master profiles, Leaderboards, and the number of media files (videos, sounds and images).
 3. Enter your password. If you sign in with Google, select **Sign in with Google** first; you come back to the same dialog.
 4. Type `DELETE` and select **Delete account**.
 
