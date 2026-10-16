@@ -1,8 +1,9 @@
 # Escape Director Documentation Agent Guide
 
 This repository contains the public customer documentation (GitBook) for
-Escape Director. Workspace-wide workflow is defined in
-[`../AGENTS.md`](../AGENTS.md).
+Escape Director. The product's code lives in separate repositories
+(`escape-director-frontend`, `escape-director-backend`, and the public
+`escape-director-device-sdk`).
 
 ## Read first
 
@@ -12,6 +13,18 @@ Escape Director. Workspace-wide workflow is defined in
   spelling rules.
 - [`CONTEXT.md`](CONTEXT.md): the product terms guides use and the words to
   avoid.
+
+## Work from issue to pull request
+
+1. Work starts from the assigned Linear issue (team ED).
+2. Refresh `origin/main` and branch from it, using the issue's branch name
+   when it has one.
+3. Run `node scripts/validate-docs.mjs`.
+4. Open a pull request to `main`; link the issue. GitBook adds a preview link
+   to the pull request.
+
+Merging to `main` publishes at once, so merge a guide only when what it
+describes is in production.
 
 ## Guardrails
 

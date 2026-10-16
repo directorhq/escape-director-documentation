@@ -1,6 +1,12 @@
+---
+status: accepted
+date: 2026-08-03
+---
+
 # Keep customer guides canonical in Git
 
-Status: Accepted. Amended October 2026: Featurebase no longer holds copies of Product Guides.
+> Amended on 2026-10-16: the Featurebase help center is off, so Featurebase no
+> longer holds copies of Product Guides.
 
 Customer-facing Product Guides are maintained as Markdown in the documentation repository and published through GitBook because this keeps changes reviewable, versioned, and easy to update. Featurebase and the application link to Product Guides; they do not keep their own copies.
 
