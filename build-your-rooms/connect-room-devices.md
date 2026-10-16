@@ -34,6 +34,10 @@ disconnected while installing firmware and setting up wiring.
    shows **Windows protected your PC**, choose **More info**, then **Run
    anyway**. Room Connector opens in the system tray, at the bottom right of
    the screen.
+   Room Connector isn't signed yet, so your computer warns before opening it.
+   Only skip this warning for a file you just downloaded from the Devices tab.
+   On Windows, check that the warning names the app
+   `Room-Connector-Windows-x64.exe`.
 3. When Chrome asks to open Room Connector, allow it. Choose **Connect** in
    Room Connector's window.
 4. If Chrome asks to access devices on your local network, allow access for
