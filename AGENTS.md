@@ -1,20 +1,51 @@
 # Escape Director Documentation Agent Guide
 
 This repository contains the public customer documentation (GitBook) for
-Escape Director. Workspace-wide workflow is defined in
-[`../AGENTS.md`](../AGENTS.md).
+Escape Director. The product's code lives in separate repositories
+(`escape-director-frontend`, `escape-director-backend`, and the public
+`escape-director-device-sdk`).
 
 ## Read first
 
 - [`README.md`](README.md) and [`SUMMARY.md`](SUMMARY.md): structure and the
   reader's paths through the content.
 - [`docs/content-design.md`](docs/content-design.md): voice, style, and
-  terminology rules.
+  spelling rules.
+- [`CONTEXT.md`](CONTEXT.md): the product terms guides use and the words to
+  avoid.
+
+## Work from issue to pull request
+
+1. Work starts from the assigned Linear issue (team ED).
+2. Refresh `origin/main` and branch from it, using the issue's branch name
+   when it has one.
+3. Run `node scripts/validate-docs.mjs`.
+4. Open a pull request to `main`; link the issue. GitBook adds a preview link
+   to the pull request. Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`; fill every section.
+
+Merging to `main` publishes at once, so merge a guide only when what it
+describes is in production.
+
+## Writing guides
+
+Each guide helps a Room owner or Game Master finish a task or make a decision.
+Before adding text, ask which task or decision it helps with.
+
+- Give each feature a short page: what it does, where it lives (the path, in
+  bold, such as **Account Settings → Locations**), how to start, and anything
+  that would surprise someone.
+- Do not describe buttons, icons, layouts or every screen state that the
+  reader can already see. Use a table to compare options, and a short section
+  on differences and limits instead of repeating near-identical steps.
+- A small interface tweak needs no guide change, and a new control does not
+  need its own page.
+- When how a feature works changes, rewrite the affected section instead of
+  adding a note about the new behavior.
 
 ## Guardrails
 
 - Write for customers (Room owners and Game Masters), not developers. Use the
-  domain language in `docs/content-design.md`; never expose internal terms,
+  domain language in `CONTEXT.md`; never expose internal terms,
   Linear context, API details, or credentials.
 - Keep navigation consistent: new pages belong in an existing section, are
   linked from its `README.md`, and appear in `SUMMARY.md` when appropriate.

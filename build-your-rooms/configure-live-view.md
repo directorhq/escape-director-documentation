@@ -4,54 +4,46 @@ description: Configure the player-facing Live View and end screens, then test th
 
 # Configure Live View
 
-Use this guide to make the timer, messages, Clue counter, media, and end screens readable for players.
+Live View is what players see during a game: the timer, messages, Clue counter,
+media, and end screens. Set it up in **All Rooms → Edit → Details**, and choose
+**Live view**, **Success**, or **Failure** under **Editing screen**.
 
-## Open Live View configuration
-
-1. Open **All Rooms**.
-2. Select **Edit** for the Room.
-3. Open the **Details** tab.
-4. Choose **LiveView Screen**, **Success Screen**, or **Failure Screen** under **Configure Screen**.
+Changes save automatically. Wait for **Autosave on** before leaving the editor.
 
 ## Configure the normal Live View
 
-Work from top to bottom:
+With **Live view** selected, work from top to bottom:
 
-1. Choose a background color and any required background image or video.
-2. Choose the alert tone, soundtrack, or intro video used by the Room.
-3. Set whether the timer is shown, then adjust its color, size, and position.
-4. Set whether live messages are shown, add the optional **Message at game start**, and adjust contrast, width, and position.
-5. Set whether the remaining Clue counter is shown, then adjust its size and position.
-6. Check the built-in **Preview** while you work. To match the TV or monitor in your Room, type its width and height in the preview header and press Enter. The size saves with the Room. Select the reset button to go back to 1920 × 1080.
-
-Details and screen changes save automatically. Wait for **Autosave on** before leaving the editor.
+1. **Room:** check the name, **Minutes**, and **Clues per game**, and choose the
+   alert tone. Turn on **Play it automatically with every message and clue** to
+   play it every time. These settings apply to all three screens.
+2. **Backdrop & sound:** choose a background color, image, or video, and any
+   **Intro video brief** or **Soundtrack**.
+3. **Timer**, **Live message**, and **Clue counter:** turn each on or off and set
+   its look and position. **Live message** also has an optional **Message at
+   game start**.
+4. Check the **Preview** as you work. To match your Room's screen, type its width
+   and height in the preview header and press Enter. The size saves with the
+   Room; the reset button returns to 1920 × 1080.
 
 {% hint style="warning" %}
-If **Use Background Video as Timer** is enabled, the video's duration controls the Room timer. Test the complete video on the real Room Station before live use.
+If **Run the clock from this video** is on, the video's length becomes the game length and the countdown is hidden. Test the complete video on the real Room Station before live use.
 {% endhint %}
 
 ## Configure both end screens
 
-For **Success Screen** and **Failure Screen**, confirm:
-
-- The main and supporting messages say what players should see.
-- Text remains readable over the selected background.
-- The timer is shown or hidden intentionally.
-- Any end-state media plays correctly.
+Choose **Success**, then **Failure**, and check each one's messages, that text is
+readable over the background, whether the timer shows, and any media.
 
 ## Test on the player-facing display
 
-1. Open the Room Dashboard.
-2. Select **Open Live View**.
-3. Check the real display from the players' viewing position.
-4. Send a test message and alert tone.
-5. Test both end screens before returning the Room to its starting state.
+The preview shows layout only. Check playback, browser permissions, fullscreen,
+and viewing distance on the real display:
 
-The editor preview is useful for layout, but the real display is the final check for playback, browser permissions, fullscreen behavior, and viewing distance.
-
-## You're ready when...
-
-The timer, messages, Clue counter, media, success screen, and failure screen are readable and behave as intended on the real display.
+1. On the Room Dashboard, select **Open Live View**.
+2. From where players stand, check the display, then send a test message and
+   alert tone.
+3. Test both end screens, then reset the Room.
 
 ## Next
 

@@ -4,52 +4,52 @@ description: Recover from common Live View, timer, media, and Room Session save 
 
 # Troubleshoot a Live Session
 
-Use the section matching the visible problem. Preserve the current Room Dashboard until the Room Session is safe.
+Find the problem below. Keep the current Room Dashboard open until the Room
+Session is saved.
 
 ## Live View does not open
 
-1. Confirm the browser did not block the new window.
-2. Select **Open Live View** once.
-3. Check the taskbar or other display for an existing Live View window.
-4. If it opened on the wrong display, move that window before using fullscreen.
-
-Do not open several Live View windows for the same Room.
+1. Check that the browser didn't block the new window.
+2. Look in the taskbar and on other displays for a Live View window that is
+   already open. Don't open several for the same Room.
+3. If it opened on the wrong display, move it before using fullscreen.
 
 ## Live View is open but looks wrong
 
-- Confirm the correct Room is open.
-- Exit fullscreen and place the window on the intended display.
-- Check display scaling and resolution.
-- If the layout itself is wrong, finish the current safe operation and update [Live View configuration](../build-your-rooms/configure-live-view.md) before the next group.
+- Check that the correct Room is open.
+- Exit fullscreen, move the window to the right display, and check its scaling
+  and resolution.
+- If the layout itself is wrong, [fix Live View](../build-your-rooms/configure-live-view.md)
+  before the next group.
 
 ## A message or Clue does not appear
 
-- Confirm Live View is open.
-- Check the Session Log before sending the content again. Use its filter when the relevant action is hidden among other events.
-- Confirm the correct Puzzle is selected.
-- Use **Clear Live View** only when removing the current player-facing content is intended.
+- Check that Live View is open and the correct Puzzle is selected.
+- Check the Session Log before sending it again.
+- **Clear Live View** removes what players currently see; use it only on purpose.
 
 ## Audio or media does not play
 
-1. Check the Room Station output device and volume.
-2. Open **Audio Mixer** and confirm the asset exists and is not muted.
-3. Confirm the browser has permission to play or capture audio when required.
-4. Try the exact image, video, or audio control once.
+1. Check the Room Station's output device and volume.
+2. Open the **Audio mixer** and check that the file exists and isn't muted.
+3. Check that the browser is allowed to play or capture audio.
+4. Try the control once more.
 
-If an asset is missing, do not replace Room configuration during the active game unless the operator understands the effect. Use a safe alternative and repair the Room before the next group.
+If a file is missing, use a safe alternative and repair the Room before the next
+group, rather than changing its setup mid-game.
 
 ## The timer needs correction
 
-- Use **+/- Minutes** for an intentional time adjustment.
-- Confirm the new value on both the Room Dashboard and Live View.
-- Avoid speed controls during a real Room Session unless the operating plan specifically requires them.
+- Type the number of minutes (negative to take time away), then select the
+  **Minute(s)** button. Check the new time on both the Room Dashboard and Live
+  View.
+- Avoid the speed controls during a real game.
 
 ## The Room Station loses its connection
 
-- Keep the Room Dashboard and Live View open.
-- Do not refresh or sign out during the active Room Session.
-- Continue only when the application shows the current Room is available for supported offline operation.
-- When the connection returns, allow any pending Room Session record to synchronize.
+- Keep the Room Dashboard and Live View open. Don't refresh or sign out.
+- Continue only if the app shows the Room is available offline.
+- When the connection returns, let any waiting Room Session sync.
 
 ## The Room Session does not save
 
@@ -64,7 +64,9 @@ Do not clear browser data, remove the offline download, or discard a pending or 
 
 ## An application update is ready during a game
 
-Leave the update message visible and finish the active or completed-but-unsaved Room Session first. **Update now** stays disabled while this browser profile has an active game, including a game in another Escape Director window. Select it only after the Room Session is safely saved and the control becomes available.
+Finish and save the current game first. **Update now** stays disabled while this
+browser profile has an active game, including one in another Escape Director
+window.
 
 ## Escalate to support
 
