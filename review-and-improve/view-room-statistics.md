@@ -4,45 +4,44 @@ description: Inspect saved Room Sessions, notes, action history, and CSV tools.
 
 # View Room Statistics
 
-Use Room Statistics when you need the details of individual Room Sessions.
-
-## Open a Room
-
-1. Select **Room Statistics** in the application navigation.
-2. Choose a Room.
+Room Statistics shows the details of each saved Room Session for one Room. Open
+**Room Statistics** in the application navigation and choose a Room.
 
 <figure><img src="../.gitbook/assets/room-statistics.png" alt="Room Statistics for Demo Clockwork Heist showing performance summaries and saved Room Sessions"><figcaption><p>Room Statistics combines summary values with the underlying Session list.</p></figcaption></figure>
 
-## Read the overview
+The overview shows the Room's success rate, average saved time remaining, and
+record time. The table lists each Room Session's date, Game Master, time
+remaining, reported Clues (when the Room collects them), and player counts.
 
-The overview shows the Room's current success rate, average saved time remaining, and record saved time based on the available Room Sessions.
+## Edit a Room Session
 
-Use the table to review:
+Use a row's actions to edit the team name, Game Master, reported Clues, player
+counts, notes, or public-leaderboard exclusion. The date, result, Room, and time
+remaining can't be changed.
 
-- Date and time
-- Game Master
-- Saved time remaining
-- Reported Clues when the Room collects them
-- Total and experienced players
-
-## Open a Room Session
-
-Use the row action to edit the team name, Game Master, reported Clues when applicable, player counts, notes, or public-leaderboard exclusion. Date, result, Room, and time remaining cannot be changed.
-
-Open **Session Log** to review the saved event history. Review mode shows **Sent to players**, **Completions**, and **Clock changes** by default, while session start, time adjustments, and the outcome are always shown. Historical records may preserve an earlier Game Master display-name snapshot even after the active profile is renamed or archived.
+Open **Session Log** to review what happened during the game. It shows **Sent to
+players**, **Completions**, and **Clock changes** by default; the session start,
+time adjustments, and outcome are always shown. An older record may keep a Game
+Master's earlier name after the profile is renamed or archived.
 
 {% hint style="warning" %}
-Delete a Room Session only when it should no longer exist. Use **Exclude from public leaderboards** when the record should remain available for operational review but must not appear in public rankings.
+Delete a Room Session only when it should no longer exist. To keep it for review
+but out of public rankings, use **Exclude from public leaderboards** instead.
 {% endhint %}
 
 ## Import or export CSV
 
-- **Export Statistics** downloads the selected Room's Room Sessions as a CSV file.
-- **Import Statistics** checks the chosen file before adding its Room Sessions to the selected Room. If anything in the file needs fixing, nothing is imported and Escape Director tells you which row and column to correct.
+- **Export Statistics** downloads the Room's Room Sessions as a CSV file.
+- **Import Statistics** checks the file before adding its Room Sessions to the
+  selected Room. If anything needs fixing, nothing is imported and Escape
+  Director tells you which row and column to correct.
 
-Before importing, create a Game Master Profile for every Game Master named in the file. Names match regardless of capitalization.
+Before importing:
 
-Do not mix Room Sessions from different Rooms in one file, and keep a copy of the original before you edit it.
+- Create a Game Master Profile for every Game Master named in the file. Names
+  match regardless of capitalization.
+- Keep each file to one Room.
+- Keep a copy of the original before you edit it.
 
 ## Statistics CSV format
 
@@ -72,10 +71,6 @@ Write dates with the time zone, as exports do, so sessions keep the right day an
 ### Older exports
 
 Files exported before the current format have six columns: Date, Game Master, Time Remaining, Clues Used, Total Players and Experienced Players. Import Statistics still accepts them. Each session is recorded as a failure when Time Remaining is `00:00.00`, and as a success otherwise.
-
-## You're ready when...
-
-The expected Room Session appears with the correct Game Master, saved time, reported Clues when collected, and player details.
 
 ## Next
 

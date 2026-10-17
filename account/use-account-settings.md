@@ -4,40 +4,45 @@ description: Update your profile, manage sign-in security and billing, and check
 
 # Use Account Settings
 
-Account Settings is a separate workspace with sections for **Profile**, **Security**, **Membership**, **Beta features**, and **This browser**. Use **Back to...** to return to the application page you came from.
+Account Settings holds your profile, sign-in, membership, and this browser's
+offline state. Open **Account Settings** from the application navigation or
+account menu.
 
-## Open Account Settings
-
-Select **Account Settings** in the application navigation or account menu, then choose the section you need.
+| Section | Use it to |
+| --- | --- |
+| **Profile** | Change the account name, business name, or phone number. |
+| **Security** | Change your password. |
+| **Membership** | Check your plan, manage billing, and see media storage. |
+| **Locations** | Add or remove sites. See [Manage Locations](manage-locations.md). |
+| **Beta features** | Try new features early. |
+| **This browser** | Check offline access on this browser. |
 
 <figure><img src="../.gitbook/assets/account-settings-device.png" alt="Account Settings in This browser showing Offline access status, expiry, and prepared Rooms in a synthetic test account"><figcaption><p>This browser reports its own offline access and prepared Rooms; another browser can have different readiness.</p></figcaption></figure>
 
 ## Update your profile
 
-Open **Profile** to update the account name, or add an optional business name and phone number. Clear an optional field to remove it. The email address is shown for reference; contact support when it must change. Select **Save** when the unsaved-changes bar appears.
+In **Profile**, update the account name, business name, or phone number, then
+select **Save**. Clear an optional field to remove it. To change your email
+address, contact support.
 
 ## Review membership and billing
 
-Open **Membership** to check status, plan, and the current period or cancellation date. Select **Manage billing** to open Stripe's billing portal for supported subscription and payment-method actions. Use **Update card** when the status requires payment action.
-
-**Media storage** shows how much of your 25 GB media storage your Rooms and Leaderboards use. See [Storage limits](../build-your-rooms/manage-room-media.md#storage-limits).
+**Membership** shows your status, plan, and current period or cancellation date.
+Select **Manage billing** to change your plan, cancel, or change how you pay in
+Stripe. If a payment is needed, use **Update card**. **Media storage** shows how
+much of your 25 GB your Rooms and Leaderboards use; see
+[Storage limits](../build-your-rooms/manage-room-media.md#storage-limits).
 
 {% hint style="warning" %}
 Review the effective date shown by Stripe before confirming a cancellation or plan change.
 {% endhint %}
 
-To add or remove a site, see [Manage Locations](manage-locations.md).
-
 ## Change your password
 
-Open **Security**. Escape Director shows the sign-in method first. Accounts that sign in only through a linked provider do not have an Escape Director password form.
-
-1. Enter the current password.
-2. Enter and confirm the new password.
-3. Select **Change password** once.
-4. Store the new password securely.
-
-Use **Forgot password?** on the sign-in page when the current password is unavailable.
+In **Security**, enter your current password and the new one twice, then select
+**Change password**. If you've forgotten the current one, use **Forgot
+password?** on the sign-in page. Accounts that sign in only with Google or
+another linked provider have no password here.
 
 {% hint style="danger" %}
 Changing the password signs out every other browser and tablet immediately, including a Room Station. Change it between games, not during one.
@@ -45,38 +50,29 @@ Changing the password signs out every other browser and tablet immediately, incl
 
 ## Try beta features
 
-Open **Beta features** to try new features before everyone else.
-
-- Turn a feature on or off with its switch. The change applies to your whole account.
-- Select **Learn more** when a feature has it to read how the feature works.
-- Turning a feature off hides it again. Anything you made with it stays saved.
-
-When the list is empty, there are no beta features to try right now.
+In **Beta features**, turn a feature on or off with its switch. The change
+applies to your whole account. Turning a feature off hides it again, but anything
+you made with it stays saved. An empty list means there are no beta features
+right now.
 
 ## Check this browser
 
-Open **This browser** to see:
-
-- whether offline access is **Ready** and when it expires;
-- how many Rooms are downloaded to this browser; and
-- which Rooms are currently prepared.
-
-This state belongs to the current browser profile. It does not prove that another Room Station is ready.
+**This browser** shows whether offline access is **Ready**, when it expires, and
+which Rooms are downloaded. It covers only the current browser profile, not other
+Room Stations.
 
 ## Check notifications
 
-Select the bell at the top of the app to open **Notifications**. A dot on the bell means something is unread.
-
-Notifications include new product updates and a reminder when your free trial ends within 7 days. Select a notification to open it. Select **Mark as read** or **Mark all read** to clear the dot.
+Select the bell at the top of the app to open **Notifications**, such as product
+updates and a reminder when your free trial ends within 7 days. A dot on the bell
+means something is unread; **Mark as read** or **Mark all read** clears it.
 
 ## Sign out
 
-Select **Sign out** only after active Room Sessions and pending saves are complete. Profile, security, and billing changes require a connection; prepared Rooms may still run offline while their displayed access remains valid.
+Sign out only after running games and waiting saves are complete. Profile,
+security, and billing changes need a connection; prepared Rooms can still run
+offline until their access expires.
 
-## You're ready when...
-
-The intended profile, membership, security, or browser-readiness state is confirmed and you can return to the application safely.
-
-## Get help
+## If your membership looks wrong
 
 For a membership state that does not match Stripe, or an account you cannot access, [contact support](../help/README.md).

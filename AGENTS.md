@@ -26,6 +26,22 @@ Escape Director. The product's code lives in separate repositories
 Merging to `main` publishes at once, so merge a guide only when what it
 describes is in production.
 
+## Writing guides
+
+Each guide helps a Room owner or Game Master finish a task or make a decision.
+Before adding text, ask which task or decision it helps with.
+
+- Give each feature a short page: what it does, where it lives (the path, in
+  bold, such as **Account Settings → Locations**), how to start, and anything
+  that would surprise someone.
+- Do not describe buttons, icons, layouts or every screen state that the
+  reader can already see. Use a table to compare options, and a short section
+  on differences and limits instead of repeating near-identical steps.
+- A small interface tweak needs no guide change, and a new control does not
+  need its own page.
+- When how a feature works changes, rewrite the affected section instead of
+  adding a note about the new behavior.
+
 ## Guardrails
 
 - Write for customers (Room owners and Game Masters), not developers. Use the

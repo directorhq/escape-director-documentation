@@ -50,13 +50,13 @@ Keep example names, Puzzle order, Clues, media, Game Masters, and Session detail
 
 Keep each Product Guide focused on one customer task and use this order when the sections apply:
 
-1. State the outcome in one sentence: `Use this guide to ...`
+1. State in one or two sentences what the feature does and where it lives, with the path in bold (for example **Account Settings → Locations**).
 2. List prerequisites under `Before you begin` only when the reader could otherwise become blocked or make a material mistake.
-3. Give short, numbered steps. Place screenshots beside the difficult or easy-to-misidentify moments.
-4. Describe the observable success state under `You're ready when ...`.
+3. Give short, numbered steps. Place screenshots beside the difficult or easy-to-misidentify moments. Compare options or modes in a table instead of repeating near-identical steps.
+4. Describe the success state under `You're ready when ...` only when it is not obvious from the last step.
 5. Place warnings beside the step where the risk occurs.
 6. Link the normal continuation under `Next`.
-7. Keep page-specific troubleshooting brief and link to a focused troubleshooting guide for deeper recovery.
+7. Keep page-specific troubleshooting brief and link to a focused troubleshooting guide for deeper recovery. Do not add a generic `Get help` section; the Help menu and the troubleshooting section already cover it.
 
 ## Editorial test
 
