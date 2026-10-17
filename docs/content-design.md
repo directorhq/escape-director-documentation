@@ -40,9 +40,9 @@ Use screenshots to orient readers and clarify consequential interactions, not as
 
 Use a small, consistent set of fictional demo Rooms so that instructions and screenshots feel like one continuous walkthrough.
 
-- Use `Demo · Clockwork Heist` for account setup, Room configuration, Live View, Room Station preparation, live-session operation, and ordinary statistics examples.
+- Every Room, Game Master, team, and account shown must be fictional.
+- Prefer `Demo · Clockwork Heist` for new account setup, Room configuration, Live View, Room Station preparation, live-session, and ordinary statistics screenshots. Existing screenshots with other fictional Rooms (such as `The Curator's Vault` or `Sublevel 13`) stay until the UI changes enough to need a retake.
 - For Analytics, use the fictional Rooms and Game Masters in the local test account (for example `The Alchemist's Study`), which has enough games to fill every card.
-- Use other demo Rooms only when a Product Guide specifically teaches Room comparison.
 
 Keep example names, Puzzle order, Clues, media, Game Masters, and Session details consistent between related pages wherever the application state allows it.
 
@@ -71,17 +71,6 @@ Remove repetition, product marketing, obvious interface descriptions, speculativ
 
 Prefer short paragraphs, descriptive headings, numbered actions, compact checklists, and direct links. Use the exact visible interface label when telling a reader what to select.
 
-## Featurebase Messenger articles
-
-Keep the Featurebase article set intentionally small and operational. Maintain curated Markdown copies of only these Product Guides:
-
-- Prepare Your Room Station
-- Run a Session: Quick Reference
-- Troubleshoot a Live Session
-- Get Help and Contact Support
-
-Each Featurebase copy must link to its canonical Product Guide and should be reviewed whenever that page changes. Longer setup, configuration, Analytics, billing, and reference material remains in GitBook and may be opened from Featurebase through direct links.
-
 ## Contextual application help
 
 Use the existing application Help menu as the consistent entry point instead of scattering help icons throughout forms and workspaces. When a relevant Product Guide exists, the menu should present:
@@ -108,6 +97,10 @@ Documentation is not a universal merge or release gate. Every customer-visible c
 
 Write in a calm, operational second-person voice.
 
+- Use American spelling (color, center, canceled) and US date and time formats.
+- Keep the language as simple as possible: short sentences and everyday words.
+- Use the product terms defined in [`CONTEXT.md`](../CONTEXT.md), and the exact capitalization the app shows for a label (for example, the **Media library** tab).
+
 - Tell the reader what to do using the exact visible interface label, then state the expected result when it is not obvious.
 - Use `owner` or `Game Master` only when responsibility matters; otherwise use `you`.
 - Avoid `just`, `simply`, `obviously`, product marketing, jokes, and unnecessary technical terminology.
@@ -119,7 +112,6 @@ Write in a calm, operational second-person voice.
 - Identify affected Product Guides and contextual Help links in each customer-visible feature change.
 - Review coordinated documentation alongside the release when practical, while allowing ordinary documentation improvements to follow asynchronously under a tracked owner.
 - Use descriptive screenshot filenames based on the task or interface; do not add generic names such as `image (8).png`.
-- Record which of the four curated Featurebase articles must be refreshed when its canonical Product Guide changes.
 - Publish instructions and screenshots only when their behavior is in production.
 - Periodically review broken links, stale screenshots, unanswered searches, support patterns, and low-rated pages to choose the next documentation improvements.
 

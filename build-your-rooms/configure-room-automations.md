@@ -46,9 +46,9 @@ The Room Dashboard does not have a preview or practice mode. Testing an Automati
 
 ## Prepare for offline operation
 
-Prepare the Room on its Room Station after you finish editing. The prepared Room includes its enabled Automations and referenced media, so they can run during an admitted game without a backend connection.
+After you finish editing, open the Room on its Room Station while online so it is ready offline. The offline copy includes the enabled Automations and their media, so they keep running during a game even if the internet drops.
 
-If you change an Automation or one of its media files, prepare the Room again before relying on it offline.
+If you change an Automation or one of its media files, open the Room again while online before you rely on it offline.
 
 ## You're ready when...
 
@@ -60,4 +60,4 @@ If you change an Automation or one of its media files, prepare the Room again be
 
 ## Next
 
-[Prepare Your Room Station](../prepare-for-a-shift/prepare-your-room-station.md)
+[Connect Room Devices](connect-room-devices.md) when the Room has props or other hardware to connect. Otherwise, go to [Prepare Your Room Station](../prepare-for-a-shift/prepare-your-room-station.md).

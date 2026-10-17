@@ -37,7 +37,7 @@ Open **Security**. Escape Director shows the sign-in method first. Accounts that
 3. Select **Change password** once.
 4. Store the new password securely.
 
-Use **Forgot Password** from the sign-in page when the current password is unavailable.
+Use **Forgot password?** on the sign-in page when the current password is unavailable.
 
 {% hint style="danger" %}
 Changing the password signs out every other browser and tablet immediately, including a Room Station. Change it between games, not during one.

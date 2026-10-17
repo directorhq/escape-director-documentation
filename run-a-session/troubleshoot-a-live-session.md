@@ -32,7 +32,7 @@ Do not open several Live View windows for the same Room.
 ## Audio or media does not play
 
 1. Check the Room Station output device and volume.
-2. Open **Audio Mixer** and confirm the asset exists and is not muted.
+2. Open the **Audio mixer** and confirm the asset exists and is not muted.
 3. Confirm the browser has permission to play or capture audio when required.
 4. Try the exact image, video, or audio control once.
 
@@ -40,7 +40,7 @@ If an asset is missing, do not replace Room configuration during the active game
 
 ## The timer needs correction
 
-- Use **+/- Minutes** for an intentional time adjustment.
+- To add time, type a positive number of minutes. To take time away, type a negative number. Then select the **Minute(s)** button.
 - Confirm the new value on both the Room Dashboard and Live View.
 - Avoid speed controls during a real Room Session unless the operating plan specifically requires them.
 

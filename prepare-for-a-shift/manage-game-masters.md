@@ -10,7 +10,7 @@ Use this guide when a staff member joins, changes display name, or should no lon
 
 1. Open any Room Dashboard.
 2. Open the **Game Master** selector.
-3. Choose the management action from the selector.
+3. Choose **Manage Game Masters…**.
 
 ## Maintain the list
 

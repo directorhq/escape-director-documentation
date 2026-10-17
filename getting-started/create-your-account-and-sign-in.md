@@ -8,14 +8,16 @@ Use this guide to reach **All Rooms** with a verified Escape Director account.
 
 ## Before you begin
 
-Use an email inbox you can open now and a password you can store securely.
+Use an email inbox you can open now and a password you can store securely, or a Google account.
 
 ## Create the account
 
 1. Go to [www.escapedirector.com](https://www.escapedirector.com/).
-2. Select **Start Free Trial**.
+2. Select **Start free trial**.
 3. Enter your name, email address, and password. Your business name is optional.
 4. Submit the form.
+
+To use your Google account instead, select **Continue with Google** and choose the account. Skip the email verification steps below, and sign in later with **Continue with Google**.
 
 ## Verify your email address
 
@@ -35,7 +37,7 @@ You can sign in and open **All Rooms**.
 
 - Confirm that the email address is verified.
 - Check spam or junk folders for the newest verification email.
-- Use **Forgot Password** on the sign-in page if the password is not accepted.
+- Use **Forgot password?** on the sign-in page if the password is not accepted.
 - [Contact support](../help/README.md) if verification or access remains blocked.
 
 ## Next

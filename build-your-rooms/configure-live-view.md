@@ -11,28 +11,28 @@ Use this guide to make the timer, messages, Clue counter, media, and end screens
 1. Open **All Rooms**.
 2. Select **Edit** for the Room.
 3. Open the **Details** tab.
-4. Choose **LiveView Screen**, **Success Screen**, or **Failure Screen** under **Configure Screen**.
+4. Under **Editing screen**, choose **Live view**, **Success**, or **Failure**.
 
 ## Configure the normal Live View
 
-Work from top to bottom:
+With **Live view** selected, work from top to bottom:
 
-1. Choose a background color and any required background image or video.
-2. Choose the alert tone, soundtrack, or intro video used by the Room.
-3. Set whether the timer is shown, then adjust its color, size, and position.
-4. Set whether live messages are shown, add the optional **Message at game start**, and adjust contrast, width, and position.
-5. Set whether the remaining Clue counter is shown, then adjust its size and position.
-6. Check the built-in **Preview** while you work. To match the TV or monitor in your Room, type its width and height in the preview header and press Enter. The size saves with the Room. Select the reset button to go back to 1920 × 1080.
+1. Under **Room**, check the Room name, **Minutes**, and **Clues per game**. Choose the alert tone, and turn on **Play it automatically with every message and clue** if you want it to play every time. These settings apply to all three screens.
+2. Under **Backdrop & sound**, choose a **Background color** and any **Background image** or **Background video**. Add an **Intro video brief** or **Soundtrack** if the Room uses them.
+3. Under **Timer**, turn **Show timer** on or off, then set its color, size, and position.
+4. Under **Live message**, turn **Show live messages** on or off, add the optional **Message at game start**, and set its colors, size, width, and position.
+5. Under **Clue counter**, turn **Show clue counter** on or off, then set its size and position.
+6. Check the **Preview** while you work. To match the TV or monitor in your Room, type its width and height in the preview header and press Enter. The size saves with the Room. Select the reset button to go back to 1920 × 1080.
 
 Details and screen changes save automatically. Wait for **Autosave on** before leaving the editor.
 
 {% hint style="warning" %}
-If **Use Background Video as Timer** is enabled, the video's duration controls the Room timer. Test the complete video on the real Room Station before live use.
+If **Run the clock from this video** is on, the video's length becomes the game length and the countdown is hidden. Test the complete video on the real Room Station before live use.
 {% endhint %}
 
 ## Configure both end screens
 
-For **Success Screen** and **Failure Screen**, confirm:
+Choose **Success**, then **Failure**, and for each one confirm:
 
 - The main and supporting messages say what players should see.
 - Text remains readable over the selected background.

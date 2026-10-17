@@ -1,10 +1,17 @@
+---
+status: accepted
+date: 2026-08-03
+---
+
 # Keep customer guides canonical in Git
 
-Customer-facing Product Guides are maintained as Markdown in the documentation repository and published through GitBook because this keeps changes reviewable, versioned, and easy to update. Featurebase and the application may surface curated copies or direct links for high-value In-App Help, but they are distribution surfaces rather than independent sources of truth; any copied article must identify its canonical repository page so the two versions can be checked together.
+> Amended on 2026-10-16: the Featurebase help center is off, so Featurebase no
+> longer holds copies of Product Guides.
+
+Customer-facing Product Guides are maintained as Markdown in the documentation repository and published through GitBook because this keeps changes reviewable, versioned, and easy to update. Featurebase and the application link to Product Guides; they do not keep their own copies.
 
 ## Consequences
 
-- GitBook remains the complete, public documentation experience.
-- Featurebase Messenger should contain only the small set of articles that materially helps someone without leaving their current workflow.
+- GitBook remains the complete, public documentation experience and the only source of help articles.
+- The Featurebase help center is turned off. Support chat links to Product Guides when an article helps.
 - The application should link directly to the most relevant Product Guide when its context is known.
-- A Featurebase copy must not introduce instructions or terminology that are absent from its canonical Product Guide.

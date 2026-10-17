@@ -24,7 +24,7 @@ Use this guide to give Game Masters a clear, ordered Room flow.
 6. Add Clues in escalation order, from a light nudge to direct help.
 7. Select **Apply changes**.
 
-Use the attachment actions beside **Clue** to add an image, audio, or video Clue from the Room's Media Library.
+Use the attachment actions beside **Clue** to add an image, audio, or video Clue from the Room's Media library.
 
 ## Edit Puzzles and Clues from the Room Dashboard
 
@@ -47,7 +47,7 @@ During a game, a change to **Can be marked complete** applies to the next game. 
 4. Type the Clue text, or choose the file from **Room media**.
 5. Select **Create Clue**.
 
-A media Clue can only use a file that is already in the Room's Media Library. To add a new file, upload it first in [Manage Room Media](manage-room-media.md). To edit or reorder Clues, select **Edit Clues**. You can't add or edit Puzzles or Clues while the Room Dashboard is offline.
+A media Clue can only use a file that is already in the Room's Media library. To add a new file, upload it first in [Manage Room Media](manage-room-media.md). To edit or reorder Clues, select **Edit Clues**. You can't add or edit Puzzles or Clues while the Room Dashboard is offline.
 
 ## Arrange the Room flow
 
@@ -58,7 +58,7 @@ A media Clue can only use a file that is already in the Room's Media Library. To
 - Use player-facing Clue text; keep internal operating notes in the Puzzle description.
 
 {% hint style="warning" %}
-Deleting a Puzzle removes its current Clues but does not rewrite completed Room Session history. Deleting a Media Library file that is attached as a Clue also deletes each linked media Clue; review the confirmation before continuing.
+Deleting a Puzzle removes its current Clues but does not rewrite completed Room Session history. Deleting a Media library file that is attached as a Clue also deletes each linked media Clue; review the confirmation before continuing.
 {% endhint %}
 
 ## You're ready when...
