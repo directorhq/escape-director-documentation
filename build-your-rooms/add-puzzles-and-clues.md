@@ -19,7 +19,8 @@ Dashboard during a game.
 2. Add the answer and a short internal description if they help the Game Master.
 3. Add Clues in order, from a light nudge to direct help. Use the attachment
    actions beside **Clue** for an image, audio, or video from the Media library.
-4. Select **Apply changes**. Edits aren't saved until you do.
+4. Changes save on their own. A change that can't save yet, such as an empty
+   Clue or a Puzzle with no name, shows **Not saved yet** with the reason.
 
 Order Puzzles the way players usually solve them. Write Clues for players;
 keep staff notes in the Puzzle description.
