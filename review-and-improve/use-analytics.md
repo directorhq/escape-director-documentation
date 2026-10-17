@@ -1,5 +1,5 @@
 ---
-description: Read ready-made Analytics cards, compare Rooms or Game Masters, set escape-rate targets, and ask Analytics questions about completed Room Sessions.
+description: Read ready-made Analytics cards, compare Rooms or Game Masters, set escape-rate targets, and ask the assistant about completed Room Sessions.
 ---
 
 # Use Analytics
@@ -67,23 +67,23 @@ side** can show a target beside the escape rate. In the card's menu, choose
 **Escape-rate target**, enter a whole number from 1 to 100 for each Room, and
 select **Save**. Each Room has one target, shared by everyone on the account.
 
-## Ask Analytics
+## Ask about this page
 
-Select **Ask Analytics** to ask about your Rooms in plain language. Start with a
-suggested review or type your own question.
+Select **Ask about this page** to ask about your Rooms in plain language. The
+assistant opens under the header with the Room and dates you're looking at.
+Start with a suggested question or type your own.
+
+The assistant can split a figure by day of the week, weekday or weekend, time
+of day, or Game Master, and follow it week by week or month by month. For
+example, ask which days a Game Master who often adds time usually works. Open
+**How we got this** under an answer to see the numbers behind it. It says so
+when your data can't answer a question.
 
 {% hint style="info" %}
-Ask Analytics is in beta. It shows only on accounts that are part of the beta
-and have a paid membership, not during the free trial. Each month has a usage
-limit; when an account reaches it, the button is hidden until the next month.
+Each account has a monthly AI allowance of $3 per Location, shared by everyone
+on the account. When it runs out, the chat hands your questions to the team
+until the next month.
 {% endhint %}
-
-<figure><img src="../.gitbook/assets/analytics-ai-assistant.png" alt="Ask Analytics panel open beside the Analytics page for The Alchemist's Study, answering which Game Master gives the most clues and on which days, with Show calculation and suggested follow-up questions"><figcaption><p>Ask Analytics answers beside the page and shows the numbers behind each answer.</p></figcaption></figure>
-
-Ask Analytics can split a figure by day of the week, weekday or weekend, time of
-day, or Game Master, and follow it week by week or month by month. For example,
-ask which days a Game Master who often adds time usually works. It shows the
-numbers behind each answer, and says so when your data can't answer a question.
 
 ## Next
 
