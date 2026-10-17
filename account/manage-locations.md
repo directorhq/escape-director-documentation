@@ -4,17 +4,16 @@ description: Add, edit, and remove the sites where you run Rooms, and see what e
 
 # Manage Locations
 
-Use this guide to add a Location for each site where you run Rooms, move Rooms between Locations, and remove a Location you no longer need.
-
-Your membership includes one Location. Each extra Location adds to your membership price.
+A Location is a site where you run Rooms. Manage them in **Account Settings →
+Locations**. Your membership includes one Location; each extra one adds to your
+membership price.
 
 ## Add a Location
 
-1. Open **Account Settings**, then **Locations**.
-2. Select **Add Location**.
-3. Enter a **Name**, such as the town the site is in, and an optional **Address**. Select **Continue**.
-4. Review what you'll pay. **Adds to your membership** is the extra cost, **New membership price** is your new total, and **Due today** covers the days left in this billing period.
-5. Select **Pay** to charge your saved card. During a free trial, select **Add Location** instead. Nothing is charged until your trial ends.
+1. Select **Add Location**.
+2. Enter a **Name**, such as the town the site is in, and an optional **Address**. Select **Continue**.
+3. Review what you'll pay. **Adds to your membership** is the extra cost, **New membership price** is your new total, and **Due today** covers the days left in this billing period.
+4. Select **Pay** to charge your saved card. During a free trial, select **Add Location** instead. Nothing is charged until your trial ends.
 
 To use a different card, select **Change card** before you pay.
 
@@ -49,10 +48,6 @@ Select **Edit** beside the Location's address to change its name or address.
 
 Your membership price goes down from your next bill. There's no refund for the current billing period. You always keep at least one Location.
 
-## You're ready when...
-
-Each site appears under **Locations** with the right Rooms, and **Membership** shows the plan you expect.
-
-## Get help
+## If a charge looks wrong
 
 If a charge doesn't match what the review showed, or **Locations** says your membership needs setup, [contact support](../help/README.md).

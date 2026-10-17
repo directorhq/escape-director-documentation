@@ -12,10 +12,6 @@ Use these guides to reach a working Room that is ready for detailed setup.
 2. [Start Your Trial and Activate Your Plan](start-your-trial-and-activate-your-plan.md)
 3. [Create Your First Room](create-and-configure-your-first-room.md)
 
-## You're ready when...
-
-You can open **All Rooms**, see your Room, and select **Edit** without an account or billing warning.
-
 ## Next
 
 [Build Your Rooms](../build-your-rooms/README.md)

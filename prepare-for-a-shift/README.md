@@ -12,10 +12,6 @@ Use these guides before the first group enters a Room.
 2. [Prepare Your Room Station](prepare-your-room-station.md) on the computer that will run the Room.
 3. Open Live View on the player-facing display and confirm the complete starting state.
 
-## You're ready when...
-
-The correct Room, Game Master, display, media, timer, and Clue count are ready at the Room Station.
-
 ## Next
 
 [Run a Session](../run-a-session/README.md)
