@@ -76,8 +76,9 @@ Prefer short paragraphs, descriptive headings, numbered actions, compact checkli
 Use the existing application Help menu as the consistent entry point instead of scattering help icons throughout forms and workspaces. When a relevant Product Guide exists, the menu should present:
 
 1. `Guide for this page`, linked to the most relevant task for the current application route;
-2. `Browse all documentation`; and
-3. `System status`.
+2. `Browse all documentation`;
+3. `Share an idea` (the Discord #ideas forum); and
+4. `System status`.
 
 The assistant and support chat has its own header button beside Help.
 
