@@ -115,7 +115,7 @@ while keeping your puzzle logic.
 | Problem | What to do |
 | --- | --- |
 | **Controller description changed** | The firmware reports something new. Follow step 5. |
-| **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. |
+| **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. Then follow [step 5](#5-update-your-firmware). |
 | The controller never appears | Open the Serial Monitor at 115200 baud. The SDK prints any declaration it rejected. |
 | **The controller ran out of memory during setup** | Restart it and try again. If it continues, reduce your firmware's memory use, such as large buffers or text. |
 | **Offline** | Check the controller's power and Wi-Fi, and that Room Connector is running. |

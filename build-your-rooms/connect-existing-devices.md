@@ -39,8 +39,8 @@ address changes.
 **Check reachability** checks whether an HTTP device answers. It doesn't test a
 command or the physical prop.
 
-Passwords and tokens stay on this computer. On another Room Station, enter them
-again.
+Passwords and tokens you enter in Escape Director stay on this computer. On
+another Room Station, enter them again.
 
 ## 2. Map a signal
 
