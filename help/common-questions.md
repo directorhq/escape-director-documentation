@@ -63,7 +63,7 @@ No. Editing needs a connection.
 Open **Account Settings → Membership** and select **Manage billing**. See [Use Account Settings](../account/use-account-settings.md).
 
 **How do I delete my account?**
-Open **Account Settings → Security** and select **Delete account**. It deletes your Rooms, game history and everything else for good, and ends your membership right away without a refund. See [Delete your account](../account/use-account-settings.md#delete-your-account).
+Open **Account Settings → Security** and select **Delete account**. It deletes your Rooms, game history and the rest of your account data for good (Stripe keeps past invoices), and ends your membership right away without a refund. See [Delete your account](../account/use-account-settings.md#delete-your-account).
 
 **How do I change my email address?**
 Contact support. See [Troubleshoot and Get Help](README.md).

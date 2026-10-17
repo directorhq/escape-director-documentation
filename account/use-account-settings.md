@@ -63,7 +63,7 @@ When it is done, you land on the Escape Director home page and can no longer sig
 Your membership ends right away and you are not charged again. The rest of the current billing period is not refunded. Every computer signed in to the account is signed out, including Room Stations, so delete the account when no games are running.
 {% endhint %}
 
-Stripe keeps your past invoices and payments because tax law requires it. To stop paying but keep your Rooms and history, cancel in **Membership → Manage billing** instead.
+Stripe keeps your past invoices and payments for tax records. To stop paying but keep your Rooms and history, cancel in **Membership → Manage billing** instead.
 
 ## Try beta features
 
