@@ -14,8 +14,9 @@ or two. -->
 
 ## Before and after
 
-<!-- For new or replaced screenshots, show the old and new images. Use
-fictional demo data only. Otherwise write "No screenshot changes." -->
+<!-- For a replaced screenshot, show the old and new images. For a new
+screenshot, show the new image. Use fictional demo data only. Otherwise write
+"No screenshot changes." -->
 
 ## Verification
 
