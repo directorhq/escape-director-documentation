@@ -21,7 +21,7 @@ Escape Director. The product's code lives in separate repositories
    when it has one.
 3. Run `node scripts/validate-docs.mjs`.
 4. Open a pull request to `main`; link the issue. GitBook adds a preview link
-   to the pull request.
+   to the pull request. Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`; fill every section.
 
 Merging to `main` publishes at once, so merge a guide only when what it
 describes is in production.
