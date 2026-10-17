@@ -76,9 +76,10 @@ Prefer short paragraphs, descriptive headings, numbered actions, compact checkli
 Use the existing application Help menu as the consistent entry point instead of scattering help icons throughout forms and workspaces. When a relevant Product Guide exists, the menu should present:
 
 1. `Guide for this page`, linked to the most relevant task for the current application route;
-2. `Browse all documentation`;
-3. `Feedback Portal`, when configured; and
-4. `Open Chat`, when configured.
+2. `Browse all documentation`; and
+3. `System status`.
+
+The assistant and support chat has its own header button beside Help.
 
 Keep the route-to-guide mapping explicit in the frontend so that renamed or reorganized Product Guides can be updated and tested in one place. Fall back to the documentation homepage when a route has no focused guide.
 
