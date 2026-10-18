@@ -77,7 +77,7 @@ Use the existing application Help menu as the consistent entry point instead of 
 
 1. `Guide for this page`, linked to the most relevant task for the current application route;
 2. `Browse all documentation`;
-3. `Share an idea` (the Discord #ideas forum); and
+3. `Join our Discord` (the community Discord); and
 4. `System status`.
 
 The assistant and support chat has its own header button beside Help.
