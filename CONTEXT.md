@@ -10,6 +10,10 @@ This context defines the customer-facing language used to help escape room teams
 The person who signs in to Escape Director, manages the account and its membership, and sets up Rooms. Write `owner` in lowercase in prose.
 _Avoid_: Admin, customer, operator account
 
+**Manager**:
+A person the owner invites to the account with their own login. A Manager runs Rooms and manages Game Master Profiles, plus the access and Locations the owner chooses.
+_Avoid_: Staff account, admin, sub-user
+
 **Location**:
 A site where an owner runs Rooms. Each Room belongs to one Location.
 _Avoid_: Venue, site, branch, store
@@ -51,7 +55,7 @@ The player-facing presentation of a running Room, including its timer, Clues, me
 _Avoid_: Display page, player dashboard
 
 **Room Station**:
-The one Windows or Mac computer, using Google Chrome or Microsoft Edge, that runs an escape-room game, including its Room Dashboard and Live View.
+The one Windows or Mac computer, using Google Chrome or Microsoft Edge, that runs an escape-room game, including its Room Dashboard and Live View. It can sign in as a person or on its own, locked to one Location until an owner or Manager unlocks it.
 _Avoid_: Device fleet, multi-device room
 
 **Room Connector**:
