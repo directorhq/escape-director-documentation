@@ -10,6 +10,14 @@ Use this checklist on the computer that will run the Room.
 
 Run each Room from one Windows or Mac computer, using Google Chrome or Microsoft Edge. The Room Dashboard and Live View can be separate windows on that computer, with Live View on the players' screen.
 
+## Sign in the Room Station
+
+The computer can sign in as you, or on its own as a Room Station. A Room
+Station needs no password typed on it, runs games for one Location, and stays
+locked until an owner or Manager unlocks it. Games keep running either way. To
+set one up, see
+[Add Managers and Room Stations](../account/add-managers-and-room-stations.md#set-up-a-room-station).
+
 ## Before guests arrive
 
 1. Open **All Rooms**, choose the Room, and select the Game Master who will run

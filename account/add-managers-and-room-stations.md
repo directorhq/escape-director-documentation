@@ -1,0 +1,95 @@
+---
+description: Give Managers their own login, and let the computers that run your Rooms sign in on their own as Room Stations.
+---
+
+# Add Managers and Room Stations
+
+Managers are people who help run your business with their own login. A Room
+Station can sign in on its own, so nobody types a password on the computer that
+runs a Room. The owner manages both in **Account Settings → Team**. Only the
+owner sees this page.
+
+## Invite a Manager
+
+1. Select **Invite Manager** and enter their email address.
+2. Choose what else they can use. Every Manager can run Rooms, manage Game
+   Master Profiles and set up Room Stations.
+3. If you have more than one Location, choose **Every Location, including new
+   ones**, or **Only these Locations** and pick them.
+4. Select **Send invite**. They get a link to set a password. It works for 7
+   days; select **Resend invite** if it runs out.
+
+Managers cost nothing extra. To change what a Manager can use, select **Edit
+access**. To take it away, select **Remove from team**. Either change applies
+right away. Your Rooms and past games don't change.
+
+| Access | What the Manager gets |
+| --- | --- |
+| **Analytics** | The Analytics page and its assistant. |
+| **Game history** | Room Statistics, with past games, corrections and imports. |
+| **Room editing** | Rooms, media, Automations, Devices and Leaderboard settings. |
+
+A Manager limited to some Locations sees only those Locations' Rooms, games and
+Analytics. Leaderboard settings and the Analytics assistant cover every
+Location, so they need **Every Location**. Membership, billing, Locations, the
+Team page and Beta features always stay with the owner.
+
+## Set up a Room Station
+
+1. On the computer that runs the Room, select **Get a code** on the sign-in
+   page, or open `escapedirector.com/station-setup`. It shows a short code that
+   works for 10 minutes.
+2. On your phone, sign in as the owner or a Manager and open
+   `escapedirector.com/station`.
+3. Enter the code, then choose the Location and a name, such as `The Vault`.
+   Select **Approve**.
+
+The computer then signs in on its own as a Room Station and opens its Rooms.
+Managers can approve Room Stations only for their own Locations.
+
+## What a Room Station can do
+
+A Room Station starts locked. Locked, it runs games and shows Leaderboards for
+its one Location, and nothing else. The header shows a lock, and the bottom of
+the side menu says **Room Station · Locked**.
+
+To do more on it, select **Unlock**, choose your name and type your own
+password. It then works like your own login, with your pages, your Locations
+and your access. It locks again when you select **Lock now**, or once nobody
+has used it for 15 minutes. The owner can change that time with **Lock when
+idle** on the Team page, or choose **Only with Lock now** so it stays unlocked
+until someone locks it. Games keep running while it locks and unlocks.
+
+| | Owner | Manager | Locked Room Station | Unlocked Room Station |
+| --- | --- | --- | --- | --- |
+| Run games | Every Location | Their Locations | Its Location | Same as the person who unlocked it |
+| Analytics, game history, Room editing | Yes | When given | No | Same as the person who unlocked it |
+| Locations, Team, Beta features | Yes | No | No | When the owner unlocked it |
+| Billing | Yes | No | No | No |
+| Profile and Security | Yes | Yes | No | No |
+
+Profile, Security, Membership and deleting the account stay closed on a Room
+Station, even when it's unlocked. The station keeps its own sign-in so games
+keep running, so change these on your own phone or computer.
+
+{% hint style="info" %}
+Unlocking needs an internet connection. Games still run offline as usual. If
+you sign in only with Google, set a password in **Account Settings → Security**
+on your own device before you unlock a Room Station.
+{% endhint %}
+
+## Stop using a computer as a Room Station
+
+- **On the computer itself:** unlock it, then select **Sign in as yourself**
+  from a closed page such as **Profile**. Room Station mode ends and the sign-in
+  page opens. This waits until no game is running and every finished game has
+  been saved.
+- **From anywhere:** in **Account Settings → Team**, select **Remove** beside
+  the Room Station. It signs out at once. The row for the computer you're on
+  says **(this computer)**.
+
+To use that computer as a Room Station again, set it up with a new code.
+
+## Next
+
+[Prepare Your Room Station](../prepare-for-a-shift/prepare-your-room-station.md)

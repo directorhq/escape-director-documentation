@@ -14,6 +14,7 @@ account menu.
 | **Security** | Change your password. |
 | **Membership** | Check your plan, manage billing, and see media storage. |
 | **Locations** | Add or remove sites. See [Manage Locations](manage-locations.md). |
+| **Team** | Add Managers and Room Stations. See [Add Managers and Room Stations](add-managers-and-room-stations.md). |
 | **Beta features** | Try new features early. |
 | **This browser** | Check offline access on this browser. |
 
@@ -45,7 +46,7 @@ password?** on the sign-in page. Accounts that sign in only with Google or
 another linked provider have no password here.
 
 {% hint style="danger" %}
-Changing the password signs out every other browser and tablet immediately, including a Room Station. Change it between games, not during one.
+Changing the password signs out every other browser and tablet immediately, including a Room Station signed in as you. Change it between games, not during one.
 {% endhint %}
 
 ## Delete your account
