@@ -1,5 +1,5 @@
 ---
-description: Inspect saved Room Sessions, notes, action history, and CSV tools.
+description: Review saved Room Sessions with a report, the Session Log, and notes, and use CSV tools.
 ---
 
 # View Room Statistics
@@ -19,15 +19,27 @@ Use a row's actions to edit the team name, Game Master, reported Clues, player
 counts, notes, or public-leaderboard exclusion. The date, result, Room, and time
 remaining can't be changed.
 
-Open **Session Log** to review what happened during the game. It shows **Sent to
-players**, **Completions**, and **Clock changes** by default; the session start,
-time adjustments, and outcome are always shown. An older record may keep a Game
-Master's earlier name after the profile is renamed or archived.
-
 {% hint style="warning" %}
 Delete a Room Session only when it should no longer exist. To keep it for review
 but out of public rankings, use **Exclude from public leaderboards** instead.
 {% endhint %}
+
+## Review a Room Session
+
+Choose **View report** from a row's actions to see how the game went: the
+result, time left, Clues, Puzzles solved, and any pauses or time changes. The
+chart shows time left on the clock across the game, with what was sent and every
+clock change underneath. Hover over or tap a mark to see what it was. Sessions
+imported from a CSV file have no timeline, so their report shows the totals
+only.
+
+Switch to **Session Log** for every event in order. Its filter starts with
+everything shown; the session start, time adjustments, and outcome are always
+shown. An older record may keep a Game Master's earlier name after the profile
+is renamed or archived.
+
+**View notes** shows the notes saved with the session. Choose **Edit notes** to
+change them.
 
 ## Import or export CSV
 
