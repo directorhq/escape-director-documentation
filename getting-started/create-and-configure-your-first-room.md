@@ -14,15 +14,17 @@ live in **All Rooms**.
    and **Clues per game**.
 3. Select **Create Room**.
 
-<figure><img src="../.gitbook/assets/room-editor-details.png" alt="Escape Director Room editor showing the consolidated Details tab, autosave status, Live View screen controls, and preview"><figcaption><p>After creation, the Details tab keeps Room defaults and all three player-facing screen configurations together.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/room-editor-details.png" alt="Escape Director Room editor showing the consolidated Details tab, save status, Live View screen controls, and preview"><figcaption><p>After creation, the Details tab keeps Room defaults and all three player-facing screen configurations together.</p></figcaption></figure>
 
 These values are the normal starting state. The Game Master can adjust time and
 reported Clues during a game.
 
 ## How saving works
 
-Changes on **Details** save automatically. Wait for **Autosave on** before
-leaving the page. Puzzle changes save only when you select **Apply changes**.
+Changes on **Details** and **Puzzles & clues** save on their own, and the top
+of the page shows **Saved** when they have. **Undo** (or Ctrl+Z) takes back the
+last saved change, one at a time, and **Redo** puts it back. Undo lasts until
+you leave the page. Automations and Devices save only when you select **Save**.
 
 ## Delete a Room
 

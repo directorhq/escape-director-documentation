@@ -8,7 +8,7 @@ Live View is what players see during a game: the timer, messages, Clue counter,
 media, and end screens. Set it up in **All Rooms → Edit → Details**, and choose
 **Live view**, **Success**, or **Failure** under **Editing screen**.
 
-Changes save automatically. Wait for **Autosave on** before leaving the editor.
+Changes save on their own; the top of the editor shows **Saved** when they have.
 
 ## Configure the normal Live View
 
