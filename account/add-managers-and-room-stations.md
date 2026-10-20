@@ -57,7 +57,8 @@ To do more on it, select **Unlock**, choose your name and type your own
 password. It then works like your own login, with your pages, your Locations
 and your access. It locks again when you select **Lock now**, or once nobody
 has used it for 15 minutes. The owner can change that time with **Lock when
-idle** on the Team page. Games keep running while it locks and unlocks.
+idle** on the Team page, or choose **Only with Lock now** so it stays unlocked
+until someone locks it. Games keep running while it locks and unlocks.
 
 | | Owner | Manager | Locked Room Station | Unlocked Room Station |
 | --- | --- | --- | --- | --- |
