@@ -66,6 +66,11 @@ tray menu if this computer runs the Room every day.
 
 ## 2. Add and pair your controller
 
+These steps use Escape Director firmware. If the controller runs your own
+firmware built with the Device SDK, pair it from
+[Build Your Own Controller](build-your-own-controller.md#2-pair-the-controller)
+instead, so your firmware isn't replaced.
+
 1. Choose **Add Integrated Device → Escape Director firmware**, name the Device,
    and choose **Add Device**.
 2. Close Arduino IDE's Serial Monitor and any other program using the
