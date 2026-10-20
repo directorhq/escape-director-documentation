@@ -10,6 +10,10 @@ This context defines the customer-facing language used to help escape room teams
 The person who signs in to Escape Director, manages the account and its membership, and sets up Rooms. Write `owner` in lowercase in prose.
 _Avoid_: Admin, customer, operator account
 
+**Manager**:
+A person the owner invites to the account with their own login. A Manager runs Rooms and manages Game Master Profiles, plus the access and Locations the owner chooses.
+_Avoid_: Staff account, admin, sub-user
+
 **Location**:
 A site where an owner runs Rooms. Each Room belongs to one Location.
 _Avoid_: Venue, site, branch, store
@@ -51,7 +55,7 @@ The player-facing presentation of a running Room, including its timer, Clues, me
 _Avoid_: Display page, player dashboard
 
 **Room Station**:
-The one Windows or Mac computer, using Google Chrome or Microsoft Edge, that runs an escape-room game, including its Room Dashboard and Live View.
+The one Windows or Mac computer, using Google Chrome or Microsoft Edge, that runs an escape-room game, including its Room Dashboard and Live View. It can sign in as a person or on its own, locked to one Location until an owner or Manager unlocks it.
 _Avoid_: Device fleet, multi-device room
 
 **Room Connector**:
@@ -70,19 +74,15 @@ _Avoid_: Statistic, game record
 
 **Product Guide**:
 A canonical, task-focused customer page maintained in this repository and published through GitBook.
-_Avoid_: Featurebase article, user manual, knowledge-base copy
+_Avoid_: Help center article, user manual, knowledge-base copy
 
 **In-App Help**:
 Contextual guidance available from inside Escape Director, provided by a direct link to a Product Guide.
 _Avoid_: Live docs, embedded documentation
 
-**Support Messenger**:
-The Featurebase chat used to contact support. It links to Product Guides rather than holding its own copies.
-_Avoid_: Documentation, live chat docs
-
-**Feedback Portal**:
-The Featurebase surface for requests, roadmap information, and Product Updates.
-_Avoid_: Support center, documentation portal
+**Assistant**:
+The AI assistant and support chat opened from the application header. It answers from Product Guides and, on Analytics, from the account's data, and hands the conversation to the team when asked.
+_Avoid_: Featurebase, Support Messenger, Ask Analytics, chatbot
 
 **Product Update**:
 A customer-facing announcement about a meaningful release, improvement, fix, reliability change, or deprecation.

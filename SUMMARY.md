@@ -45,5 +45,6 @@
 * [Account](account/README.md)
 * [Use Account Settings](account/use-account-settings.md)
 * [Manage Locations](account/manage-locations.md)
+* [Add Managers and Room Stations](account/add-managers-and-room-stations.md)
 * [Troubleshoot and Get Help](help/README.md)
 * [Common Questions](help/common-questions.md)

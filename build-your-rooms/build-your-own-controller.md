@@ -39,6 +39,10 @@ needs no wiring.
 
 ## 2. Pair the controller
 
+These steps are for a controller running your own firmware. To pair one
+without it and set up its props in the app instead, use
+[Escape Director firmware](connect-room-devices.md#2-add-and-pair-your-controller).
+
 1. Stop any game. In **Devices**, choose **Add Integrated Device → Your own
    firmware (SDK)**, name the Device, then choose **Add Device** and **Save
    Devices**.
@@ -52,8 +56,8 @@ needs no wiring.
    controller**.
 
 {% hint style="warning" %}
-Don't choose **Install firmware**: it replaces your firmware with Escape
-Director's.
+Don't choose **Install firmware** for a controller running your firmware: it
+replaces your firmware with Escape Director's.
 {% endhint %}
 
 ## 3. Test the props

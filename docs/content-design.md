@@ -77,8 +77,10 @@ Use the existing application Help menu as the consistent entry point instead of 
 
 1. `Guide for this page`, linked to the most relevant task for the current application route;
 2. `Browse all documentation`;
-3. `Feedback Portal`, when configured; and
-4. `Open Chat`, when configured.
+3. `Join our Discord` (the community Discord); and
+4. `System status`.
+
+The assistant and support chat has its own header button beside Help.
 
 Keep the route-to-guide mapping explicit in the frontend so that renamed or reorganized Product Guides can be updated and tested in one place. Fall back to the documentation homepage when a route has no focused guide.
 
