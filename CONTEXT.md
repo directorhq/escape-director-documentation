@@ -70,19 +70,15 @@ _Avoid_: Statistic, game record
 
 **Product Guide**:
 A canonical, task-focused customer page maintained in this repository and published through GitBook.
-_Avoid_: Featurebase article, user manual, knowledge-base copy
+_Avoid_: Help center article, user manual, knowledge-base copy
 
 **In-App Help**:
 Contextual guidance available from inside Escape Director, provided by a direct link to a Product Guide.
 _Avoid_: Live docs, embedded documentation
 
-**Support Messenger**:
-The Featurebase chat used to contact support. It links to Product Guides rather than holding its own copies.
-_Avoid_: Documentation, live chat docs
-
-**Feedback Portal**:
-The Featurebase surface for requests, roadmap information, and Product Updates.
-_Avoid_: Support center, documentation portal
+**Assistant**:
+The AI assistant and support chat opened from the application header. It answers from Product Guides and, on Analytics, from the account's data, and hands the conversation to the team when asked.
+_Avoid_: Featurebase, Support Messenger, Ask Analytics, chatbot
 
 **Product Update**:
 A customer-facing announcement about a meaningful release, improvement, fix, reliability change, or deprecation.

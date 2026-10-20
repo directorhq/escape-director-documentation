@@ -14,17 +14,17 @@ description: Find the right Product Guide, troubleshoot a live Room Session, or 
 
 ## Open help inside Escape Director
 
-Select **Help** in the application header to open the guide for the current page, browse all documentation, open the Feedback Portal, or start a support conversation.
+Select **Help** in the application header to open the guide for the current page, browse all documentation, join our community Discord, or check system status.
 
-<figure><img src="../.gitbook/assets/contextual-help-menu.png" alt="Escape Director Help menu on Analytics showing Guide for this page, all documentation, Feedback Portal, and Open Chat"><figcaption><p>Guide for this page changes with the current application workspace.</p></figcaption></figure>
+To ask a question or reach the team, select the assistant beside **Help** (the white circle with red eyes). The assistant answers from the Product Guides, and on **Analytics** it can answer questions about your Rooms. Ask for a person at any time, or give an answer a thumbs down and choose **Tell the team**. When the team replies while the chat is closed, the button shows a count; on the Room Dashboard it only shows the count, so nothing pops up during a game.
 
 ## Choose the right support surface
 
 | Need | Use |
 | --- | --- |
 | Instructions or troubleshooting | Product Guides |
-| A feature request, roadmap item, or Product Update | Feedback Portal |
-| Direct help with a current problem | **Open Chat** |
+| A quick question or direct help with a problem | The assistant |
+| A feature idea, or to talk with other room owners | [Our community Discord](https://discord.gg/tRDXj9x6SF) |
 | Email support | [support@escapedirector.com](mailto:support@escapedirector.com) |
 
 ## Include this with a support request
