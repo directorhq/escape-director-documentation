@@ -73,7 +73,7 @@ _Avoid_: Statistic, game record
 ### Customer guidance
 
 **Product Guide**:
-A canonical, task-focused customer page maintained in this repository and published through GitBook.
+A canonical, task-focused customer page maintained in this repository and published with Mintlify.
 _Avoid_: Help center article, user manual, knowledge-base copy
 
 **In-App Help**:
