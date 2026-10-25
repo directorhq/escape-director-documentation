@@ -1,0 +1,25 @@
+/* Links in page text: brand red with a faint underline that turns solid on hover.
+   Scoped to .mdx-content a.link, so the sidebar, header, tabs, cards and
+   table of contents keep Mintlify's default styling. */
+.mdx-content a.link {
+  --link-color: #dd3333;
+  color: var(--link-color);
+  font-weight: inherit;
+  border-bottom: 0;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--link-color) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.mdx-content a.link:hover,
+.mdx-content a.link:focus-visible {
+  border-bottom: 0;
+  text-decoration-color: var(--link-color);
+}
+
+/* #DD3333 is low-contrast on the dark background, so use a lighter red. */
+.dark .mdx-content a.link {
+  --link-color: #e85c5c;
+}
