@@ -20,7 +20,7 @@ Escape Director. The product's code lives in separate repositories
 2. Refresh `origin/main` and branch from it, using the issue's branch name
    when it has one.
 3. Run `node scripts/validate-docs.mjs`.
-4. Preview the site with `npx mint dev` (Node 20 or later) and open each page
+4. Preview the site with `npx mint dev` (Node 20 to 24; the Mintlify CLI refuses Node 25) and open each page
    you changed.
 5. Open a pull request to `main`; link the issue. Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`; fill every section.
 
