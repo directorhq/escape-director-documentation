@@ -28,6 +28,6 @@ opened, or which code you read), and anything you could not check. -->
 - [ ] The Linear ticket is linked.
 - [ ] Wording follows `docs/content-design.md` and stays in the customer's
       language.
-- [ ] New pages are linked from their section's `README.md` and from
-      `SUMMARY.md`.
+- [ ] New pages are linked from their section's first page and listed in
+      `docs.json`; moved pages have a redirect.
 - [ ] Screenshots show fictional demo data only.

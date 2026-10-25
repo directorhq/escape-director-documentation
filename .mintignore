@@ -1,0 +1,8 @@
+# Repository files that are not customer pages.
+AGENTS.md
+CLAUDE.md
+CONTEXT.md
+README.md
+LICENSE
+docs/
+scripts/

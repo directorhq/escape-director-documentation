@@ -4,7 +4,7 @@ This document records the accepted structure and presentation rules for Escape D
 
 ## Source of truth
 
-Product Guides are maintained as Markdown in this repository and published through GitBook. See [ADR 0001](adr/0001-keep-customer-guides-canonical-in-git.md).
+Product Guides are maintained as Markdown in this repository and published with Mintlify. See [ADR 0001](adr/0001-keep-customer-guides-canonical-in-git.md) and [ADR 0002](adr/0002-publish-the-help-center-with-mintlify.md).
 
 ## Navigation model
 
@@ -117,4 +117,4 @@ Write in a calm, operational second-person voice.
 - Publish instructions and screenshots only when their behavior is in production.
 - Periodically review broken links, stale screenshots, unanswered searches, support patterns, and low-rated pages to choose the next documentation improvements.
 
-Run `node scripts/validate-docs.mjs` before publication to check local Markdown links, image references, the site cover, and GitBook redirect destinations.
+Run `node scripts/validate-docs.mjs` before publication to check that every page is in the navigation, every local link and image resolves, and every redirect lands on a page. `npx mint broken-links` also checks links to headings.

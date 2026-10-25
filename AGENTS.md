@@ -1,13 +1,13 @@
 # Escape Director Documentation Agent Guide
 
-This repository contains the public customer documentation (GitBook) for
+This repository contains the public customer documentation (Mintlify) for
 Escape Director. The product's code lives in separate repositories
 (`escape-director-frontend`, `escape-director-backend`, and the public
 `escape-director-device-sdk`).
 
 ## Read first
 
-- [`README.md`](README.md) and [`SUMMARY.md`](SUMMARY.md): structure and the
+- [`docs.json`](docs.json): site settings, navigation and redirects, and the
   reader's paths through the content.
 - [`docs/content-design.md`](docs/content-design.md): voice, style, and
   spelling rules.
@@ -20,8 +20,9 @@ Escape Director. The product's code lives in separate repositories
 2. Refresh `origin/main` and branch from it, using the issue's branch name
    when it has one.
 3. Run `node scripts/validate-docs.mjs`.
-4. Open a pull request to `main`; link the issue. GitBook adds a preview link
-   to the pull request. Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`; fill every section.
+4. Preview the site with `npx mint dev` (Node 20 or later) and open each page
+   you changed.
+5. Open a pull request to `main`; link the issue. Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`; fill every section.
 
 Merging to `main` publishes at once, so merge a guide only when what it
 describes is in production.
@@ -47,10 +48,16 @@ Before adding text, ask which task or decision it helps with.
 - Write for customers (Room owners and Game Masters), not developers. Use the
   domain language in `CONTEXT.md`; never expose internal terms,
   Linear context, API details, or credentials.
-- Keep navigation consistent: new pages belong in an existing section, are
-  linked from its `README.md`, and appear in `SUMMARY.md` when appropriate.
+- Keep navigation consistent: new pages belong in an existing section folder,
+  are linked from the section's first page, and are listed in `docs.json`.
+- Page URLs come from file paths and are what search engines and the app link
+  to. When you rename or move a page, add a permanent redirect in `docs.json`
+  from the old path.
+- Pages are MDX: start with `title` and `description` front matter (no `#`
+  heading), link with paths from the site root (`/run-a-session/run-a-session`),
+  and keep images in `images/`.
 - Screenshots use fictional demo data only; never capture real customer Rooms,
   sessions, or accounts.
-- Do not commit build output or GitBook-generated artifacts.
+- Do not commit build output or Mintlify-generated artifacts.
 - If your change invalidates anything stated in this guide or the documents it
   references, update those documents in the same pull request.
