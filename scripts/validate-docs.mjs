@@ -1,128 +1,137 @@
-import { access, readdir, readFile, stat } from "node:fs/promises";
+import { access, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
 const repositoryRoot = process.cwd();
-const ignoredDirectories = new Set([".git", "node_modules"]);
 const errors = [];
 
-const collectMarkdownFiles = async (directory) => {
-  const entries = await readdir(directory, { withFileTypes: true });
-  const files = [];
+const config = JSON.parse(
+  await readFile(path.join(repositoryRoot, "docs.json"), "utf8"),
+);
 
-  for (const entry of entries) {
-    if (ignoredDirectories.has(entry.name)) {
+const ignored = (await readFile(path.join(repositoryRoot, ".mintignore"), "utf8"))
+  .split("\n")
+  .map((line) => line.trim())
+  .filter((line) => line && !line.startsWith("#"));
+const isIgnored = (relative) =>
+  ignored.some((entry) =>
+    entry.endsWith("/") ? relative.startsWith(entry) : relative === entry,
+  );
+
+const collectPages = async (directory) => {
+  const pages = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.name.startsWith(".") || entry.name === "node_modules") {
       continue;
     }
-
     const entryPath = path.join(directory, entry.name);
+    const relative = path.relative(repositoryRoot, entryPath);
+    if (isIgnored(entry.isDirectory() ? `${relative}/` : relative)) {
+      continue;
+    }
     if (entry.isDirectory()) {
-      files.push(...(await collectMarkdownFiles(entryPath)));
-    } else if (entry.name.endsWith(".md")) {
-      files.push(entryPath);
+      pages.push(...(await collectPages(entryPath)));
+    } else if (/\.mdx?$/.test(entry.name)) {
+      pages.push(relative.replace(/\.mdx?$/, ""));
     }
   }
-
-  return files;
+  return pages;
 };
 
-const localTarget = (rawTarget) => {
-  const withoutTitle = rawTarget.trim().replace(/\s+["'][^"']*["']$/, "");
-  const unwrapped = withoutTitle.replace(/^<|>$/g, "");
-  const withoutFragment = unwrapped.split("#", 1)[0];
-
-  if (
-    !withoutFragment ||
-    /^(?:https?:|mailto:|tel:)/i.test(withoutFragment)
-  ) {
-    return null;
+const navigationPages = [];
+const walkNavigation = (node) => {
+  if (typeof node === "string") {
+    navigationPages.push(node);
+  } else if (Array.isArray(node)) {
+    node.forEach(walkNavigation);
+  } else if (node && typeof node === "object") {
+    walkNavigation(node.pages);
   }
-
-  return decodeURIComponent(withoutFragment);
 };
+walkNavigation(config.navigation.groups);
 
-const outsideRepository = (sourceFile, target) => {
-  const relative = path.relative(
-    repositoryRoot,
-    path.resolve(path.dirname(sourceFile), target),
-  );
-  return relative === ".." || relative.startsWith(`..${path.sep}`);
-};
+const pages = new Set(await collectPages(repositoryRoot));
+const pageUrl = (page) => (page === "index" ? "/" : `/${page}`);
+const pageUrls = new Set([...pages].map(pageUrl));
 
-const targetExists = async (sourceFile, target) => {
-  const resolved = path.resolve(path.dirname(sourceFile), target);
+for (const page of navigationPages) {
+  if (!pages.has(page)) {
+    errors.push(`docs.json: navigation lists missing page ${page}`);
+  }
+}
+for (const page of pages) {
+  if (!navigationPages.includes(page)) {
+    errors.push(`${page}.mdx: not listed in docs.json navigation`);
+  }
+}
 
+// Redirects keep old help center links working, so each must land on a page
+// and must not hide one.
+const redirectSources = new Set();
+for (const { source, destination } of config.redirects ?? []) {
+  redirectSources.add(source);
+  if (pageUrls.has(source)) {
+    errors.push(`docs.json: redirect from ${source} hides a page`);
+  }
+  if (!pageUrls.has(destination.split("#", 1)[0])) {
+    errors.push(`docs.json: redirect ${source} goes to missing ${destination}`);
+  }
+}
+
+const fileExists = async (urlPath) => {
   try {
-    const targetStat = await stat(resolved);
-    if (targetStat.isDirectory()) {
-      await access(path.join(resolved, "README.md"));
-    }
+    await access(path.join(repositoryRoot, decodeURIComponent(urlPath)));
     return true;
   } catch {
     return false;
   }
 };
 
-const validateMarkdownFile = async (filePath) => {
-  const content = await readFile(filePath, "utf8");
-  const targets = [];
-
-  for (const match of content.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
-    targets.push(match[1]);
+const assets = [config.favicon, config.logo?.light, config.logo?.dark].filter(
+  Boolean,
+);
+for (const asset of assets) {
+  if (!(await fileExists(asset))) {
+    errors.push(`docs.json: missing ${asset}`);
   }
-
-  for (const match of content.matchAll(/<img\s+[^>]*src="([^"]+)"/g)) {
-    targets.push(match[1]);
-  }
-
-  const coverMatch = content.match(/^cover:\s*(.+)$/m);
-  if (coverMatch) {
-    targets.push(coverMatch[1].trim());
-  }
-
-  for (const rawTarget of targets) {
-    const target = localTarget(rawTarget);
-    // Links above the repository point into the local workspace (for example
-    // the shared ../AGENTS.md), which a clone or CI checkout does not contain.
-    if (target && outsideRepository(filePath, target)) {
-      continue;
-    }
-    if (target && !(await targetExists(filePath, target))) {
-      errors.push(
-        `${path.relative(repositoryRoot, filePath)}: missing ${rawTarget}`,
-      );
-    }
-  }
-};
-
-const validateRedirects = async () => {
-  const configPath = path.join(repositoryRoot, ".gitbook.yaml");
-  const config = await readFile(configPath, "utf8");
-
-  for (const line of config.split("\n")) {
-    const match = line.match(/^\s{2}[^#][^:]+:\s+(.+\.md)\s*$/);
-    if (!match) {
-      continue;
-    }
-
-    const redirectTarget = path.join(repositoryRoot, match[1]);
-    try {
-      await access(redirectTarget);
-    } catch {
-      errors.push(`.gitbook.yaml: missing redirect target ${match[1]}`);
-    }
-  }
-};
-
-const markdownFiles = await collectMarkdownFiles(repositoryRoot);
-for (const markdownFile of markdownFiles) {
-  await validateMarkdownFile(markdownFile);
 }
-await validateRedirects();
+
+for (const page of pages) {
+  const file = (await fileExists(`${page}.mdx`)) ? `${page}.mdx` : `${page}.md`;
+  const content = await readFile(path.join(repositoryRoot, file), "utf8");
+  const targets = [
+    ...[...content.matchAll(/\]\(([^)\s]+)/g)].map((match) => match[1]),
+    ...[...content.matchAll(/\bsrc="([^"]+)"/g)].map((match) => match[1]),
+  ];
+
+  if (!/^---\n[\s\S]*?^title:/m.test(content)) {
+    errors.push(`${file}: missing title in front matter`);
+  }
+
+  for (const target of targets) {
+    if (/^(?:https?:|mailto:|tel:|#)/i.test(target)) {
+      continue;
+    }
+    if (!target.startsWith("/")) {
+      errors.push(`${file}: use a path from the site root for ${target}`);
+      continue;
+    }
+    const withoutFragment = target.split("#", 1)[0];
+    if (
+      !pageUrls.has(withoutFragment) &&
+      !redirectSources.has(withoutFragment) &&
+      !(await fileExists(withoutFragment))
+    ) {
+      errors.push(`${file}: missing ${target}`);
+    }
+  }
+}
 
 if (errors.length > 0) {
   console.error(errors.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Validated ${markdownFiles.length} Markdown files.`);
+  console.log(
+    `Validated ${pages.size} pages and ${redirectSources.size} redirects.`,
+  );
 }

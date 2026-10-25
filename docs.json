@@ -1,0 +1,278 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Escape Director",
+  "description": "Set up Escape Director, prepare your Room Station, run live games, and review results.",
+  "colors": {
+    "primary": "#DD3333",
+    "light": "#DD3333",
+    "dark": "#B82A2A"
+  },
+  "background": {
+    "color": {
+      "dark": "#060404"
+    }
+  },
+  "fonts": {
+    "family": "Geist"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://www.escapedirector.com"
+  },
+  "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "dark"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Join our Discord",
+        "href": "https://discord.gg/tRDXj9x6SF"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Sign in",
+      "href": "https://www.escapedirector.com/sign-in"
+    }
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Welcome",
+        "pages": [
+          "index"
+        ]
+      },
+      {
+        "group": "Get Started",
+        "pages": [
+          "get-started/getting-started",
+          "get-started/create-your-account-and-sign-in",
+          "get-started/start-your-trial-and-activate-your-plan",
+          "get-started/create-and-configure-your-first-room"
+        ]
+      },
+      {
+        "group": "Build Your Rooms",
+        "pages": [
+          "build-your-rooms/build-your-rooms",
+          "build-your-rooms/configure-live-view",
+          "build-your-rooms/add-puzzles-and-clues",
+          "build-your-rooms/manage-room-media",
+          "build-your-rooms/configure-room-automations",
+          "build-your-rooms/connect-room-devices",
+          "build-your-rooms/connect-existing-devices",
+          "build-your-rooms/build-your-own-controller"
+        ]
+      },
+      {
+        "group": "Prepare for a Shift",
+        "pages": [
+          "prepare-for-a-shift/prepare-for-a-shift",
+          "prepare-for-a-shift/manage-game-masters",
+          "prepare-for-a-shift/prepare-your-room-station"
+        ]
+      },
+      {
+        "group": "Run a Session",
+        "pages": [
+          "run-a-session/run-a-session",
+          "run-a-session/run-a-live-session",
+          "run-a-session/live-session-quick-reference",
+          "run-a-session/troubleshoot-a-live-session"
+        ]
+      },
+      {
+        "group": "Review and Improve",
+        "pages": [
+          "review-and-improve/review-and-improve",
+          "review-and-improve/view-room-statistics",
+          "review-and-improve/use-analytics",
+          "review-and-improve/manage-leaderboards"
+        ]
+      },
+      {
+        "group": "Account and Help",
+        "pages": [
+          "account-and-help/account",
+          "account-and-help/use-account-settings",
+          "account-and-help/manage-locations",
+          "account-and-help/add-managers-and-room-stations",
+          "account-and-help/help",
+          "account-and-help/common-questions"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/tRDXj9x6SF",
+      "website": "https://www.escapedirector.com"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/get-started",
+      "destination": "/get-started/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/build-your-rooms",
+      "destination": "/build-your-rooms/build-your-rooms",
+      "permanent": true
+    },
+    {
+      "source": "/prepare-for-a-shift",
+      "destination": "/prepare-for-a-shift/prepare-for-a-shift",
+      "permanent": true
+    },
+    {
+      "source": "/run-a-session",
+      "destination": "/run-a-session/run-a-session",
+      "permanent": true
+    },
+    {
+      "source": "/review-and-improve",
+      "destination": "/review-and-improve/review-and-improve",
+      "permanent": true
+    },
+    {
+      "source": "/account-and-help",
+      "destination": "/account-and-help/account",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started",
+      "destination": "/get-started/getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/create-your-account-and-sign-in",
+      "destination": "/get-started/create-your-account-and-sign-in",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/start-your-trial-and-activate-your-plan",
+      "destination": "/get-started/start-your-trial-and-activate-your-plan",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/create-and-configure-your-first-room",
+      "destination": "/get-started/create-and-configure-your-first-room",
+      "permanent": true
+    },
+    {
+      "source": "/account",
+      "destination": "/account-and-help/account",
+      "permanent": true
+    },
+    {
+      "source": "/account/use-account-settings",
+      "destination": "/account-and-help/use-account-settings",
+      "permanent": true
+    },
+    {
+      "source": "/account/manage-locations",
+      "destination": "/account-and-help/manage-locations",
+      "permanent": true
+    },
+    {
+      "source": "/account/add-managers-and-room-stations",
+      "destination": "/account-and-help/add-managers-and-room-stations",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/account-and-help/help",
+      "permanent": true
+    },
+    {
+      "source": "/help/common-questions",
+      "destination": "/account-and-help/common-questions",
+      "permanent": true
+    },
+    {
+      "source": "/build-your-rooms/build-your-rooms/configure-live-view",
+      "destination": "/build-your-rooms/configure-live-view",
+      "permanent": true
+    },
+    {
+      "source": "/build-your-rooms/build-your-rooms/add-puzzles-and-clues",
+      "destination": "/build-your-rooms/add-puzzles-and-clues",
+      "permanent": true
+    },
+    {
+      "source": "/build-your-rooms/build-your-rooms/manage-room-media",
+      "destination": "/build-your-rooms/manage-room-media",
+      "permanent": true
+    },
+    {
+      "source": "/run-live-sessions/run-rooms",
+      "destination": "/run-a-session/run-a-session",
+      "permanent": true
+    },
+    {
+      "source": "/run-live-sessions/run-rooms/run-a-live-session",
+      "destination": "/run-a-session/run-a-live-session",
+      "permanent": true
+    },
+    {
+      "source": "/run-rooms",
+      "destination": "/run-a-session/run-a-session",
+      "permanent": true
+    },
+    {
+      "source": "/run-rooms/prepare-your-room-station",
+      "destination": "/prepare-for-a-shift/prepare-your-room-station",
+      "permanent": true
+    },
+    {
+      "source": "/run-rooms/run-a-live-session",
+      "destination": "/run-a-session/run-a-live-session",
+      "permanent": true
+    },
+    {
+      "source": "/run-rooms/troubleshoot-live-session-issues",
+      "destination": "/run-a-session/troubleshoot-a-live-session",
+      "permanent": true
+    },
+    {
+      "source": "/review-performance",
+      "destination": "/review-and-improve/review-and-improve",
+      "permanent": true
+    },
+    {
+      "source": "/review-performance/review-performance",
+      "destination": "/review-and-improve/review-and-improve",
+      "permanent": true
+    },
+    {
+      "source": "/review-performance/view-room-statistics",
+      "destination": "/review-and-improve/view-room-statistics",
+      "permanent": true
+    },
+    {
+      "source": "/review-performance/review-performance/view-room-statistics",
+      "destination": "/review-and-improve/view-room-statistics",
+      "permanent": true
+    },
+    {
+      "source": "/account/account",
+      "destination": "/account-and-help/account",
+      "permanent": true
+    },
+    {
+      "source": "/account/account/use-account-settings",
+      "destination": "/account-and-help/use-account-settings",
+      "permanent": true
+    },
+    {
+      "source": "/get-help",
+      "destination": "/account-and-help/help",
+      "permanent": true
+    }
+  ]
+}

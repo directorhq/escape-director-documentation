@@ -5,6 +5,9 @@ date: 2026-08-03
 
 # Keep customer guides canonical in Git
 
+> Amended on 2026-10-25: the help center is published with Mintlify instead
+> of GitBook. See [ADR 0002](0002-publish-the-help-center-with-mintlify.md).
+>
 > Amended on 2026-10-16: the Featurebase help center is off, so Featurebase no
 > longer holds copies of Product Guides.
 

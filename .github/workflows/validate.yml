@@ -1,6 +1,6 @@
 name: Validate docs
 
-# Checks every local link, image and GitBook redirect before a change reaches
+# Checks every page, local link, image and redirect before a change reaches
 # the published docs.
 on:
   pull_request:
