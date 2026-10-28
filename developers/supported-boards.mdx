@@ -1,0 +1,58 @@
+---
+title: "Supported boards and limits"
+description: "Check which Arduino boards, cores and libraries the Escape Director Device SDK supports, its limits per prop, and how to keep a controller safe."
+keywords: ["Arduino UNO R4 WiFi escape room", "Arduino GIGA R1 WiFi escape room", "escape room controller board", "Device SDK compatibility"]
+---
+
+The Device SDK includes adapters for two Arduino boards and is tested with the
+core and library versions below. Other boards need a
+[board adapter](/developers/add-a-board-adapter).
+
+## Boards
+
+| Board | Arduino core | FQBN for Arduino CLI |
+| --- | --- | --- |
+| Arduino UNO R4 WiFi | Arduino UNO R4 Boards 1.5.3 | `arduino:renesas_uno:unor4wifi` |
+| Arduino GIGA R1 WiFi | Arduino Mbed OS Giga Boards 4.6.0, main M7 processor | `arduino:mbed_giga:giga` |
+
+Controllers join 2.4 GHz Wi-Fi. A GIGA needs its external Wi-Fi antenna.
+
+## Libraries and apps
+
+- **ArduinoJson** 7 (tested with 7.4.3).
+- **ArduinoMqttClient** 0.1.8 or later (tested with 0.1.8).
+- **Room Connector** on the Room Station, kept up to date. Puzzle completion
+  with `prop.completion()` needs Room Connector 0.7.2 or later.
+
+## Limits
+
+| Limit | Value |
+| --- | --- |
+| Props per Room | 8 |
+| Signals, commands, state fields per prop | 8, 8, 16 |
+| Signals, commands and state fields in total | 48 by default; more with `ed::BasicRoom` |
+| ID length | 40 characters: lowercase letters, digits and hyphens, starting with a letter |
+| Name length | 1 to 80 characters |
+
+See [Capacity and memory](/developers/room-api-reference#capacity-and-memory)
+to raise the totals.
+
+## Keep a controller safe
+
+- **Not a safety controller.** Keep emergency exits, safety interlocks and
+  other life-safety functions independent of the SDK.
+- **Pairing data isn't encrypted.** After pairing, the board stores the Wi-Fi
+  name and password and its Room Station credentials. Anyone with physical or
+  USB access can read them, so keep controllers in locked or staff-only areas.
+- **Before you reuse, sell or throw away a board,** erase its storage with a
+  sketch that clears it. Pairing again isn't enough: the board keeps the
+  previous record as a backup.
+- **If a paired board leaves your control,** pair a replacement controller for
+  that Device. This revokes the old board's access. Treat the saved Wi-Fi
+  password as exposed and change it.
+- **Your wiring and code are yours.** Power loads through suitable drivers and
+  relays, and check each board's pin voltage limits.
+
+## Next
+
+[Add a board adapter](/developers/add-a-board-adapter)

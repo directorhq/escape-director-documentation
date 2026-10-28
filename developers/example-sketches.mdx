@@ -1,0 +1,180 @@
+---
+title: "Example sketches"
+description: "Copy two complete Arduino escape room prop sketches for the Device SDK: a lever-operated train door and a four-button code lock."
+keywords: ["Arduino escape room example code", "escape room button code Arduino", "escape room door relay Arduino", "Arduino escape room puzzle sketch"]
+---
+
+The Device SDK includes two example sketches. Both use the board's built-in LED
+in place of a relay, so you can try them with no wiring. In Arduino IDE, open
+them from **File → Examples → EscapeDirector**.
+
+| Example | Shows | Start from it when |
+| --- | --- | --- |
+| [Train door](#train-door) (`room_basic`) | One input, a timed relay, a Test behavior, Puzzle completion | Your prop has one trigger and one output. |
+| [Button code](#button-code) (`button_code`) | A sequence across four inputs, a delayed action, live progress | Players enter a code or an order. |
+
+## Train door
+
+A lever opens a train door for five seconds. Touch pin **2** to **GND** to pull
+the lever. In Escape Director, the prop reports **Lever pulled**, shows
+whether the door is **Open**, and has **Open door** and **Close door**
+commands. In Test mode, **Open door** lights the LED for one second.
+
+Source: [`examples/room_basic/room_basic.ino`](https://github.com/directorhq/escape-director-device-sdk/blob/main/examples/room_basic/room_basic.ino)
+
+```cpp room_basic.ino
+// A train door: pulling the lever opens it for five seconds and reports
+// "solved". Escape Director can open or close the door; in Test mode, Open door
+// opens it for one second. The built-in LED stands in for the door relay, and
+// the lever is a button (or a jumper wire) from pin 2 to GND, so nothing else
+// needs wiring.
+#include <EscapeDirectorRoom.h>
+
+constexpr uint8_t DOOR_RELAY = LED_BUILTIN; // your relay pin in a real prop
+// The level that opens the door. Many relay modules, and the GIGA's built-in
+// LED, switch on with LOW; match your wiring.
+#if defined(ARDUINO_GIGA)
+constexpr uint8_t DOOR_OPEN = LOW;
+#else
+constexpr uint8_t DOOR_OPEN = HIGH;
+#endif
+constexpr uint8_t DOOR_CLOSED = DOOR_OPEN == HIGH ? LOW : HIGH;
+
+ed::Room room("Train door", "1.0.0");
+ed::Prop &door = room.prop("door", "Train door");
+ed::Input lever(2); // sampled by the SDK, so a pull during a reconnect is kept
+
+bool doorOpen = false;
+
+void doorClosed() { doorOpen = false; }
+void openDoor() {
+  // Five seconds (to within the SDK's 5 ms timer), even while the board is
+  // reconnecting.
+  room.pulse(DOOR_RELAY, DOOR_OPEN, 5000, doorClosed);
+  doorOpen = true;
+}
+void closeDoor() {
+  digitalWrite(DOOR_RELAY, DOOR_CLOSED);
+  doorOpen = false;
+}
+
+void setup() {
+  pinMode(DOOR_RELAY, OUTPUT);
+  closeDoor();
+
+  door.signal("solved", "Lever pulled");
+  door.command("open", "Open door", openDoor).testPin(DOOR_RELAY, DOOR_OPEN, 1000);
+  door.command("reset", "Close door", closeDoor);
+  door.state("open", "Open", &doorOpen);
+  door.completion("solved", "open");
+  room.onReset(closeDoor); // pulses end automatically on Room reset
+
+  room.begin();
+}
+
+void loop() {
+  room.loop();
+  if (lever.pressed()) {
+    openDoor();
+    door.trigger("solved", lever); // with the press's time and Game
+  }
+}
+```
+
+## Button code
+
+Pressing the buttons on pins 2 to 5 in the order 1-3-2-4 solves the puzzle,
+and the lock releases two seconds later. Each button connects its pin to
+**GND**. Escape Director shows the progress, and staff can release the lock or
+reset the code. In Test mode, **Release lock** opens it for one second.
+
+The sketch reads every button with `room.nextPress()` so presses keep their
+order, and starts over when `room.lostPresses()` says presses were dropped.
+
+Source: [`examples/button_code/button_code.ino`](https://github.com/directorhq/escape-director-device-sdk/blob/main/examples/button_code/button_code.ino)
+
+```cpp button_code.ino
+// A four-button code: pressing the buttons on pins 2–5 in the order 1-3-2-4
+// solves the puzzle, and a lock (the built-in LED here) releases two seconds
+// later. Escape Director sees the progress and can release the lock or reset
+// the code; in Test mode, Release lock opens it for one second. Each button
+// connects its pin to GND.
+#include <EscapeDirectorRoom.h>
+
+constexpr uint8_t LOCK = LED_BUILTIN; // your lock relay pin in a real prop
+// The level that releases the lock. Many relay modules, and the GIGA's
+// built-in LED, switch on with LOW; match your wiring.
+#if defined(ARDUINO_GIGA)
+constexpr uint8_t LOCK_RELEASED = LOW;
+#else
+constexpr uint8_t LOCK_RELEASED = HIGH;
+#endif
+constexpr uint8_t LOCK_HELD = LOCK_RELEASED == HIGH ? LOW : HIGH;
+
+ed::Room room("Button code", "1.0.0");
+ed::Prop &code = room.prop("button-code", "Button code");
+ed::Input button1(2), button2(3), button3(4), button4(5);
+
+ed::Input *const answer[] = {&button1, &button3, &button2, &button4};
+constexpr int CODE_LENGTH = 4;
+int progress = 0; // correct presses so far
+bool released = false;
+
+void releaseLock() {
+  digitalWrite(LOCK, LOCK_RELEASED);
+  released = true;
+}
+void resetCode() {
+  room.cancel(releaseLock);
+  digitalWrite(LOCK, LOCK_HELD);
+  progress = 0;
+  released = false;
+}
+void solve() {
+  progress = CODE_LENGTH;
+  room.after(2000, releaseLock); // a short pause before the lock opens
+}
+
+void setup() {
+  pinMode(LOCK, OUTPUT);
+  resetCode();
+
+  code.signal("solved", "Code entered");
+  code.command("release", "Release lock", solve).testPin(LOCK, LOCK_RELEASED, 1000);
+  code.command("reset", "Reset code", resetCode);
+  code.state("progress", "Progress", &progress, 0, CODE_LENGTH, "presses");
+  code.state("released", "Lock released", &released);
+  code.completion("solved", "release");
+  room.onReset(resetCode);
+
+  room.begin();
+}
+
+void loop() {
+  room.loop();
+
+  // More than 16 presses arrived while the board was busy: the order is
+  // incomplete, so start the code again.
+  if (room.lostPresses())
+    progress = 0;
+
+  // Presses in the order they happened, including any made while the board
+  // was reconnecting.
+  while (ed::Input *press = room.nextPress()) {
+    if (progress == CODE_LENGTH)
+      continue; // already solved
+    if (press == answer[progress]) {
+      if (++progress == CODE_LENGTH) {
+        code.trigger("solved", *press);
+        solve();
+      }
+    } else {
+      progress = press == answer[0] ? 1 : 0;
+    }
+  }
+}
+```
+
+## Next
+
+[Build props with a coding agent](/developers/build-with-a-coding-agent)

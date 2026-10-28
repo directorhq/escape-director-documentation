@@ -1,0 +1,130 @@
+---
+title: "Add the SDK to your sketch"
+description: "Connect an existing Arduino escape room prop sketch to Escape Director with the Device SDK while keeping its pins, wiring and puzzle logic."
+keywords: ["Arduino escape room code", "connect Arduino prop to escape room software", "escape room prop sketch", "replace delay Arduino"]
+---
+
+The Device SDK fits beside the code you already have. Your sketch keeps its
+pins, relay polarity and puzzle rules. You add `ed::Room` declarations that
+tell Escape Director what each prop reports and what a Game Master can do.
+
+Start from a copy of your working sketch, and test on a spare board with prop
+loads disconnected.
+
+## How a connected sketch looks
+
+```cpp
+#include <EscapeDirectorRoom.h>
+
+ed::Room room("Train door", "1.0.0");             // your sketch's name and version
+ed::Prop &door = room.prop("door", "Train door"); // one per puzzle
+ed::Input lever(2);                               // buttons and switches
+
+bool doorOpen = false;
+
+void setup() {
+  // ...your existing pin setup...
+  door.signal("solved", "Lever pulled");       // what Escape Director hears
+  door.command("open", "Open door", openDoor)  // what the Game Master can do
+      .testPin(12, HIGH, 1000);                // a safe one-second try in Test mode
+  door.state("open", "Open", &doorOpen);       // live status
+  door.completion("solved", "open");           // lets a Puzzle link to the prop
+  room.onReset(closeDoor);
+  room.begin();
+}
+
+void loop() {
+  room.loop();                                 // first, every time
+  if (lever.pressed()) {                       // your logic, unchanged
+    openDoor();
+    door.trigger("solved", lever);
+  }
+}
+```
+
+The full version is the
+[train door example](/developers/example-sketches#train-door).
+
+## Convert your sketch
+
+1. Add `#include <EscapeDirectorRoom.h>` and one `ed::Room` with your
+   sketch's name and version.
+2. Add one `room.prop()` for each puzzle or mechanism. A Room takes up to 8
+   props.
+3. Make each button and switch an `ed::Input`. Use `pressed()` for presses and
+   `active()` for a switch's level.
+4. Replace `delay()` (see [Replace delay()](#replace-delay)).
+5. Remove any `Serial.begin()` at a speed other than 115200. USB serial is the
+   SDK's setup channel. Printing is fine, but never print a line that starts
+   with `{`.
+6. Declare each prop's signals, commands and state in `setup()`, then call
+   `room.begin()`.
+7. Call `room.loop()` at the top of `loop()`.
+8. Report the signal where your code already detects a solve (see
+   [Report a solve](#report-a-solve)).
+9. Compile for your exact board, then pair and test it as in
+   [Connect your first Arduino prop](/developers/quickstart#pair-the-board).
+
+Leave Wi-Fi, pairing and networking to the SDK. Don't add your own.
+
+## Replace delay()
+
+The SDK sometimes pauses `loop()` to keep the board connected. Blocking code
+makes that worse, and a `delay()` holds up the whole prop. Use these instead:
+
+| In your sketch | Use | Why |
+| --- | --- | --- |
+| Turn an output on, `delay()`, turn it off | `room.pulse(pin, level, ms)` | The SDK switches the pin back on time, even while `loop()` is paused. |
+| Wait, then do the next step | `room.after(ms, action)` | Runs the step from `room.loop()` without blocking. |
+| A loop that waits for a player | Check the input on each pass of `loop()` | Lets the SDK keep the board connected. |
+
+## Report a solve
+
+Pick the call that matches how your code knows the puzzle is solved:
+
+| Your code knows because | Call |
+| --- | --- |
+| A button or switch was pressed | `prop.trigger("solved", input)` |
+| It saw the solved moment, such as the last correct digit | `prop.trigger("solved")`, once |
+| A condition just became true, such as all sensors reading | `if (prop.triggerWhen("solved", allPlaced)) { ... }` |
+
+Report a signal once, at the moment it happens. Never report it again on each
+pass of `loop()` while the state stays the same.
+
+## Make commands run your own code
+
+A command should call the same function your local input calls, such as
+`openDoor()`. If a command only writes a pin, the next pass of `loop()` may
+write it back from your puzzle state.
+
+Add a Test behavior only for effects that are safe to try with staff in the
+Room, and keep it short. See [Test mode](/developers/room-api-reference#test-mode).
+
+## Keep IDs when you change the sketch
+
+A prop's ID comes from its slug, such as `"exit-door"`. Signal, command and
+state IDs are the strings you declare. The Room's Puzzle links and Automations
+point to these IDs.
+
+- To rename something, change its name, not its ID.
+- Never reuse an old ID for something new.
+- If you remove a signal or command, check the Room's Automations afterward.
+
+After any change, raise the version in `ed::Room`, upload, and update the
+connection as in
+[Update your firmware](/build-your-rooms/build-your-own-controller#5-update-your-firmware).
+
+## Move a Device that is already paired
+
+If the Device was paired with SDK code that didn't use `ed::Room`, keep its prop IDs by passing each
+prop's existing UUID:
+
+```cpp
+ed::Prop &fuses = room.prop("fuses", "Fuse panel", "0210a18f-c31f-45b7-a35a-e20eb82a6c11");
+```
+
+Keep its signal, command and state IDs as they were.
+
+## Next
+
+[ed::Room reference](/developers/room-api-reference)

@@ -1,7 +1,8 @@
 # Escape Director Documentation Agent Guide
 
 This repository contains the public customer documentation (Mintlify) for
-Escape Director. The product's code lives in separate repositories
+Escape Director: the help center, and a Developers tab for people who write
+prop firmware with the Device SDK. The product's code lives in separate repositories
 (`escape-director-frontend`, `escape-director-backend`, and the public
 `escape-director-device-sdk`).
 
@@ -43,7 +44,8 @@ Before adding text, ask which task or decision it helps with.
 - When how a feature works changes, rewrite the affected section instead of
   adding a note about the new behavior.
 - Check facts against the product code (`escape-director-frontend`,
-  `escape-director-backend`) before you write them. Limits, prices and labels
+  `escape-director-backend`, and `escape-director-device-sdk` for the
+  Developers tab) before you write them. Limits, prices and labels
   change; never copy them from memory or another guide.
 
 ## Page checklist
@@ -81,11 +83,28 @@ Use Mintlify components only where they help: `<Steps>` for staged
 procedures, `<CardGroup>` on landing pages, `<Frame caption>` for screenshots,
 and callouts. Do not add tabs, accordions or icons inside page text.
 
+## Developers tab
+
+Pages in `developers/` are for people who write their own prop firmware with
+the Device SDK. The same checklist applies, with these differences:
+
+- Code blocks, C++ calls and Arduino terms are fine. Each page still says what
+  to do and why in plain words before the code.
+- Facts come from the SDK's source (`src/EscapeDirectorRoom.h`, the examples
+  and `protocol.md`). The example sketches on **Example sketches** are copies
+  of the SDK's `examples/`; update them together.
+- App steps (pairing, Test mode, Puzzle links, updating the connection) live
+  once, in **Build your own controller**. Developers pages summarize them and
+  link there.
+- The SDK repository keeps `AGENTS.md`, the wire protocol and contributor
+  files. Guides for people live here, not in the SDK's Markdown.
+
 ## Guardrails
 
-- Write for customers (Room owners and Game Masters), not developers. Use the
-  domain language in `CONTEXT.md`; never expose internal terms,
-  Linear context, API details, or credentials.
+- Write the help center for customers (Room owners and Game Masters), not
+  developers. Use the domain language in `CONTEXT.md`; never expose internal
+  terms, Linear context, backend API details, or credentials. The Developers
+  tab documents the Device SDK and nothing behind it.
 - Keep navigation consistent: new pages belong in an existing section folder,
   are linked from the section's first page, and are listed in `docs.json`.
 - Page URLs come from file paths and are what search engines and the app link

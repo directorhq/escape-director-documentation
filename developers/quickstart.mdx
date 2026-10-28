@@ -1,0 +1,111 @@
+---
+title: "Connect your first Arduino prop"
+description: "Install the Escape Director Device SDK, upload the example escape room prop sketch to an Arduino, and see it work in a Room."
+keywords: ["Arduino escape room tutorial", "escape room prop Arduino example", "Arduino UNO R4 WiFi escape room", "Device SDK quickstart"]
+---
+
+This quickstart uploads **room_basic**, a one-prop example sketch, to an
+Arduino and connects it to a Room. The prop is a train door: the board's
+built-in LED stands in for the door relay, and touching pin **2** to **GND**
+pulls the lever. You need no wiring.
+
+## Before you begin
+
+- **A board:** an Arduino UNO R4 WiFi or GIGA R1 WiFi, and a USB data cable.
+  Use a spare board: uploading replaces its sketch.
+- **Arduino IDE 2** or Arduino CLI on your computer.
+- **Escape Director:** a Room to test with, and the Room Station computer with
+  [Room Connector](/build-your-rooms/connect-room-devices) running and Chrome
+  open. The board pairs over USB from that computer.
+- **The SDK download:** `EscapeDirectorSDK-<version>.zip` from the
+  [latest release](https://github.com/directorhq/escape-director-device-sdk/releases/latest).
+
+<Steps titleSize="h2">
+
+<Step title="Install the SDK" id="install-the-sdk">
+
+1. In Arduino IDE, open **Boards Manager** and install **Arduino UNO R4
+   Boards** or **Arduino Mbed OS Giga Boards**.
+2. Open **Library Manager** and install **ArduinoJson** (version 7) and
+   **ArduinoMqttClient**.
+3. Extract the SDK download.
+4. Choose **Sketch → Include Library → Add .ZIP Library…** and select the
+   `EscapeDirector-<version>.zip` file inside the extracted folder, not the
+   download itself.
+
+If you can't find these menus, see
+[Arduino's library guide](https://support.arduino.cc/hc/en-us/articles/5145457742236-Install-libraries-in-the-Arduino-IDE).
+To use the command line instead, see [Install with Arduino CLI](#install-with-arduino-cli).
+
+</Step>
+
+<Step title="Upload the example" id="upload-the-example">
+
+1. On a GIGA, attach its external Wi-Fi antenna.
+2. Choose **File → Examples → EscapeDirector → room_basic**.
+3. Select your board and its USB port. On a GIGA, choose the main M7
+   processor.
+4. Click **Upload**. Keep the board connected by USB.
+
+</Step>
+
+<Step title="Pair the board with your Room" id="pair-the-board">
+
+Pair the board on the Room Station computer. The full steps are in
+[Pair the controller](/build-your-rooms/build-your-own-controller#2-pair-the-controller).
+In short:
+
+1. Close Arduino IDE's Serial Monitor. Room Connector needs the USB port.
+2. In the Room's **Devices**, choose **Add Integrated Device → Your own
+   firmware (SDK)**, then **Pair controller**.
+3. Choose the Wi-Fi network. Controllers use 2.4 GHz Wi-Fi.
+4. Choose **Save props to Room**. **Train door** appears with its signal,
+   commands and live state.
+
+<Warning>
+Never choose **Install firmware** for a board running your sketch. It replaces
+your sketch with Escape Director firmware.
+</Warning>
+
+</Step>
+
+<Step title="Try the prop" id="try-the-prop">
+
+1. Turn on **Test mode** and run **Open door**. The LED lights for one second.
+2. Turn off Test mode. On the **Train door** prop, set **Completes Puzzle** to
+   any Puzzle.
+3. Start a practice game and touch pin 2 to GND. The LED lights for five
+   seconds, the prop shows **Open**, and the Puzzle completes.
+
+</Step>
+
+</Steps>
+
+## Install with Arduino CLI
+
+Run these commands from the extracted SDK folder. They pin the versions the SDK
+is tested with.
+
+```sh
+arduino-cli core update-index
+arduino-cli core install arduino:renesas_uno@1.5.3
+arduino-cli lib install ArduinoJson@7.4.3 ArduinoMqttClient@0.1.8
+arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi --library . examples/room_basic
+arduino-cli board list
+arduino-cli upload -p <port> --fqbn arduino:renesas_uno:unor4wifi --library . examples/room_basic
+```
+
+For a GIGA, install `arduino:mbed_giga@4.6.0` and use
+`--fqbn arduino:mbed_giga:giga`. On Windows, run the same commands in
+PowerShell.
+
+## If the board doesn't appear
+
+Open the Serial Monitor at **115200** baud. If the sketch broke a rule,
+`room.begin()` prints the reason there. Close the Serial Monitor again before
+you pair. For other problems, see
+[Troubleshoot SDK firmware](/developers/troubleshoot-your-firmware).
+
+## Next
+
+[Add the SDK to your sketch](/developers/add-the-sdk-to-your-sketch)

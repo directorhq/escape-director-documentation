@@ -1,0 +1,105 @@
+---
+title: "Add a board adapter"
+description: "Port the Escape Director Device SDK to another Arduino board with Wi-Fi by writing a board adapter, then verify it before using it in an escape room."
+keywords: ["Arduino board adapter", "port Arduino library to new board", "Device SDK BoardAdapter"]
+---
+
+A board adapter connects the Device SDK to a board it doesn't support yet. The
+SDK includes adapters for the Arduino UNO R4 WiFi and GIGA R1 WiFi. For any
+other Arduino board with USB, Wi-Fi and enough memory, you write a class that
+derives from `ed::BoardAdapter` in `BoardAdapter.h`.
+
+The adapter only handles the platform: USB, Wi-Fi, TLS, storage and a timer.
+The SDK's shared client keeps handling setup messages, MQTT, discovery and
+Game and Test rules. `boards/UnoR4Board.cpp` and `boards/GigaBoard.cpp` are
+complete adapters to copy from. The UNO's is the better model for a board with
+little RAM.
+
+Listing `architectures=*` in the library doesn't mean every board is
+supported or tested.
+
+## Check the board first
+
+Find these facts in the board's and core's documentation before you start:
+
+| Area | What to find out |
+| --- | --- |
+| Network | Which library provides Wi-Fi, a TLS `Client` and a `UDP` socket? Can devices reach each other on the venue network? |
+| TLS | How do you install a private CA and verify the Room Station's identity? Does the client verify IP addresses correctly? |
+| Storage | What survives a reset and a power loss? What are its size, erase size and write endurance? Can a failed write keep the last good pairing? |
+| USB | Which serial object supports two-way setup, and what happens when USB opens or the board resets? |
+| Memory | Is there RAM for the client beside the network stack and your sketch? On the UNO R4, a seven-prop sketch uses about 16 KB of static RAM, and the heap peaks near 14 KB while pairing again. |
+| Timing | Can a hardware timer read inputs and end Test outputs while network calls block? |
+| Electrical | What are the pin voltage limits, usable pins and output polarity? |
+
+Setup uses USB plus Wi-Fi. An Ethernet-only board could speak the
+[MQTT protocol](https://github.com/directorhq/escape-director-device-sdk/blob/main/protocol.md),
+but the app's setup doesn't support it yet.
+
+## Write the adapter
+
+Include `BoardAdapter.h`, derive from `ed::BoardAdapter`, and implement every
+method in that header. Keep the adapter alive for the whole sketch.
+
+| Method | What it must do |
+| --- | --- |
+| `begin` | Start the USB stream and any platform services. |
+| `setupStream` | Provide newline-delimited JSON setup messages at 115200 baud. Keep credentials and debug prints out of it. |
+| `secureClient`, `trustStation` | Return a lasting TLS `Client` and install the Room Station's certificate. Never fall back to insecure TLS. |
+| Network methods | Join and leave Wi-Fi, report the connection, and return the local IP and subnet mask. Joining without a DHCP address doesn't count as connected. |
+| `scanNetworks` | Write at most 32 `{ssid, rssi, secured}` entries, skipping empty names. Return `false` only when the scan fails. |
+| `discoverySocket` | Return a lasting `UDP` socket. The shared client handles discovery messages. |
+| `loadPairing`, `savePairing` | Load the last valid saved record, or return `false`. A save must keep the previous record if it fails and read the new one back before returning `true`. Never print the stored values. |
+| `startTimer` | Call the given function every `periodMs` from a hardware timer that keeps running while network calls block. |
+| `id` | Return a stable lowercase board ID, such as `my-controller-v1`, up to 80 characters. Don't pretend to be a supported board. |
+
+Keep MQTT topics, prop descriptions, signal rules and Game and Test
+permissions out of the adapter. They belong to the shared client.
+
+The bundled adapters keep two checksummed pairing records. Stream the record
+to and from storage instead of buffering it, and check whether the storage
+API erases a whole block for each byte written. The UNO R4's `EEPROM.update`
+does.
+
+## Use the adapter in a sketch
+
+Pass the adapter to `room.begin()`. Nothing else in the sketch changes:
+
+```cpp
+#include <EscapeDirectorRoom.h>
+#include "MyBoard.h"
+
+MyBoard board; // alive for the whole sketch
+
+void setup() {
+  // ...declarations, as in the train door example...
+  room.begin(board);
+}
+```
+
+`room.begin(board)` starts the adapter's timer, which reads `ed::Input`, ends
+`room.pulse()` outputs and enforces Test deadlines while networking blocks.
+The adapter doesn't take over your pins.
+
+## Verify the port
+
+1. Compile the train door example and check RAM and flash headroom. A
+   compile alone doesn't prove the network stack, memory or outputs.
+2. Pair over USB with **Your own firmware (SDK)**. Check scanning, joining,
+   station checks and clear errors, without showing credentials.
+3. Check that the pinned certificate accepts the right Room Station and
+   rejects a different one.
+4. In Test mode and a practice game, check state, commands and signals. Test
+   effects must end even if networking blocks. Expired or repeated commands
+   must not move outputs, and signals outside a game must not complete
+   Puzzles.
+5. Reset and power-cycle the board. It must keep its pairing and reconnect.
+   Turn off Wi-Fi and restart Room Connector; the board must never replay
+   missed commands.
+6. Interrupt a pairing save and check the last valid record survives.
+7. Write down the core and library versions, wiring, limits and results you
+   tested.
+
+## Next
+
+[Troubleshoot SDK firmware](/developers/troubleshoot-your-firmware)

@@ -54,77 +54,116 @@
     }
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Welcome",
-        "icon": "house",
-        "pages": [
-          "index"
+        "tab": "Help center",
+        "icon": "life-ring",
+        "groups": [
+          {
+            "group": "Welcome",
+            "icon": "house",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "Get started",
+            "icon": "rocket",
+            "pages": [
+              "get-started/getting-started",
+              "get-started/create-your-account-and-sign-in",
+              "get-started/start-your-trial-and-activate-your-plan",
+              "get-started/create-and-configure-your-first-room"
+            ]
+          },
+          {
+            "group": "Build your Rooms",
+            "icon": "hammer",
+            "pages": [
+              "build-your-rooms/build-your-rooms",
+              "build-your-rooms/configure-live-view",
+              "build-your-rooms/add-puzzles-and-clues",
+              "build-your-rooms/manage-room-media",
+              "build-your-rooms/configure-room-automations",
+              "build-your-rooms/connect-room-devices",
+              "build-your-rooms/connect-existing-devices",
+              "build-your-rooms/build-your-own-controller"
+            ]
+          },
+          {
+            "group": "Prepare for a shift",
+            "icon": "clipboard-check",
+            "pages": [
+              "prepare-for-a-shift/prepare-for-a-shift",
+              "prepare-for-a-shift/manage-game-masters",
+              "prepare-for-a-shift/prepare-your-room-station"
+            ]
+          },
+          {
+            "group": "Run a session",
+            "icon": "play",
+            "pages": [
+              "run-a-session/run-a-session",
+              "run-a-session/run-a-live-session",
+              "run-a-session/live-session-quick-reference",
+              "run-a-session/troubleshoot-a-live-session"
+            ]
+          },
+          {
+            "group": "Review and improve",
+            "icon": "chart-line",
+            "pages": [
+              "review-and-improve/review-and-improve",
+              "review-and-improve/view-room-statistics",
+              "review-and-improve/use-analytics",
+              "review-and-improve/manage-leaderboards"
+            ]
+          },
+          {
+            "group": "Account and help",
+            "icon": "circle-user",
+            "pages": [
+              "account-and-help/account",
+              "account-and-help/use-account-settings",
+              "account-and-help/manage-locations",
+              "account-and-help/add-managers-and-room-stations",
+              "account-and-help/help",
+              "account-and-help/common-questions"
+            ]
+          }
         ]
       },
       {
-        "group": "Get started",
-        "icon": "rocket",
-        "pages": [
-          "get-started/getting-started",
-          "get-started/create-your-account-and-sign-in",
-          "get-started/start-your-trial-and-activate-your-plan",
-          "get-started/create-and-configure-your-first-room"
-        ]
-      },
-      {
-        "group": "Build your Rooms",
-        "icon": "hammer",
-        "pages": [
-          "build-your-rooms/build-your-rooms",
-          "build-your-rooms/configure-live-view",
-          "build-your-rooms/add-puzzles-and-clues",
-          "build-your-rooms/manage-room-media",
-          "build-your-rooms/configure-room-automations",
-          "build-your-rooms/connect-room-devices",
-          "build-your-rooms/connect-existing-devices",
-          "build-your-rooms/build-your-own-controller"
-        ]
-      },
-      {
-        "group": "Prepare for a shift",
-        "icon": "clipboard-check",
-        "pages": [
-          "prepare-for-a-shift/prepare-for-a-shift",
-          "prepare-for-a-shift/manage-game-masters",
-          "prepare-for-a-shift/prepare-your-room-station"
-        ]
-      },
-      {
-        "group": "Run a session",
-        "icon": "play",
-        "pages": [
-          "run-a-session/run-a-session",
-          "run-a-session/run-a-live-session",
-          "run-a-session/live-session-quick-reference",
-          "run-a-session/troubleshoot-a-live-session"
-        ]
-      },
-      {
-        "group": "Review and improve",
-        "icon": "chart-line",
-        "pages": [
-          "review-and-improve/review-and-improve",
-          "review-and-improve/view-room-statistics",
-          "review-and-improve/use-analytics",
-          "review-and-improve/manage-leaderboards"
-        ]
-      },
-      {
-        "group": "Account and help",
-        "icon": "circle-user",
-        "pages": [
-          "account-and-help/account",
-          "account-and-help/use-account-settings",
-          "account-and-help/manage-locations",
-          "account-and-help/add-managers-and-room-stations",
-          "account-and-help/help",
-          "account-and-help/common-questions"
+        "tab": "Developers",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Get started",
+            "icon": "rocket",
+            "pages": [
+              "developers/overview",
+              "developers/quickstart",
+              "developers/build-with-a-coding-agent"
+            ]
+          },
+          {
+            "group": "Build your prop",
+            "icon": "microchip",
+            "pages": [
+              "developers/add-the-sdk-to-your-sketch",
+              "developers/example-sketches",
+              "developers/troubleshoot-your-firmware"
+            ]
+          },
+          {
+            "group": "Reference",
+            "icon": "book",
+            "pages": [
+              "developers/room-api-reference",
+              "developers/supported-boards",
+              "developers/add-a-board-adapter"
+            ]
+          }
         ]
       }
     ]
@@ -321,6 +360,11 @@
     {
       "source": "/get-help",
       "destination": "/account-and-help/help",
+      "permanent": true
+    },
+    {
+      "source": "/developers",
+      "destination": "/developers/overview",
       "permanent": true
     }
   ]

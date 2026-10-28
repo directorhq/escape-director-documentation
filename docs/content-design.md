@@ -22,7 +22,9 @@ Do not duplicate the main documentation tree by role. Instead, provide short hom
 - an owner setting up Escape Director; and
 - a Game Master preparing to run a Room.
 
-Each role shortcut should link into the same canonical Product Guides. Keep navigation at no more than two page levels, prefer task-based page titles, and place the most likely next action at the end of each guide.
+Each role shortcut should link into the same canonical Product Guides.
+
+A separate **Developers** tab holds the Device SDK documentation for people who write their own prop firmware: get started, build your prop, and reference. It is the canonical home of the SDK's guides; the SDK repository keeps only agent instructions, the wire protocol and contributor files. App-side steps stay in the help center's **Build your own controller**, and the Developers pages link to them instead of repeating them. Keep navigation at no more than two page levels, prefer task-based page titles, and place the most likely next action at the end of each guide.
 
 Page titles, section names and headings use sentence case, like the app and the marketing site. Product terms from `CONTEXT.md` keep their capitals: "Create your first Room", "Prepare your Room Station".
 

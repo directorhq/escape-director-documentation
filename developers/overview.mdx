@@ -1,0 +1,86 @@
+---
+title: "Escape Director Device SDK"
+description: "Connect your own Arduino escape room props to Escape Director with the free, open-source Device SDK and keep your puzzle code."
+keywords: ["Arduino escape room props", "escape room Arduino code", "escape room prop SDK", "Arduino UNO R4 WiFi escape room", "Arduino GIGA escape room", "escape room prop controller"]
+---
+
+The Device SDK is a free Arduino library that connects a prop you program
+yourself to an Escape Director Room. Your sketch keeps running the puzzle.
+Escape Director shows its live state, sends it commands from the Room
+Dashboard, and uses its signals to complete Puzzles and start Automations.
+
+The SDK is open source under the MIT License. Download it from the
+[latest release on GitHub](https://github.com/directorhq/escape-director-device-sdk/releases/latest).
+
+## Choose how to connect a prop
+
+The SDK is one of three ways to connect a prop. Pick the one that fits the
+controller you have.
+
+| Your prop | Use | Code needed |
+| --- | --- | --- |
+| An Arduino UNO R4 WiFi or GIGA R1 WiFi you want to set up in the app | [Escape Director firmware](/build-your-rooms/connect-room-devices) | None |
+| An Arduino running a sketch you wrote or want to write | The Device SDK, on this tab | Arduino C++ |
+| A device that already sends HTTP or MQTT messages | [An existing device](/build-your-rooms/connect-existing-devices) | None |
+
+## What the SDK handles for you
+
+You add a few lines that describe each prop beside the code that runs it. The
+SDK does the rest:
+
+- Wi-Fi, secure pairing with the Room Station, and reconnecting after a drop.
+- The prop's description in Escape Director, built from your code. There is no
+  JSON file to write.
+- Game and Test mode rules, so a press in Test mode never completes a Puzzle.
+- Button presses and timed outputs that stay on time while the board
+  reconnects.
+
+```cpp
+ed::Room room("Train door", "1.0.0");
+ed::Prop &door = room.prop("door", "Train door");
+
+void setup() {
+  door.signal("solved", "Lever pulled");
+  door.command("open", "Open door", openDoor);
+  door.state("open", "Open", &doorOpen);
+  room.begin();
+}
+```
+
+## Start here
+
+<CardGroup cols={2}>
+  <Card title="Connect your first Arduino prop" icon="rocket" href="/developers/quickstart">
+    Upload the example sketch and see it work in a Room.
+  </Card>
+  <Card title="Add the SDK to your sketch" icon="code" href="/developers/add-the-sdk-to-your-sketch">
+    Keep your puzzle logic and connect it to Escape Director.
+  </Card>
+  <Card title="Build props with a coding agent" icon="robot" href="/developers/build-with-a-coding-agent">
+    Let Claude Code, Cursor or Codex add the SDK to your sketch.
+  </Card>
+  <Card title="ed::Room reference" icon="book" href="/developers/room-api-reference">
+    Every call, its limits, and what happens while the board reconnects.
+  </Card>
+</CardGroup>
+
+## Supported boards
+
+The SDK includes adapters for the **Arduino UNO R4 WiFi** and **Arduino GIGA R1
+WiFi**. Other Arduino boards with USB, Wi-Fi and enough memory can use it
+through a [board adapter](/developers/add-a-board-adapter). Versions and limits
+are in [Supported boards and limits](/developers/supported-boards).
+
+A platform that isn't Arduino can speak the SDK's
+[MQTT protocol](https://github.com/directorhq/escape-director-device-sdk/blob/main/protocol.md)
+directly. The protocol is written for SDK maintainers.
+
+<Warning>
+The SDK is for show control, not safety. Keep emergency exits, maglock
+releases and other life-safety functions independent of any controller the
+SDK runs on.
+</Warning>
+
+## Next
+
+[Connect your first Arduino prop](/developers/quickstart)
