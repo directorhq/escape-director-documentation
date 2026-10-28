@@ -1,16 +1,17 @@
 ---
-title: "Build Your Own Controller"
-description: Connect a controller running your own Arduino code with the open-source Device SDK.
+title: "Build your own controller"
+description: "Connect an Arduino escape room prop running your own code to Escape Director with the open-source Device SDK, then pair, test, and update it."
+keywords: ["Arduino escape room", "escape room prop SDK", "Device SDK", "coding agent"]
 ---
 
-Use this guide to connect a controller running your own firmware to your Room.
-Your firmware runs the prop. Escape Director shows its state, sends its commands
-and uses its signals in Automations and linked Puzzles. Add it in **All Rooms →
-Edit → Devices → Add Integrated Device → Your own firmware (SDK)**.
+With the Device SDK, your own Arduino code runs the prop, and Escape Director
+shows its state, sends its commands, and uses its signals in Automations and
+linked Puzzles. Add the controller in **All Rooms → Edit → Devices → Add
+Integrated Device → Your own firmware (SDK)**.
 
 To set up inputs and outputs without code, see
 [Connect Room Devices](/build-your-rooms/connect-room-devices). For a device that already sends
-HTTP or MQTT messages, see [Connect Existing Devices](/build-your-rooms/connect-existing-devices).
+HTTP or MQTT messages, see [Connect existing Devices](/build-your-rooms/connect-existing-devices).
 
 ## Before you begin
 
@@ -29,14 +30,18 @@ HTTP or MQTT messages, see [Connect Existing Devices](/build-your-rooms/connect-
 
 Use a spare controller for your first test, with prop loads disconnected.
 
-## 1. Upload the example
+<Steps titleSize="h2">
+
+<Step title="Upload the example" id="1-upload-the-example">
 
 Follow `GETTING_STARTED.md` in the SDK. It installs the libraries and uploads
 **room_basic**, a train door with one prop, **Train door**. The board's built-in
 LED stands in for the door, and touching pin 2 to GND pulls its lever, so it
 needs no wiring.
 
-## 2. Pair the controller
+</Step>
+
+<Step title="Pair the controller" id="2-pair-the-controller">
 
 These steps are for a controller running your own firmware. To pair one
 without it and set up its props in the app instead, use
@@ -59,7 +64,9 @@ Don't choose **Install firmware** for a controller running your firmware: it
 replaces your firmware with Escape Director's.
 </Warning>
 
-## 3. Test the props
+</Step>
+
+<Step title="Test the props" id="3-test-the-props">
 
 Turn on **Test mode** and try each prop's commands. Only commands your firmware
 allows in Test mode appear. Watch the physical outputs as well as the reported
@@ -72,7 +79,9 @@ mechanism moved. With the example, **Open door** lights the LED for one second.
 
 Test mode doesn't run Automations or complete Puzzles.
 
-## 4. Use the props in your Room
+</Step>
+
+<Step title="Use the props in your Room" id="4-use-the-props-in-your-room">
 
 - **Completes Puzzle:** for a prop that supports it, choose the Puzzle it
   completes. Completing either one completes the other.
@@ -87,7 +96,9 @@ Check each link in a practice game. With the example, link **Train door** to a
 Puzzle, start a game and touch pin 2 to GND: the LED lights for five seconds and
 the Puzzle completes once.
 
-## 5. Update your firmware
+</Step>
+
+<Step title="Update your firmware" id="5-update-your-firmware">
 
 Change your sketch's version whenever you change it. Any change to its name,
 version, or declared props, signals, commands or state needs a connection
@@ -102,6 +113,9 @@ update, even if the prop behaves the same.
 Links and Automations are kept for props and capabilities whose IDs didn't
 change.
 
+</Step>
+</Steps>
+
 ## Build your prop with a coding agent
 
 The SDK includes `AGENTS.md`, instructions that coding agents such as Claude
@@ -113,7 +127,8 @@ while keeping your puzzle logic.
    commands you want. For example: _"Add the SDK to my vault_keypad sketch.
    Make one prop that completes when 4-7-1-9 is entered on the keypad, with
    Reset and Open latch commands. Compile it for the UNO R4 WiFi."_
-3. Review the changes, upload the firmware, then follow step 2 or step 5 above.
+3. Review the changes and upload the firmware. Then [pair the controller](#2-pair-the-controller),
+   or for a paired one, [update your firmware](#5-update-your-firmware).
 4. Test every command yourself. An agent can compile and upload the firmware,
    but it can't check the wiring or the prop.
 
@@ -121,8 +136,8 @@ while keeping your puzzle logic.
 
 | Problem | What to do |
 | --- | --- |
-| **Controller description changed** | The firmware reports something new. Follow step 5. |
-| **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. Then follow [step 5](#5-update-your-firmware). |
+| **Controller description changed** | The firmware reports something new. Follow [Update your firmware](#5-update-your-firmware). |
+| **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. Then follow [Update your firmware](#5-update-your-firmware). |
 | The controller never appears | Open the Serial Monitor at 115200 baud. The SDK prints any declaration it rejected. |
 | **The controller ran out of memory during setup** | Restart it and try again. If it continues, reduce your firmware's memory use, such as large buffers or text. |
 | **Offline** | Check the controller's power and Wi-Fi, and that Room Connector is running. |
@@ -130,5 +145,5 @@ while keeping your puzzle logic.
 
 ## Next
 
-[Configure Room Automations](/build-your-rooms/configure-room-automations) to use your props'
-signals and commands.
+To use your props' signals and commands with the Room's other actions, see
+[Configure Room Automations](/build-your-rooms/configure-room-automations).

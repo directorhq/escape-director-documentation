@@ -10,12 +10,12 @@ Product Guides are maintained as Markdown in this repository and published with 
 
 Organize the complete documentation around one shared operational journey:
 
-1. Get Started
-2. Build Your Rooms
-3. Prepare for a Shift
-4. Run a Session
-5. Review and Improve
-6. Troubleshoot and Get Help
+1. Get started
+2. Build your Rooms
+3. Prepare for a shift
+4. Run a session
+5. Review and improve
+6. Troubleshoot and get help
 
 Do not duplicate the main documentation tree by role. Instead, provide short homepage entry paths for:
 
@@ -23,6 +23,8 @@ Do not duplicate the main documentation tree by role. Instead, provide short hom
 - a Game Master preparing to run a Room.
 
 Each role shortcut should link into the same canonical Product Guides. Keep navigation at no more than two page levels, prefer task-based page titles, and place the most likely next action at the end of each guide.
+
+Page titles, section names and headings use sentence case, like the app and the marketing site. Product terms from `CONTEXT.md` keep their capitals: "Create your first Room", "Prepare your Room Station".
 
 ## Visual guidance
 
@@ -70,6 +72,22 @@ A section belongs only when it helps the reader:
 Remove repetition, product marketing, obvious interface descriptions, speculative advice, and background that does not change what the reader should do. Move reusable facts, option definitions, and detailed explanations to focused reference pages instead of interrupting task steps.
 
 Prefer short paragraphs, descriptive headings, numbered actions, compact checklists, and direct links. Use the exact visible interface label when telling a reader what to select.
+
+## Writing for people and AI tools
+
+People skim a guide to finish a task. AI tools such as the assistant, ChatGPT or Claude read a guide in pieces and quote one section at a time. The same habits serve both.
+
+- **Description:** one sentence of up to about 150 characters that names the task and the product terms a reader would search for. Start with a verb ("Add Puzzles and Clues…"), not "Learn how to" or "This guide". Google shows it under the page title, and AI tools read it first.
+- **Search terms:** people search for "escape room timer", "escape room hints" or "Arduino escape room props", not our product terms alone. Use those phrases in the description and opening where they read naturally, and list them in the page's `keywords` front matter. Don't repeat them through the page text.
+- **Opening:** the first one or two sentences say what the feature does and where it lives, with the path in bold. Do not start with "Use this guide to".
+- **Headings:** name a task ("Delete a Room") or a question the reader has ("If you can't sign in"). Keep them unique on the page. Do not number headings; use `<Steps>` when a guide has several stages done in order.
+- **Sections stand alone:** name the thing instead of "this", "it" or "above", and give the full path the first time a section mentions a screen. A reader who lands on one heading from search should still be able to act.
+- **Lead with the condition or goal:** "To move a Room, open…", "If Live View is blank, …".
+- **One action per step.** Put the result after the action when the reader needs to check it.
+- **Short sentences and paragraphs:** aim for under 25 words a sentence and under four sentences a paragraph.
+- **Link text names the destination** ("see [Manage Locations](/account-and-help/manage-locations)"), never "here" or "this page".
+- **Facts in text, not only in images:** a screenshot caption says why the image is there; the steps never depend on it.
+- **Callouts:** `<Warning>` or `<Danger>` only for data loss, a disrupted game, billing, or something that can't be undone. `<Info>` for one fact worth noticing. At most one or two callouts on a page.
 
 ## Contextual application help
 

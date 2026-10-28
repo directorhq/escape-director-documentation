@@ -19,7 +19,26 @@
   text-decoration-color: var(--link-color);
 }
 
-/* #DD3333 is low-contrast on the dark background, so use a lighter red. */
+/* #DD3333 is low-contrast on the dark background, so use the app's red for text. */
 .dark .mdx-content a.link {
-  --link-color: #e85c5c;
+  --link-color: #e76f6f;
+}
+
+/* Flat panels like the marketing site: small corners and a hairline edge
+   instead of Mintlify's rounded, shadowed cards. */
+.mdx-content .card,
+.mdx-content .callout,
+.mdx-content .frame,
+.mdx-content .code-block {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.dark .mdx-content .card {
+  border-color: rgba(255, 255, 255, 0.09);
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.dark .mdx-content .card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
 }

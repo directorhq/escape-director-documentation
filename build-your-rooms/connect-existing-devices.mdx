@@ -1,12 +1,14 @@
 ---
-title: "Connect Existing Devices"
-description: Connect existing HTTP or MQTT props to Room Automations without replacing their firmware.
+title: "Connect existing Devices"
+description: "Use escape room props that already send HTTP or MQTT messages in Escape Director Automations and Puzzles, without changing their firmware."
+keywords: ["MQTT escape room", "HTTP props", "escape room props integration"]
 ---
 
-Use this guide to use an existing prop's messages and commands in Escape
-Director. The device must already support HTTP or MQTT; it keeps its firmware.
-Add it in **All Rooms → Edit → Devices → Add Integrated Device → Existing
-device**.
+An existing device is a prop that already talks HTTP or MQTT. It keeps its
+firmware, and Escape Director uses its messages and commands. Add one in
+**All Rooms → Edit → Devices → Add Integrated Device → Existing device**.
+
+Three words come up on this page:
 
 | Term | Meaning |
 | --- | --- |
@@ -21,7 +23,9 @@ device**.
 - Run [Room Connector](/build-your-rooms/connect-room-devices) on the Room Station, on a
   network that can reach the devices or broker. Guest networks may block this.
 
-## 1. Add the connection
+<Steps titleSize="h2">
+
+<Step title="Add the connection" id="1-add-the-connection">
 
 1. Choose **Add Integrated Device → Existing device** and name it.
 2. Choose **MQTT** or **HTTP** and fill in the connection details.
@@ -41,7 +45,9 @@ command or the physical prop.
 Passwords and tokens you enter in Escape Director stay on this computer. On
 another Room Station, enter them again.
 
-## 2. Map a signal
+</Step>
+
+<Step title="Map a signal" id="2-map-a-signal">
 
 1. Choose **Add prop** and name the puzzle or mechanism.
 2. Choose **Add from a message**, keep **A moment** selected, and name the
@@ -50,7 +56,7 @@ another Room Station, enter them again.
    Select a message, then click the value that matters, such as `"pressed"`.
    You can also enter the rule by hand.
 4. Check the value type: the boolean `true` differs from the text `"true"`.
-5. Choose the rule's verb (see below).
+5. Choose the rule's verb, **is** or **changes to** (see the table below).
 6. To complete a Room Puzzle, choose it under **Complete a puzzle**. This
    creates a regular Automation.
 7. Choose **Save signal**.
@@ -68,7 +74,9 @@ Listening can't tell whether repeated messages are separate events or regular
 state reports, so choose based on how your device works. MQTT messages marked
 **Retained** show earlier state and don't run Automations.
 
-## 3. Map state and commands
+</Step>
+
+<Step title="Map state and commands" id="3-map-state-and-commands">
 
 - **State:** choose **Add from a message → A reading** to show a reported text,
   number or true/false value in Device Monitor. A reading doesn't trigger
@@ -104,7 +112,9 @@ command more than once, so use commands the device can safely repeat. The
 device's own broker session may also queue messages while it's offline; check
 its settings.
 
-## 4. Use it in an Automation
+</Step>
+
+<Step title="Use it in an Automation" id="4-use-it-in-an-automation">
 
 In **Automations**, choose a device signal as a trigger or a device command as
 an action. To create one there, choose **New device signal…** or **New device
@@ -113,7 +123,9 @@ command…**, then **Save and use**. Save the Automation afterward.
 **Used in** beside a mapping opens the Automations that use it. Removing a
 mapping disables those Automations until you repair them.
 
-## 5. Check the complete game
+</Step>
+
+<Step title="Check the complete game" id="5-check-the-complete-game">
 
 1. In Devices, turn on **Test mode**. Send inputs, inspect messages, and test
    each command. Test mode doesn't run Automations or write to the Session Log.
@@ -124,6 +136,9 @@ mapping disables those Automations until you repair them.
 4. Finish the game and use the device's own reset. **Reset Room** doesn't send a
    reset command to existing devices.
 
+</Step>
+</Steps>
+
 ## Limits
 
 - Commands missed while Room Connector is disconnected aren't sent again when
@@ -133,5 +148,5 @@ mapping disables those Automations until you repair them.
 
 ## Next
 
-[Configure Room Automations](/build-your-rooms/configure-room-automations)
-to combine device signals and commands with your Room's other actions.
+To combine device signals and commands with your Room's other actions, see
+[Configure Room Automations](/build-your-rooms/configure-room-automations).
