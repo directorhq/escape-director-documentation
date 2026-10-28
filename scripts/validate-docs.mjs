@@ -101,7 +101,7 @@ for (const page of pages) {
   const content = await readFile(path.join(repositoryRoot, file), "utf8");
   const targets = [
     ...[...content.matchAll(/\]\(([^)\s]+)/g)].map((match) => match[1]),
-    ...[...content.matchAll(/\bsrc="([^"]+)"/g)].map((match) => match[1]),
+    ...[...content.matchAll(/\b(?:src|href)="([^"]+)"/g)].map((match) => match[1]),
   ];
 
   if (!/^---\n[\s\S]*?^title:/m.test(content)) {

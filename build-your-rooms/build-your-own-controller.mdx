@@ -1,5 +1,5 @@
 ---
-title: "Build Your Own Controller"
+title: "Build your own controller"
 description: Connect a controller running your own Arduino code with the open-source Device SDK.
 ---
 
@@ -10,7 +10,7 @@ Edit → Devices → Add Integrated Device → Your own firmware (SDK)**.
 
 To set up inputs and outputs without code, see
 [Connect Room Devices](/build-your-rooms/connect-room-devices). For a device that already sends
-HTTP or MQTT messages, see [Connect Existing Devices](/build-your-rooms/connect-existing-devices).
+HTTP or MQTT messages, see [Connect existing Devices](/build-your-rooms/connect-existing-devices).
 
 ## Before you begin
 
@@ -29,14 +29,18 @@ HTTP or MQTT messages, see [Connect Existing Devices](/build-your-rooms/connect-
 
 Use a spare controller for your first test, with prop loads disconnected.
 
-## 1. Upload the example
+<Steps titleSize="h2">
+
+<Step title="Upload the example" id="1-upload-the-example">
 
 Follow `GETTING_STARTED.md` in the SDK. It installs the libraries and uploads
 **room_basic**, a train door with one prop, **Train door**. The board's built-in
 LED stands in for the door, and touching pin 2 to GND pulls its lever, so it
 needs no wiring.
 
-## 2. Pair the controller
+</Step>
+
+<Step title="Pair the controller" id="2-pair-the-controller">
 
 These steps are for a controller running your own firmware. To pair one
 without it and set up its props in the app instead, use
@@ -59,7 +63,9 @@ Don't choose **Install firmware** for a controller running your firmware: it
 replaces your firmware with Escape Director's.
 </Warning>
 
-## 3. Test the props
+</Step>
+
+<Step title="Test the props" id="3-test-the-props">
 
 Turn on **Test mode** and try each prop's commands. Only commands your firmware
 allows in Test mode appear. Watch the physical outputs as well as the reported
@@ -72,7 +78,9 @@ mechanism moved. With the example, **Open door** lights the LED for one second.
 
 Test mode doesn't run Automations or complete Puzzles.
 
-## 4. Use the props in your Room
+</Step>
+
+<Step title="Use the props in your Room" id="4-use-the-props-in-your-room">
 
 - **Completes Puzzle:** for a prop that supports it, choose the Puzzle it
   completes. Completing either one completes the other.
@@ -87,7 +95,9 @@ Check each link in a practice game. With the example, link **Train door** to a
 Puzzle, start a game and touch pin 2 to GND: the LED lights for five seconds and
 the Puzzle completes once.
 
-## 5. Update your firmware
+</Step>
+
+<Step title="Update your firmware" id="5-update-your-firmware">
 
 Change your sketch's version whenever you change it. Any change to its name,
 version, or declared props, signals, commands or state needs a connection
@@ -101,6 +111,9 @@ update, even if the prop behaves the same.
 
 Links and Automations are kept for props and capabilities whose IDs didn't
 change.
+
+</Step>
+</Steps>
 
 ## Build your prop with a coding agent
 

@@ -1,5 +1,5 @@
 ---
-title: "Connect Existing Devices"
+title: "Connect existing Devices"
 description: Connect existing HTTP or MQTT props to Room Automations without replacing their firmware.
 ---
 
@@ -21,7 +21,9 @@ device**.
 - Run [Room Connector](/build-your-rooms/connect-room-devices) on the Room Station, on a
   network that can reach the devices or broker. Guest networks may block this.
 
-## 1. Add the connection
+<Steps titleSize="h2">
+
+<Step title="Add the connection" id="1-add-the-connection">
 
 1. Choose **Add Integrated Device → Existing device** and name it.
 2. Choose **MQTT** or **HTTP** and fill in the connection details.
@@ -41,7 +43,9 @@ command or the physical prop.
 Passwords and tokens you enter in Escape Director stay on this computer. On
 another Room Station, enter them again.
 
-## 2. Map a signal
+</Step>
+
+<Step title="Map a signal" id="2-map-a-signal">
 
 1. Choose **Add prop** and name the puzzle or mechanism.
 2. Choose **Add from a message**, keep **A moment** selected, and name the
@@ -68,7 +72,9 @@ Listening can't tell whether repeated messages are separate events or regular
 state reports, so choose based on how your device works. MQTT messages marked
 **Retained** show earlier state and don't run Automations.
 
-## 3. Map state and commands
+</Step>
+
+<Step title="Map state and commands" id="3-map-state-and-commands">
 
 - **State:** choose **Add from a message → A reading** to show a reported text,
   number or true/false value in Device Monitor. A reading doesn't trigger
@@ -104,7 +110,9 @@ command more than once, so use commands the device can safely repeat. The
 device's own broker session may also queue messages while it's offline; check
 its settings.
 
-## 4. Use it in an Automation
+</Step>
+
+<Step title="Use it in an Automation" id="4-use-it-in-an-automation">
 
 In **Automations**, choose a device signal as a trigger or a device command as
 an action. To create one there, choose **New device signal…** or **New device
@@ -113,7 +121,9 @@ command…**, then **Save and use**. Save the Automation afterward.
 **Used in** beside a mapping opens the Automations that use it. Removing a
 mapping disables those Automations until you repair them.
 
-## 5. Check the complete game
+</Step>
+
+<Step title="Check the complete game" id="5-check-the-complete-game">
 
 1. In Devices, turn on **Test mode**. Send inputs, inspect messages, and test
    each command. Test mode doesn't run Automations or write to the Session Log.
@@ -123,6 +133,9 @@ mapping disables those Automations until you repair them.
    physical output together.
 4. Finish the game and use the device's own reset. **Reset Room** doesn't send a
    reset command to existing devices.
+
+</Step>
+</Steps>
 
 ## Limits
 

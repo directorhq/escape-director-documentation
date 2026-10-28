@@ -10,12 +10,12 @@ Product Guides are maintained as Markdown in this repository and published with 
 
 Organize the complete documentation around one shared operational journey:
 
-1. Get Started
-2. Build Your Rooms
-3. Prepare for a Shift
-4. Run a Session
-5. Review and Improve
-6. Troubleshoot and Get Help
+1. Get started
+2. Build your Rooms
+3. Prepare for a shift
+4. Run a session
+5. Review and improve
+6. Troubleshoot and get help
 
 Do not duplicate the main documentation tree by role. Instead, provide short homepage entry paths for:
 
@@ -23,6 +23,8 @@ Do not duplicate the main documentation tree by role. Instead, provide short hom
 - a Game Master preparing to run a Room.
 
 Each role shortcut should link into the same canonical Product Guides. Keep navigation at no more than two page levels, prefer task-based page titles, and place the most likely next action at the end of each guide.
+
+Page titles, section names and headings use sentence case, like the app and the marketing site. Product terms from `CONTEXT.md` keep their capitals: "Create your first Room", "Prepare your Room Station".
 
 ## Visual guidance
 

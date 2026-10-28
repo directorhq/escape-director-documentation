@@ -5,7 +5,7 @@
   "description": "Set up Escape Director, prepare your Room Station, run live games, and review results.",
   "colors": {
     "primary": "#DD3333",
-    "light": "#DD3333",
+    "light": "#E76F6F",
     "dark": "#B82A2A"
   },
   "background": {
@@ -38,16 +38,27 @@
       "href": "https://www.escapedirector.com/sign-in"
     }
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "mcp"
+    ]
+  },
   "navigation": {
     "groups": [
       {
         "group": "Welcome",
+        "icon": "house",
         "pages": [
           "index"
         ]
       },
       {
-        "group": "Get Started",
+        "group": "Get started",
+        "icon": "rocket",
         "pages": [
           "get-started/getting-started",
           "get-started/create-your-account-and-sign-in",
@@ -56,7 +67,8 @@
         ]
       },
       {
-        "group": "Build Your Rooms",
+        "group": "Build your Rooms",
+        "icon": "hammer",
         "pages": [
           "build-your-rooms/build-your-rooms",
           "build-your-rooms/configure-live-view",
@@ -69,7 +81,8 @@
         ]
       },
       {
-        "group": "Prepare for a Shift",
+        "group": "Prepare for a shift",
+        "icon": "clipboard-check",
         "pages": [
           "prepare-for-a-shift/prepare-for-a-shift",
           "prepare-for-a-shift/manage-game-masters",
@@ -77,7 +90,8 @@
         ]
       },
       {
-        "group": "Run a Session",
+        "group": "Run a session",
+        "icon": "play",
         "pages": [
           "run-a-session/run-a-session",
           "run-a-session/run-a-live-session",
@@ -86,7 +100,8 @@
         ]
       },
       {
-        "group": "Review and Improve",
+        "group": "Review and improve",
+        "icon": "chart-line",
         "pages": [
           "review-and-improve/review-and-improve",
           "review-and-improve/view-room-statistics",
@@ -95,7 +110,8 @@
         ]
       },
       {
-        "group": "Account and Help",
+        "group": "Account and help",
+        "icon": "circle-user",
         "pages": [
           "account-and-help/account",
           "account-and-help/use-account-settings",

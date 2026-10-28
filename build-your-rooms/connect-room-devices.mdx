@@ -11,8 +11,8 @@ When you add a Device, choose what runs on the controller:
 | Choice | Use it when | Guide |
 | --- | --- | --- |
 | **Escape Director firmware** | You want to set up inputs and outputs in the app, without code, on an Arduino GIGA R1 WiFi or UNO R4 WiFi. | This page |
-| **Your own firmware (SDK)** | You or your developer write the controller's program. Its props and wiring are defined in the firmware, not in the app. | [Build Your Own Controller](/build-your-rooms/build-your-own-controller) |
-| **Existing device** | The device already sends HTTP or MQTT messages and should keep its firmware. | [Connect Existing Devices](/build-your-rooms/connect-existing-devices) |
+| **Your own firmware (SDK)** | You or your developer write the controller's program. Its props and wiring are defined in the firmware, not in the app. | [Build your own controller](/build-your-rooms/build-your-own-controller) |
+| **Existing device** | The device already sends HTTP or MQTT messages and should keep its firmware. | [Connect existing Devices](/build-your-rooms/connect-existing-devices) |
 
 See [Which controllers and props work](/account-and-help/common-questions#devices-and-props)
 for other boards.
@@ -28,7 +28,9 @@ for other boards.
 - Keep the controller's prop outputs disconnected while installing firmware and
   setting up wiring.
 
-## 1. Connect Room Connector
+<Steps titleSize="h2">
+
+<Step title="Connect Room Connector" id="1-connect-room-connector">
 
 Room Connector is the app on the Room Station that talks to your controllers.
 
@@ -65,11 +67,13 @@ Keep Room Connector running while operating the Room. Refreshing the page
 doesn't require reinstalling it. On Windows, turn on **Start at login** in its
 tray menu if this computer runs the Room every day.
 
-## 2. Add and pair your controller
+</Step>
+
+<Step title="Add and pair your controller" id="2-add-and-pair-your-controller">
 
 These steps use Escape Director firmware. If the controller runs your own
 firmware built with the Device SDK, pair it from
-[Build Your Own Controller](/build-your-rooms/build-your-own-controller#2-pair-the-controller)
+[Build your own controller](/build-your-rooms/build-your-own-controller#2-pair-the-controller)
 instead, so your firmware isn't replaced.
 
 1. Choose **Add Integrated Device → Escape Director firmware**, name the Device,
@@ -91,7 +95,9 @@ instead, so your firmware isn't replaced.
 USB is only needed for setup and firmware installation. After that, the
 controller uses Wi-Fi, but it still needs a power source.
 
-## 3. Configure the props
+</Step>
+
+<Step title="Configure the props" id="3-configure-the-props">
 
 1. Add the props this controller will operate. Several props can share one
    board using different channels.
@@ -105,7 +111,9 @@ controller uses Wi-Fi, but it still needs a power source.
 Saving in the app and applying to the controller are separate steps. Fix any
 reported problem before testing.
 
-## 4. Test the props
+</Step>
+
+<Step title="Test the props" id="4-test-the-props">
 
 1. Turn on **Test mode**.
 2. Operate each physical input and check the reported progress and the actual
@@ -117,7 +125,9 @@ reported problem before testing.
 Test mode doesn't run Automations or complete Puzzles. Use the board's wiring
 instructions to connect and check the real loads before admitting guests.
 
-## 5. Link props to Puzzles
+</Step>
+
+<Step title="Link props to Puzzles" id="5-link-props-to-puzzles">
 
 1. In a prop's **Completes Puzzle** selector, choose the Puzzle it represents.
 2. Start a practice game. Complete the Puzzle from the Room Dashboard and check
@@ -130,6 +140,9 @@ instructions to connect and check the real loads before admitting guests.
 A linked Puzzle works in both directions, so you don't need Automations for
 that. Use Automations when completion should also do something else, such as
 play audio.
+
+</Step>
+</Steps>
 
 ## During a game
 
