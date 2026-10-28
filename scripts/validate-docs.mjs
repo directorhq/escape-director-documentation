@@ -45,10 +45,12 @@ const walkNavigation = (node) => {
   } else if (Array.isArray(node)) {
     node.forEach(walkNavigation);
   } else if (node && typeof node === "object") {
+    walkNavigation(node.tabs);
+    walkNavigation(node.groups);
     walkNavigation(node.pages);
   }
 };
-walkNavigation(config.navigation.groups);
+walkNavigation(config.navigation);
 
 const pages = new Set(await collectPages(repositoryRoot));
 const pageUrl = (page) => (page === "index" ? "/" : `/${page}`);

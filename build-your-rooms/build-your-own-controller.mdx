@@ -20,9 +20,8 @@ HTTP or MQTT messages, see [Connect existing Devices](/build-your-rooms/connect-
   It's open source under the MIT License, so you can use and change it for your
   props however you like.
 - **A supported board:** the SDK includes adapters for the Arduino UNO R4 WiFi
-  and GIGA R1 WiFi. Other boards with USB and Wi-Fi work once they have a board
-  adapter; see the SDK's
-  [board porting guide](https://github.com/directorhq/escape-director-device-sdk/blob/main/BOARD_PORTING.md).
+  and GIGA R1 WiFi. Other boards with USB and Wi-Fi work once they have a
+  [board adapter](/developers/add-a-board-adapter).
 - **Room Connector**, up to date and running on the Room Station. See
   [Connect Room Devices](/build-your-rooms/connect-room-devices).
 - **Chrome** on the same computer, a USB data cable, and experience uploading
@@ -34,10 +33,13 @@ Use a spare controller for your first test, with prop loads disconnected.
 
 <Step title="Upload the example" id="1-upload-the-example">
 
-Follow `GETTING_STARTED.md` in the SDK. It installs the libraries and uploads
-**room_basic**, a train door with one prop, **Train door**. The board's built-in
-LED stands in for the door, and touching pin 2 to GND pulls its lever, so it
-needs no wiring.
+Follow [Connect your first Arduino prop](/developers/quickstart) in the
+Developers section. It installs the libraries and uploads **room_basic**, a
+train door with one prop, **Train door**. The board's built-in LED stands in
+for the door, and touching pin 2 to GND pulls its lever, so it needs no wiring.
+
+To connect a sketch you already have, see
+[Add the SDK to your sketch](/developers/add-the-sdk-to-your-sketch).
 
 </Step>
 
@@ -119,18 +121,9 @@ change.
 ## Build your prop with a coding agent
 
 The SDK includes `AGENTS.md`, instructions that coding agents such as Claude
-Code read automatically. It tells the agent how to add the SDK to your sketch
-while keeping your puzzle logic.
-
-1. Open the extracted SDK folder in your coding agent.
-2. Describe your prop: its inputs and outputs, what solves it, and which
-   commands you want. For example: _"Add the SDK to my vault_keypad sketch.
-   Make one prop that completes when 4-7-1-9 is entered on the keypad, with
-   Reset and Open latch commands. Compile it for the UNO R4 WiFi."_
-3. Review the changes and upload the firmware. Then [pair the controller](#2-pair-the-controller),
-   or for a paired one, [update your firmware](#5-update-your-firmware).
-4. Test every command yourself. An agent can compile and upload the firmware,
-   but it can't check the wiring or the prop.
+Code read on their own. The agent adds the SDK to your sketch and keeps your
+puzzle logic. You still upload, pair and test the prop yourself. See
+[Build props with a coding agent](/developers/build-with-a-coding-agent).
 
 ## Troubleshooting
 
@@ -138,7 +131,7 @@ while keeping your puzzle logic.
 | --- | --- |
 | **Controller description changed** | The firmware reports something new. Follow [Update your firmware](#5-update-your-firmware). |
 | **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. Then follow [Update your firmware](#5-update-your-firmware). |
-| The controller never appears | Open the Serial Monitor at 115200 baud. The SDK prints any declaration it rejected. |
+| The controller never appears | Open the Serial Monitor at 115200 baud. The SDK prints any declaration it rejected. See [Troubleshoot SDK firmware](/developers/troubleshoot-your-firmware). |
 | **The controller ran out of memory during setup** | Restart it and try again. If it continues, reduce your firmware's memory use, such as large buffers or text. |
 | **Offline** | Check the controller's power and Wi-Fi, and that Room Connector is running. |
 | A Test command works but the Puzzle doesn't complete | Test mode never completes Puzzles. Check the **Completes Puzzle** link in a practice game. |

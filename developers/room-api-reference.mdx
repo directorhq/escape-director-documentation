@@ -1,0 +1,174 @@
+---
+title: "ed::Room reference"
+description: "Look up every ed::Room call in the Escape Director Device SDK: props, signals, commands, state, inputs, timed outputs, Test mode and limits."
+keywords: ["ed::Room", "Escape Director SDK reference", "Arduino escape room library", "EscapeDirectorRoom.h"]
+---
+
+`ed::Room` is the Device SDK's sketch API, in `EscapeDirectorRoom.h`. Declare
+props and their capabilities in `setup()`, call `room.begin()`, and call
+`room.loop()` at the top of every `loop()`. Every callback you pass runs from
+`room.loop()`, never from an interrupt.
+
+## Declarations
+
+Declare everything in `setup()` before `room.begin()`.
+
+| Call | What it does |
+| --- | --- |
+| `ed::Room room(name, firmwareVersion)` | One per sketch. Raise the version whenever you change the sketch. |
+| `room.prop(slug, name)` | Adds a prop. `slug` is its permanent ID, such as `"exit-door"`. |
+| `room.prop(slug, name, uuid)` | Adds a prop that keeps an existing Device's prop UUID. |
+| `prop.signal(id, name)` | Something the prop reports. Automations and linked Puzzles use it. |
+| `prop.command(id, name, handler)` | Something Escape Director can ask the prop to do. Without a handler, the command works only in Test mode. |
+| `.testPin(pin, level, ms)` | What the command does in Test mode: drive one pin for `ms` (default 1000). |
+| `.test(start, stop)` | What the command does in Test mode: call `start`, then `stop` when Test ends. |
+| `prop.state(id, name, &flag)` | A live true or false value from a `bool`. |
+| `prop.state(id, name, &count, min, max, unit)` | A live number from an `int` or `long`, kept within `min` to `max`. `unit` is optional. |
+| `prop.state(id, name, &index, values)` | A live choice: a `uint8_t` index into an array of value IDs. |
+| `prop.completion(signal, command)` | Lets a Puzzle link to the prop. Completing either one completes the other. |
+| `room.onReset(handler)` | Runs when the Room is reset from Escape Director. |
+| `room.begin()` | Checks the declarations and starts connecting. Returns `false` if a declaration breaks a rule. |
+| `room.begin(board)` | The same, for a board with your own [board adapter](/developers/add-a-board-adapter). |
+
+If a declaration breaks a rule, `room.begin()` prints the reason on USB serial
+at 115200 baud and returns `false`. The sketch then runs on its own, without
+connecting, until you fix it.
+
+## IDs and names
+
+- **IDs** use lowercase letters, digits and hyphens, start with a letter, and
+  have at most 40 characters. Enum values follow the same rule.
+- **Names** have 1 to 80 characters. Names are what staff see, and you can
+  change them at any time.
+- **IDs are permanent.** The Room's Puzzle links and Automations point to them.
+  Never change or reuse one.
+
+## Inputs
+
+`ed::Input` reads a button or switch every 5 ms, debounces it (20 ms by
+default), and remembers each press with the time and game it happened in.
+Declare inputs globally; `room.begin()` sets up their pins.
+
+```cpp
+ed::Input keypadButton(4);              // INPUT_PULLUP, pressed when LOW
+ed::Input reedSwitch(5, INPUT_PULLUP);  // read its level with active()
+
+if (keypadButton.pressed()) { ... }     // true once per press
+if (reedSwitch.active()) { ... }        // the debounced level
+while (ed::Input *press = room.nextPress()) { ... } // every input's presses, in order
+```
+
+The full constructor is `ed::Input(pin, mode, activeLow, debounceMs)`.
+
+Use `room.nextPress()` for a sequence across several inputs, such as a button
+code. It returns every input's presses, so don't also call `pressed()` for
+those inputs.
+
+### How long a press waits
+
+- **One pass of loop().** A press stays available until the end of the first
+  `loop()` pass after `room.loop()` returns it. If that pass doesn't ask for it
+  with `pressed()` or `room.nextPress()`, the press is dropped. A press made
+  while your code wasn't waiting for that input doesn't act later.
+- **16 presses.** Up to 16 presses wait while `loop()` is paused. Later presses
+  are dropped, never reordered, and `room.lostPresses()` returns how many were
+  dropped since you last called it.
+
+A sequence puzzle should start over when presses were dropped:
+
+```cpp
+if (room.lostPresses()) step = 0; // the sequence is incomplete
+```
+
+## Timed outputs and delays
+
+| Call | What it does |
+| --- | --- |
+| `room.pulse(pin, level, ms, done)` | Holds `pin` at `level` for `ms`. The SDK switches it back at most 5 ms late, even while `loop()` is paused. `done` is optional and runs later from `room.loop()`. |
+| `room.after(ms, action)` | Runs `action` from `room.loop()` after `ms`. Use it for steps, not output timing: a paused `loop()` delays it. |
+| `room.cancel(action)` | Removes a pending `after()` action. |
+
+- Up to 8 pins can pulse at once, and up to 8 `after()` actions can wait. Both
+  calls return `false` when they can't schedule.
+- Pulsing a pin again restarts its time and cancels a `done` that hasn't run.
+- Set a pulsed pin as an `OUTPUT` in `setup()`. While it pulses, don't write
+  it yourself, except to set it back to its idle level early, as the train door
+  example's **Close door** does. The pulse still ends on time and `done` still
+  runs.
+- Scheduling an `after()` action that is already waiting replaces it.
+
+## Signals
+
+| Call | Use it when |
+| --- | --- |
+| `prop.trigger(signal, input)` | A press caused the signal. It carries the press's own time and game. |
+| `prop.trigger(signal)` | Your code just saw the moment, such as the puzzle becoming solved. Call it once. |
+| `prop.triggerWhen(signal, condition)` | A condition changes from false to true. Returns `true` at that change, so your code can act on it too. |
+
+Signals are sent only during a live game. `triggerWhen()` still returns `true`
+outside a game, so your puzzle logic works the same in Test mode.
+
+Signals aren't queued. A signal from an earlier game, or more than 2 seconds
+old, is dropped. So a press that waited through a reconnect still drives your
+puzzle, but Escape Director hears it only if it happened less than 2 seconds
+earlier, in the current game. Always pass the input when a press caused the
+signal, so an old press isn't reported as new.
+
+## Test mode
+
+In Test mode, staff try each prop before players arrive. A command runs in
+Test mode only if it declares a Test behavior, and that behavior must be
+temporary.
+
+```cpp
+door.command("open", "Open door", openDoor).testPin(DOOR_RELAY, HIGH, 1000);
+```
+
+- `.testPin(pin, level, ms)` drives the pin for `ms`, then the SDK switches it
+  back, even while the board reconnects. The command's normal handler doesn't
+  run in Test mode.
+- `.test(start, stop)` calls `start`. `stop` runs when Test ends or the Room
+  resets. Use it for an effect that needs more than one pin. `after()` actions
+  scheduled inside `start` end with Test.
+- A Test behavior must not change ordinary puzzle state, such as marking a
+  puzzle solved.
+- Test mode never completes Puzzles or runs Automations.
+
+## Room reset
+
+When a Game Master resets the Room, the SDK cancels waiting `after()` actions
+and ends every pulse, without calling `done`. Then it calls your
+`room.onReset()` handler. Put your sketch's own reset there.
+
+## While the board reconnects
+
+The SDK keeps the board connected in the background. While it connects or
+reconnects, `loop()` can pause, usually for well under a second, and for up to
+about 10 seconds when Room Connector can't be reached.
+
+- `ed::Input` presses and `room.pulse()` outputs keep working.
+- Other code in `loop()` waits. Keep your own calls short, such as reading an
+  RFID reader or updating a display.
+
+## Capacity and memory
+
+| Limit | Value |
+| --- | --- |
+| Props per Room | 8 |
+| Signals per prop | 8 |
+| Commands per prop | 8 |
+| State fields per prop | 16 |
+| Signals, commands and state fields in total (default) | 48 |
+| Test behaviors plus number and choice fields (default) | 16 |
+
+For more room, declare `ed::BasicRoom<8, 64, 24> room(name, version);` in
+place of `ed::Room`. The three numbers are props, total entries, and Test
+behaviors plus number and choice fields. A Room never takes more than 8 props.
+Use a smaller first number to save RAM.
+
+The UNO R4 WiFi has 32 KB of RAM. Avoid building `String`s in `loop()`, large
+buffers and large `JsonDocument`s.
+
+## Next
+
+[Example sketches](/developers/example-sketches)

@@ -1,0 +1,95 @@
+---
+title: "Build props with a coding agent"
+description: "Use Claude Code, Cursor, Codex or another AI coding agent to add the Escape Director Device SDK to your Arduino escape room prop sketch."
+keywords: ["AI Arduino escape room", "Claude Code Arduino", "Cursor Arduino", "AI coding agent escape room props", "AGENTS.md Arduino"]
+---
+
+A coding agent such as Claude Code, Cursor or Codex can add the Device SDK to
+your sketch for you. The SDK download includes `AGENTS.md`, instructions
+agents read on their own. It tells the agent to keep your pins and puzzle
+logic, use `ed::Room`, and compile for your exact board before it reports back.
+
+## Give your agent these docs
+
+These docs are built for AI tools as well as people:
+
+| Use | Address |
+| --- | --- |
+| Search every page from your agent (MCP server) | `https://docs.escapedirector.com/mcp` |
+| A list of every page | `https://docs.escapedirector.com/llms.txt` |
+| Every page in one file | `https://docs.escapedirector.com/llms-full.txt` |
+| One page as plain Markdown | Add `.md` to its address, such as `https://docs.escapedirector.com/developers/room-api-reference.md` |
+
+To add the MCP server to Claude Code, run:
+
+```sh
+claude mcp add --transport http escape-director-docs https://docs.escapedirector.com/mcp
+```
+
+In Cursor, add it to `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "escape-director-docs": { "url": "https://docs.escapedirector.com/mcp" }
+  }
+}
+```
+
+Other agents take the same address as a remote MCP server. Each page's menu
+also has **Copy page** and buttons to open the page in ChatGPT or Claude.
+
+## Set up the folder
+
+1. Extract the SDK download.
+2. Copy your sketch into its `workspace` folder, such as
+   `workspace/vault_keypad`. Git ignores this folder.
+3. Open the extracted SDK folder in your agent. Claude Code reads `CLAUDE.md`,
+   which points to `AGENTS.md`; most other agents read `AGENTS.md` directly.
+
+If your sketch lives somewhere else, tell the agent to read the SDK's
+`AGENTS.md` first.
+
+<Warning>
+Never put Wi-Fi passwords, pairing records or customer data in the folder or
+the prompt. The SDK gets Wi-Fi details during pairing, not from your code.
+</Warning>
+
+## Describe the prop
+
+Tell the agent the facts it can't see in the code. Replace the brackets:
+
+> Read AGENTS.md and add the Escape Director SDK to workspace/[sketch] for
+> [exact board]. Keep my pins, output polarity, puzzle logic and reset
+> behavior. The prop is solved when [condition]. Give the Game Master
+> [commands] and show [state]. Keep any existing prop and capability IDs.
+> Read the sketch first and ask about wiring or behavior it doesn't show.
+> Compile for my board and report the result. Don't upload without asking me.
+
+For example: _"Add the SDK to workspace/vault_keypad for the UNO R4 WiFi. Make
+one prop that's solved when 4-7-1-9 is entered, with Reset and Open latch
+commands."_
+
+## Check the agent's work
+
+Ask the agent to hand off:
+
+- The files it changed.
+- The pins, wiring and IDs it kept.
+- The exact compile command and its result.
+- The core and library versions it used.
+- What it couldn't check.
+
+A clean compile means the code builds. It doesn't prove the wiring, timing or
+prop work. Do these yourself:
+
+1. Upload the sketch with prop loads disconnected.
+2. Pair the board or update its connection, as in
+   [Build your own controller](/build-your-rooms/build-your-own-controller#2-pair-the-controller).
+3. In **Test mode**, run each command and watch the physical output.
+4. Run a practice game to check signals, linked Puzzles and Automations.
+
+## Next
+
+[Add the SDK to your sketch](/developers/add-the-sdk-to-your-sketch) explains
+each change the agent makes.

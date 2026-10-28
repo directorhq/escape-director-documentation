@@ -1,0 +1,76 @@
+---
+title: "Troubleshoot SDK firmware"
+description: "Fix common problems with Arduino escape room props built with the Escape Director Device SDK: rejected declarations, missed presses and signals."
+keywords: ["Arduino escape room troubleshooting", "escape room prop not connecting", "Device SDK errors", "Arduino serial monitor 115200"]
+---
+
+Most SDK problems show up in one of two places: the Device in the Room's
+**Devices** page, or the board's USB serial output. To read USB serial, open
+Arduino IDE's Serial Monitor at **115200** baud. Close it again before you pair
+or update the connection, because Room Connector needs the USB port.
+
+For messages Escape Director shows on the Device, such as **Offline** or
+**Controller description changed**, see
+[Troubleshooting](/build-your-rooms/build-your-own-controller#troubleshooting)
+in Build your own controller.
+
+## If the board never appears
+
+1. Open the Serial Monitor at 115200 baud and restart the board.
+2. If `room.begin()` rejected a declaration, the reason is printed there. Fix
+   it in the sketch and upload again.
+3. Check that the sketch has no `Serial.begin()` at another speed and never
+   prints a line that starts with `{`.
+4. Close the Serial Monitor and pair again.
+
+Common messages from `room.begin()`:
+
+| Message | Fix |
+| --- | --- |
+| `IDs must match ^[a-z][a-z0-9-]{0,39}$` | Use lowercase letters, digits and hyphens, starting with a letter, up to 40 characters. Prop slugs and enum values follow the same rule. |
+| `IDs must be unique within a prop's signals, commands or state` | Give each of a prop's signals, commands and state fields its own ID. |
+| `prop slugs must be unique` | Give each prop its own slug. |
+| `too many props` or `too many signals, commands and state fields for this Room's capacity` | See [Capacity and memory](/developers/room-api-reference#capacity-and-memory). |
+| `completion must name a declared signal and command of the same prop` | Name a signal and a command that the same prop declares. |
+| `test() needs both a start and a stop action` | Pass both functions to `.test()`. |
+
+## If the controller runs out of memory
+
+Restart the board and try again. If it keeps happening, reduce your sketch's
+memory use: large buffers, `String` building in `loop()`, and large
+`JsonDocument`s. On a Room with few props, a smaller `ed::BasicRoom` saves RAM.
+
+## If presses are missed
+
+- Check that `loop()` asks for each input on every pass, with `pressed()` or
+  `room.nextPress()`. A press that no code asks for is dropped.
+- For a sequence, call `room.nextPress()` and not `pressed()` for the same
+  inputs. When `room.lostPresses()` is non-zero, start the sequence over:
+  presses were dropped, so its order is incomplete.
+- Look for `delay()` or loops that wait. Replace them as in
+  [Replace delay()](/developers/add-the-sdk-to-your-sketch#replace-delay).
+
+## If a signal doesn't reach Escape Director
+
+- Signals are sent only during a live game, never in Test mode.
+- Pass the input that caused the signal: `prop.trigger("solved", lever)`.
+- A signal more than 2 seconds old, or from an earlier game, is dropped. This
+  can happen when a press waited through a reconnect.
+
+## If an output stays on or turns off late
+
+- Use `room.pulse()`, not `room.after()`, for an output that must end on time.
+- Don't turn a pin on yourself while it pulses. Setting it back to its idle
+  level early is fine; the pulse still ends on time.
+- Up to 8 pins can pulse at once. `room.pulse()` returns `false` when none is
+  free.
+
+## If a command works once and then undoes itself
+
+The command probably writes a pin that your `loop()` writes back from
+unchanged puzzle state. Make the command call the same function your local
+input calls, so the puzzle state changes too.
+
+## Next
+
+[ed::Room reference](/developers/room-api-reference)
