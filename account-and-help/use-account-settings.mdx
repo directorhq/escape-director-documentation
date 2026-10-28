@@ -1,11 +1,11 @@
 ---
 title: "Use Account Settings"
-description: Update your profile, manage sign-in security and billing, check this browser's offline readiness, or delete your account.
+description: Change your Escape Director profile, password, membership, and billing, try beta features, check offline readiness, or delete your account.
 ---
 
-Account Settings holds your profile, sign-in, membership, and this browser's
-offline state. Open **Account Settings** from the application navigation or
-account menu.
+Account Settings holds your profile, sign-in, membership, team, and this
+browser's offline state. Open **Account Settings** from the app's side menu or
+your account menu.
 
 | Section | Use it to |
 | --- | --- |
@@ -17,7 +17,7 @@ account menu.
 | **Beta features** | Try new features early. |
 | **This browser** | Check offline access on this browser. |
 
-<Frame caption="This browser reports its own offline access and prepared Rooms; another browser can have different readiness.">
+<Frame caption="This browser shows offline access and downloaded Rooms for this browser only. Another browser can show something different.">
   <img src="/images/account-settings-device.png" alt="Account Settings in This browser showing Offline access status, expiry, and prepared Rooms in a synthetic test account" />
 </Frame>
 
@@ -29,14 +29,18 @@ address, contact support.
 
 ## Review membership and billing
 
-**Membership** shows your status, plan, and current period or cancellation date.
-Select **Manage billing** to change your plan, cancel, or change how you pay in
-Stripe. If a payment is needed, use **Update card**. **Media storage** shows how
-much of your 25 GB your Rooms and Leaderboards use; see
-[Storage limits](/build-your-rooms/manage-room-media#storage-limits).
+**Membership** shows your status, plan, and current billing period or
+cancellation date.
+
+- To change your plan, cancel, or change how you pay, select **Manage billing**.
+  It opens Stripe.
+- If a payment is needed, select **Update card**.
+- **Media storage** shows how much of your storage your Rooms and Leaderboards
+  use. Each Location adds 25 GB. See
+  [Storage limits](/build-your-rooms/manage-room-media#storage-limits).
 
 <Warning>
-Review the effective date shown by Stripe before confirming a cancellation or plan change.
+Before you confirm a cancellation or plan change, check the date Stripe says it takes effect.
 </Warning>
 
 ## Change your password
@@ -52,7 +56,7 @@ Changing the password signs out every other browser and tablet immediately, incl
 
 ## Delete your account
 
-Deleting your account removes it and everything in it for good. Only do this when you are sure: no one can bring it back.
+Deleting your account removes it and everything in it for good. No one can bring it back, so be sure first.
 
 1. Open **Security** and select **Delete account**.
 2. Read the list of what will be deleted: your Rooms with their Puzzles, Clues and Automations, game records and Analytics, Locations, Game Master profiles, Leaderboards, and the number of media files (videos, sounds and images).
@@ -77,21 +81,23 @@ right now.
 ## Check this browser
 
 **This browser** shows whether offline access is **Ready**, when it expires, and
-which Rooms are downloaded. It covers only the current browser profile, not other
+which Rooms are downloaded. It covers only this browser profile, not your other
 Room Stations.
 
 ## Check notifications
 
-Select the bell at the top of the app to open **Notifications**, such as product
-updates and a reminder when your free trial ends within 7 days. A dot on the bell
-means something is unread; **Mark as read** or **Mark all read** clears it.
+Select the bell at the top of the app to open **Notifications**. They include
+product updates and a reminder when your free trial ends within 7 days. A dot on
+the bell means something is unread. **Mark as read** or **Mark all read** clears
+it.
 
 ## Sign out
 
-Sign out only after running games and waiting saves are complete. Profile,
-security, and billing changes need a connection; prepared Rooms can still run
-offline until their access expires.
+Sign out only after every running game has finished and saved.
+
+Profile, security, and billing changes need an internet connection. Rooms that
+are ready offline can still run until their offline access expires.
 
 ## If your membership looks wrong
 
-For a membership state that does not match Stripe, or an account you cannot access, [contact support](/account-and-help/help).
+If your membership doesn't match what Stripe shows, or you can't get into your account, [contact support](/account-and-help/help).

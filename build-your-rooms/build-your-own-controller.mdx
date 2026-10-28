@@ -1,12 +1,12 @@
 ---
 title: "Build your own controller"
-description: Connect a controller running your own Arduino code with the open-source Device SDK.
+description: Connect an Arduino controller running your own code to Escape Director with the open-source Device SDK, then pair, test, and update it.
 ---
 
-Use this guide to connect a controller running your own firmware to your Room.
-Your firmware runs the prop. Escape Director shows its state, sends its commands
-and uses its signals in Automations and linked Puzzles. Add it in **All Rooms →
-Edit → Devices → Add Integrated Device → Your own firmware (SDK)**.
+With the Device SDK, your own Arduino code runs the prop, and Escape Director
+shows its state, sends its commands, and uses its signals in Automations and
+linked Puzzles. Add the controller in **All Rooms → Edit → Devices → Add
+Integrated Device → Your own firmware (SDK)**.
 
 To set up inputs and outputs without code, see
 [Connect Room Devices](/build-your-rooms/connect-room-devices). For a device that already sends
@@ -126,7 +126,8 @@ while keeping your puzzle logic.
    commands you want. For example: _"Add the SDK to my vault_keypad sketch.
    Make one prop that completes when 4-7-1-9 is entered on the keypad, with
    Reset and Open latch commands. Compile it for the UNO R4 WiFi."_
-3. Review the changes, upload the firmware, then follow step 2 or step 5 above.
+3. Review the changes and upload the firmware. Then [pair the controller](#2-pair-the-controller),
+   or for a paired one, [update your firmware](#5-update-your-firmware).
 4. Test every command yourself. An agent can compile and upload the firmware,
    but it can't check the wiring or the prop.
 
@@ -134,8 +135,8 @@ while keeping your puzzle logic.
 
 | Problem | What to do |
 | --- | --- |
-| **Controller description changed** | The firmware reports something new. Follow step 5. |
-| **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. Then follow [step 5](#5-update-your-firmware). |
+| **Controller description changed** | The firmware reports something new. Follow [Update your firmware](#5-update-your-firmware). |
+| **Controller description is invalid** | Expand **Developer details**, fix the listed declarations in your sketch and upload it again. Then follow [Update your firmware](#5-update-your-firmware). |
 | The controller never appears | Open the Serial Monitor at 115200 baud. The SDK prints any declaration it rejected. |
 | **The controller ran out of memory during setup** | Restart it and try again. If it continues, reduce your firmware's memory use, such as large buffers or text. |
 | **Offline** | Check the controller's power and Wi-Fi, and that Room Connector is running. |
@@ -143,5 +144,5 @@ while keeping your puzzle logic.
 
 ## Next
 
-[Configure Room Automations](/build-your-rooms/configure-room-automations) to use your props'
-signals and commands.
+To use your props' signals and commands with the Room's other actions, see
+[Configure Room Automations](/build-your-rooms/configure-room-automations).

@@ -42,6 +42,40 @@ Before adding text, ask which task or decision it helps with.
   need its own page.
 - When how a feature works changes, rewrite the affected section instead of
   adding a note about the new behavior.
+- Check facts against the product code (`escape-director-frontend`,
+  `escape-director-backend`) before you write them. Limits, prices and labels
+  change; never copy them from memory or another guide.
+
+## Page checklist
+
+Every page, new or edited, passes this list. The reasons and examples are in
+**Writing for people and AI tools** in `docs/content-design.md`.
+
+1. `title` is sentence case and names the task ("Create your first Room").
+   Product terms from `CONTEXT.md` keep their capitals.
+2. `description` is one sentence, under about 150 characters, starts with a
+   verb, and uses the words a customer would search for.
+3. The first one or two sentences say what the feature is and where it lives,
+   with the path in bold. No "Use this guide to…".
+4. Headings name a task or a question, are unique on the page, and aren't
+   numbered. Several stages done in order go in `<Steps titleSize="h2">`,
+   with an `id` on each `<Step>` so its link survives.
+5. Each section makes sense on its own: no "this", "above" or "see below"
+   without naming the thing.
+6. Steps are numbered, one action each, and start with the condition or goal
+   when there is one ("If Live View is blank, …").
+7. Short sentences, everyday words, American spelling, and the exact label the
+   app shows, in bold.
+8. Options or modes go in a table. Questions on a Q&A page are `###` headings.
+9. Link text names the destination. No "here" or "this page".
+10. At most one or two callouts: `<Danger>` or `<Warning>` for data loss, a
+    disrupted game, billing or something that can't be undone; `<Info>` for
+    one fact worth noticing.
+11. A task guide ends with `## Next` and the most likely next guide.
+
+Use Mintlify components only where they help: `<Steps>` for staged
+procedures, `<CardGroup>` on landing pages, `<Frame caption>` for screenshots,
+and callouts. Do not add tabs, accordions or icons inside page text.
 
 ## Guardrails
 

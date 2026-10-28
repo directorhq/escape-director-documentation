@@ -1,10 +1,11 @@
 ---
 title: "Connect Room Devices"
-description: Connect a controller, configure its props, and test them with your Room.
+description: Connect an Arduino controller to a Room with Room Connector, set up its props without code, test them, and link them to Puzzles.
 ---
 
-Use this guide to connect a controller to your Room, set up its props in the
-app, and link them to Puzzles. Devices live in **All Rooms → Edit → Devices**.
+A Device is a controller that runs props in your Room, such as locks, lights,
+and buttons. This guide connects one, sets up its props in the app, and links
+them to Puzzles. Devices live in **All Rooms → Edit → Devices**.
 
 When you add a Device, choose what runs on the controller:
 
@@ -14,10 +15,9 @@ When you add a Device, choose what runs on the controller:
 | **Your own firmware (SDK)** | You or your developer write the controller's program. Its props and wiring are defined in the firmware, not in the app. | [Build your own controller](/build-your-rooms/build-your-own-controller) |
 | **Existing device** | The device already sends HTTP or MQTT messages and should keep its firmware. | [Connect existing Devices](/build-your-rooms/connect-existing-devices) |
 
-See [Which controllers and props work](/account-and-help/common-questions#devices-and-props)
-for other boards.
+For other boards, see [Which controllers and props work](/account-and-help/common-questions#devices-and-props).
 
-## Before you start
+## Before you begin
 
 - Use Chrome on the computer that will operate the Room: a Mac, or a Windows 11
   PC with an Intel or AMD processor.
@@ -186,5 +186,5 @@ Your setup stays saved, so you don't need to pair again.
 
 ## Next
 
-[Configure Room Automations](/build-your-rooms/configure-room-automations) to use your props'
-signals and commands with the Room's other actions.
+To combine your props' signals and commands with the Room's other actions, see
+[Configure Room Automations](/build-your-rooms/configure-room-automations).

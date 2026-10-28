@@ -73,6 +73,21 @@ Remove repetition, product marketing, obvious interface descriptions, speculativ
 
 Prefer short paragraphs, descriptive headings, numbered actions, compact checklists, and direct links. Use the exact visible interface label when telling a reader what to select.
 
+## Writing for people and AI tools
+
+People skim a guide to finish a task. AI tools such as the assistant, ChatGPT or Claude read a guide in pieces and quote one section at a time. The same habits serve both.
+
+- **Description:** one sentence of up to about 150 characters that names the task and the product terms a reader would search for. Start with a verb ("Add Puzzles and Clues…"), not "Learn how to" or "This guide".
+- **Opening:** the first one or two sentences say what the feature does and where it lives, with the path in bold. Do not start with "Use this guide to".
+- **Headings:** name a task ("Delete a Room") or a question the reader has ("If you can't sign in"). Keep them unique on the page. Do not number headings; use `<Steps>` when a guide has several stages done in order.
+- **Sections stand alone:** name the thing instead of "this", "it" or "above", and give the full path the first time a section mentions a screen. A reader who lands on one heading from search should still be able to act.
+- **Lead with the condition or goal:** "To move a Room, open…", "If Live View is blank, …".
+- **One action per step.** Put the result after the action when the reader needs to check it.
+- **Short sentences and paragraphs:** aim for under 25 words a sentence and under four sentences a paragraph.
+- **Link text names the destination** ("see [Manage Locations](/account-and-help/manage-locations)"), never "here" or "this page".
+- **Facts in text, not only in images:** a screenshot caption says why the image is there; the steps never depend on it.
+- **Callouts:** `<Warning>` or `<Danger>` only for data loss, a disrupted game, billing, or something that can't be undone. `<Info>` for one fact worth noticing. At most one or two callouts on a page.
+
 ## Contextual application help
 
 Use the existing application Help menu as the consistent entry point instead of scattering help icons throughout forms and workspaces. When a relevant Product Guide exists, the menu should present:

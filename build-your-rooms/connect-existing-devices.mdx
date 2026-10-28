@@ -1,12 +1,13 @@
 ---
 title: "Connect existing Devices"
-description: Connect existing HTTP or MQTT props to Room Automations without replacing their firmware.
+description: Use props that already send HTTP or MQTT messages in Escape Director Automations and Puzzles, without changing their firmware.
 ---
 
-Use this guide to use an existing prop's messages and commands in Escape
-Director. The device must already support HTTP or MQTT; it keeps its firmware.
-Add it in **All Rooms → Edit → Devices → Add Integrated Device → Existing
-device**.
+An existing device is a prop that already talks HTTP or MQTT. It keeps its
+firmware, and Escape Director uses its messages and commands. Add one in
+**All Rooms → Edit → Devices → Add Integrated Device → Existing device**.
+
+Three words come up on this page:
 
 | Term | Meaning |
 | --- | --- |
@@ -54,7 +55,7 @@ another Room Station, enter them again.
    Select a message, then click the value that matters, such as `"pressed"`.
    You can also enter the rule by hand.
 4. Check the value type: the boolean `true` differs from the text `"true"`.
-5. Choose the rule's verb (see below).
+5. Choose the rule's verb, **is** or **changes to** (see the table below).
 6. To complete a Room Puzzle, choose it under **Complete a puzzle**. This
    creates a regular Automation.
 7. Choose **Save signal**.
@@ -146,5 +147,5 @@ mapping disables those Automations until you repair them.
 
 ## Next
 
-[Configure Room Automations](/build-your-rooms/configure-room-automations)
-to combine device signals and commands with your Room's other actions.
+To combine device signals and commands with your Room's other actions, see
+[Configure Room Automations](/build-your-rooms/configure-room-automations).
