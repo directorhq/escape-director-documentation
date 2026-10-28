@@ -86,6 +86,7 @@
               "build-your-rooms/manage-room-media",
               "build-your-rooms/configure-room-automations",
               "build-your-rooms/connect-room-devices",
+              "build-your-rooms/remove-or-reinstall-room-connector",
               "build-your-rooms/connect-existing-devices",
               "build-your-rooms/build-your-own-controller"
             ]
