@@ -1,0 +1,120 @@
+---
+title: "Remove or reinstall Room Connector"
+description: "Uninstall, reinstall or reset Room Connector on a Mac or Windows escape room computer, and fix a Room Connector that won't start."
+keywords: ["uninstall Room Connector", "reinstall Room Connector", "Room Connector not working", "Room Connector won't open", "escape room props not connecting"]
+---
+
+Room Connector is the app on the Room Station that talks to your controllers.
+You install it from **All Rooms → Edit → Devices**. This page covers removing
+it, reinstalling it to fix a broken install, and starting over on a computer.
+
+Finish any running game before you quit or remove Room Connector. Props can't
+report to the Room Dashboard while it's closed.
+
+## What a reinstall keeps
+
+Room Connector keeps its setup in a data folder that removing the app doesn't
+delete. The folder holds this computer's connection to each paired controller,
+the saved settings of existing HTTP and MQTT devices, and Room Connector's log.
+
+| Computer | Data folder |
+| --- | --- |
+| **Mac** | `~/Library/Application Support/Escape Director/Room Connector` |
+| **Windows** | `%LOCALAPPDATA%\Escape Director\Room Connector` |
+
+| What you do | Controllers | Your Rooms, Devices and Puzzle links |
+| --- | --- | --- |
+| Remove the app, or reinstall it | Reconnect on their own | Kept |
+| Also delete the data folder | Need setup again over USB | Kept |
+
+Your Rooms, Devices, props and Puzzle links are saved in your Escape Director
+account, so neither choice deletes them.
+
+## Remove Room Connector from a Mac
+
+1. Click Room Connector's icon in the menu bar and choose **Quit Room
+   Connector**.
+2. Open **System Settings → General → Login Items**.
+3. If Room Connector is listed under **Open at Login**, select it and choose
+   the minus button (**−**).
+4. In Finder, open **Applications** and move **Room Connector** to the Trash.
+
+## Remove Room Connector from Windows
+
+1. Right-click Room Connector's icon in the system tray, at the bottom right
+   of the screen, and choose **Quit Room Connector**.
+2. Open **Settings → Apps → Installed apps**.
+3. Find **Room Connector**, choose the menu button (**…**), then **Uninstall**.
+4. Confirm the uninstall.
+
+Uninstalling also turns off **Start at login** and removes the link Chrome
+uses to open Room Connector.
+
+## Reinstall Room Connector
+
+Reinstall when Room Connector won't start, or keeps stopping, after you quit
+and reopen it.
+
+1. Remove Room Connector, using the steps for
+   [a Mac](#remove-room-connector-from-a-mac) or
+   [Windows](#remove-room-connector-from-windows).
+2. In Chrome, open **All Rooms → Edit → Devices** and download Room Connector
+   again.
+3. Install and open it as you did the first time. See
+   [Connect Room Connector](/build-your-rooms/connect-room-devices#1-connect-room-connector).
+4. If the **Devices** tab doesn't say Room Connector is **Connected**, choose
+   **Set up Room Connector** and choose **Connect** in Room Connector's window.
+5. Check that each Device shows as online, then test its props in **Test
+   mode**.
+
+You don't need to pair your controllers again. A new download of the same
+version may still ask you to approve it in **Privacy & Security** on a Mac, or
+show **Windows protected your PC**.
+
+## If Room Connector won't start
+
+| What you see | What to do |
+| --- | --- |
+| On Windows, **Open Room Connector without administrator privileges** | Open Room Connector from the Start menu. Don't use **Run as administrator**. |
+| **Room Connector could not start its local connection** | Another copy is still running. Quit every Room Connector icon in the tray, or end **RoomConnector.exe** in Task Manager, then open it again. |
+| On a Mac, **Room Connector stopped. Quit and reopen it.** | Choose **Quit Room Connector** from the menu bar, then open it from **Applications**. |
+| Chrome doesn't offer to open Room Connector from **Set up Room Connector** | Reinstall Room Connector. Installing it sets up the link Chrome uses again. |
+| The icon is dimmed | Room Connector stopped. Quit and reopen it. If it stays dimmed, reinstall it. |
+
+If a problem continues after a reinstall, send support the file
+`connector.log` from the data folder. Don't send any other file from that
+folder: some hold this computer's private keys.
+
+## Start over on this computer
+
+Delete the data folder only when support asks you to, or when you're retiring
+this computer as a Room Station.
+
+<Warning>
+Deleting the data folder can't be undone. Every controller paired with this
+computer stops connecting until you set it up again over USB, and existing
+HTTP and MQTT devices lose their saved passwords and tokens.
+</Warning>
+
+1. Remove Room Connector, using the steps for
+   [a Mac](#remove-room-connector-from-a-mac) or
+   [Windows](#remove-room-connector-from-windows).
+2. Delete the **Room Connector** folder:
+   - **Mac:** in Finder, choose **Go → Go to Folder**, enter
+     `~/Library/Application Support/Escape Director`, and move **Room
+     Connector** to the Trash.
+   - **Windows:** press **Windows + R**, enter
+     `%LOCALAPPDATA%\Escape Director`, and delete **Room Connector**.
+3. Install Room Connector again from **All Rooms → Edit → Devices**.
+4. For each controller, open the Device's menu, choose **Controller setup**,
+   connect the controller by USB, and follow the prompts to reconnect it.
+5. For each existing HTTP or MQTT device, enter its password or token again.
+   For incoming HTTP, copy the new **X-ED-Token header** into the device.
+
+The same steps move your controllers to a new computer: install Room Connector
+there, then run **Controller setup** for each controller.
+
+## Next
+
+To set up a controller again after starting over, see
+[Connect Room Devices](/build-your-rooms/connect-room-devices#2-add-and-pair-your-controller).
