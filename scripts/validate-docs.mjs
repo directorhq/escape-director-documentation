@@ -107,6 +107,12 @@ for (const page of pages) {
   if (!/^---\n[\s\S]*?^title:/m.test(content)) {
     errors.push(`${file}: missing title in front matter`);
   }
+  // Mintlify rejects a page whose front matter value has an unquoted ": ".
+  for (const [, key, value] of content.matchAll(/^(title|description): (.*)$/gm)) {
+    if (!value.startsWith('"') && value.includes(": ")) {
+      errors.push(`${file}: put the ${key} in double quotes; it contains ": "`);
+    }
+  }
 
   for (const target of targets) {
     if (/^(?:https?:|mailto:|tel:|#)/i.test(target)) {

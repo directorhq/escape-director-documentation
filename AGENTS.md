@@ -53,8 +53,9 @@ Every page, new or edited, passes this list. The reasons and examples are in
 
 1. `title` is sentence case and names the task ("Create your first Room").
    Product terms from `CONTEXT.md` keep their capitals.
-2. `description` is one sentence, under about 150 characters, starts with a
-   verb, and uses the words a customer would search for.
+2. `description` is one sentence in double quotes, under about 150
+   characters, starts with a verb, and uses the words a customer would search
+   for.
 3. The first one or two sentences say what the feature is and where it lives,
    with the path in bold. No "Use this guide to…".
 4. Headings name a task or a question, are unique on the page, and aren't
