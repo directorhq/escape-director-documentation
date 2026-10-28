@@ -77,17 +77,19 @@ firmware built with the Device SDK, pair it from
 [Build your own controller](/build-your-rooms/build-your-own-controller#2-pair-the-controller)
 instead, so your firmware isn't replaced.
 
-1. Choose **Add Integrated Device → Escape Director firmware**, name the Device,
-   and choose **Add Device**.
-2. Close Arduino IDE's Serial Monitor and any other program using the
+1. Choose **Add Integrated Device**. The first time, read the hardware safety
+   note, check **I understand** and choose **Continue**.
+2. Choose **Escape Director firmware**, name the Device, and choose
+   **Add Device**.
+3. Close Arduino IDE's Serial Monitor and any other program using the
    controller. Connect it by USB, choose **Pair controller**, and select it when
    prompted.
-3. If the board needs firmware, choose **Install firmware** and select your
+4. If the board needs firmware, choose **Install firmware** and select your
    board. This replaces its current program. Leave the cable connected while
    the controller restarts; setup continues to Wi-Fi by itself.
-4. Choose a Wi-Fi network and enter its password. For a hidden network, choose
+5. Choose a Wi-Fi network and enter its password. For a hidden network, choose
    **Enter name manually**.
-5. Wait for setup to confirm that the controller reached the Room Station.
+6. Wait for setup to confirm that the controller reached the Room Station.
 
 <Frame caption="Choose what runs on the controller, then name the Device.">
   <img src="/images/add-device-choices.webp" alt="Add Integrated Device dialog with Escape Director firmware selected, Your own firmware (SDK), Existing device, and a Device name field" />
