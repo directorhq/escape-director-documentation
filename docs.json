@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Escape Director",
-  "description": "Set up Escape Director, prepare your Room Station, run live games, and review results.",
+  "description": "Help center for Escape Director, the escape room software for running live games, sending Clues, showing Live View, connecting props, and tracking results.",
   "colors": {
     "primary": "#DD3333",
     "light": "#E76F6F",
@@ -46,6 +46,12 @@
       "claude",
       "mcp"
     ]
+  },
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.escapedirector.com",
+      "og:site_name": "Escape Director"
+    }
   },
   "navigation": {
     "groups": [
@@ -127,7 +133,34 @@
     "socials": {
       "discord": "https://discord.gg/tRDXj9x6SF",
       "website": "https://www.escapedirector.com"
-    }
+    },
+    "links": [
+      {
+        "header": "Escape Director",
+        "items": [
+          {
+            "label": "Features",
+            "href": "https://www.escapedirector.com/features"
+          },
+          {
+            "label": "Pricing",
+            "href": "https://www.escapedirector.com/pricing"
+          },
+          {
+            "label": "Compare",
+            "href": "https://www.escapedirector.com/compare"
+          },
+          {
+            "label": "Updates",
+            "href": "https://www.escapedirector.com/updates"
+          },
+          {
+            "label": "Book a demo",
+            "href": "https://www.escapedirector.com/book-a-demo"
+          }
+        ]
+      }
+    ]
   },
   "redirects": [
     {

@@ -55,7 +55,10 @@ Every page, new or edited, passes this list. The reasons and examples are in
    Product terms from `CONTEXT.md` keep their capitals.
 2. `description` is one sentence in double quotes, under about 150
    characters, starts with a verb, and uses the words a customer would search
-   for.
+   for. Where it reads naturally, say "escape room" (an "escape room
+   leaderboard", not a "leaderboard"); search engines and AI tools rank on it.
+   Add a `keywords` array with the searches the page answers. Never stuff
+   keywords into the page text.
 3. The first one or two sentences say what the feature is and where it lives,
    with the path in bold. No "Use this guide to…".
 4. Headings name a task or a question, are unique on the page, and aren't

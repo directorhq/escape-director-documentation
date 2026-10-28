@@ -77,7 +77,8 @@ Prefer short paragraphs, descriptive headings, numbered actions, compact checkli
 
 People skim a guide to finish a task. AI tools such as the assistant, ChatGPT or Claude read a guide in pieces and quote one section at a time. The same habits serve both.
 
-- **Description:** one sentence of up to about 150 characters that names the task and the product terms a reader would search for. Start with a verb ("Add Puzzles and Clues…"), not "Learn how to" or "This guide".
+- **Description:** one sentence of up to about 150 characters that names the task and the product terms a reader would search for. Start with a verb ("Add Puzzles and Clues…"), not "Learn how to" or "This guide". Google shows it under the page title, and AI tools read it first.
+- **Search terms:** people search for "escape room timer", "escape room hints" or "Arduino escape room props", not our product terms alone. Use those phrases in the description and opening where they read naturally, and list them in the page's `keywords` front matter. Don't repeat them through the page text.
 - **Opening:** the first one or two sentences say what the feature does and where it lives, with the path in bold. Do not start with "Use this guide to".
 - **Headings:** name a task ("Delete a Room") or a question the reader has ("If you can't sign in"). Keep them unique on the page. Do not number headings; use `<Steps>` when a guide has several stages done in order.
 - **Sections stand alone:** name the thing instead of "this", "it" or "above", and give the full path the first time a section mentions a screen. A reader who lands on one heading from search should still be able to act.
