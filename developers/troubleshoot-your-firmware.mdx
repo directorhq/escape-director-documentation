@@ -45,7 +45,8 @@ memory use: large buffers, `String` building in `loop()`, and large
 - Check that `loop()` asks for each input on every pass, with `pressed()` or
   `room.nextPress()`. A press that no code asks for is dropped.
 - For a sequence, call `room.nextPress()` and not `pressed()` for the same
-  inputs.
+  inputs. When `room.lostPresses()` is non-zero, start the sequence over:
+  presses were dropped, so its order is incomplete.
 - Look for `delay()` or loops that wait. Replace them as in
   [Replace delay()](/developers/add-the-sdk-to-your-sketch#replace-delay).
 
@@ -59,7 +60,8 @@ memory use: large buffers, `String` building in `loop()`, and large
 ## If an output stays on or turns off late
 
 - Use `room.pulse()`, not `room.after()`, for an output that must end on time.
-- Don't write a pin yourself while it pulses.
+- Don't turn a pin on yourself while it pulses. Setting it back to its idle
+  level early is fine; the pulse still ends on time.
 - Up to 8 pins can pulse at once. `room.pulse()` returns `false` when none is
   free.
 

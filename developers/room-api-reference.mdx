@@ -91,8 +91,10 @@ if (room.lostPresses()) step = 0; // the sequence is incomplete
 - Up to 8 pins can pulse at once, and up to 8 `after()` actions can wait. Both
   calls return `false` when they can't schedule.
 - Pulsing a pin again restarts its time and cancels a `done` that hasn't run.
-- Set a pulsed pin as an `OUTPUT` in `setup()`, and don't write it yourself
-  while it pulses.
+- Set a pulsed pin as an `OUTPUT` in `setup()`. While it pulses, don't write
+  it yourself, except to set it back to its idle level early, as the train door
+  example's **Close door** does. The pulse still ends on time and `done` still
+  runs.
 - Scheduling an `after()` action that is already waiting replaces it.
 
 ## Signals

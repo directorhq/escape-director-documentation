@@ -20,13 +20,15 @@ ed::Room room("Train door", "1.0.0");             // your sketch's name and vers
 ed::Prop &door = room.prop("door", "Train door"); // one per puzzle
 ed::Input lever(2);                               // buttons and switches
 
+constexpr uint8_t DOOR_RELAY = 12;                // your relay pin
+constexpr uint8_t DOOR_OPEN = HIGH;               // the level that opens it
 bool doorOpen = false;
 
 void setup() {
-  // ...your existing pin setup...
+  pinMode(DOOR_RELAY, OUTPUT);                 // ...your existing pin setup...
   door.signal("solved", "Lever pulled");       // what Escape Director hears
   door.command("open", "Open door", openDoor)  // what the Game Master can do
-      .testPin(12, HIGH, 1000);                // a safe one-second try in Test mode
+      .testPin(DOOR_RELAY, DOOR_OPEN, 1000);   // a safe one-second try in Test mode
   door.state("open", "Open", &doorOpen);       // live status
   door.completion("solved", "open");           // lets a Puzzle link to the prop
   room.onReset(closeDoor);

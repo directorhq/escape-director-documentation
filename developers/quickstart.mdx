@@ -92,7 +92,7 @@ arduino-cli core install arduino:renesas_uno@1.5.3
 arduino-cli lib install ArduinoJson@7.4.3 ArduinoMqttClient@0.1.8
 arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi --library . examples/room_basic
 arduino-cli board list
-arduino-cli upload -p <port> --fqbn arduino:renesas_uno:unor4wifi --library . examples/room_basic
+arduino-cli upload -p <port> --fqbn arduino:renesas_uno:unor4wifi examples/room_basic
 ```
 
 For a GIGA, install `arduino:mbed_giga@4.6.0` and use
