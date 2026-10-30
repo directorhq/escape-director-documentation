@@ -1,54 +1,84 @@
 ---
 title: "View Room Statistics"
-description: "See every saved escape room game for a Room, open its report and Session Log, edit or exclude games, and import or export a statistics CSV."
-keywords: ["escape room statistics", "game history", "CSV import", "CSV export"]
+description: "See an escape room's success rate and record time, open any game's report and Session Log, correct games, and import or export CSV."
+keywords: ["escape room statistics", "escape room success rate", "game history", "game report", "CSV import", "CSV export"]
 ---
 
-Room Statistics lists every saved Room Session for one Room, with a report for
-each game. Open **Room Statistics** in the app's side menu and choose a Room.
+Room Statistics lists every saved game for one Room, with a report for each.
+Open **Room Statistics** in the app's side menu. The first Room is already
+selected; choose another under **Room**.
 
-<Frame caption="Room Statistics shows the Room's totals above the list of saved games.">
-  <img src="/images/room-statistics.png" alt="Room Statistics for The Curator's Vault showing success rate, average time and record time above the saved Room Sessions" />
+<Frame caption="Room Statistics shows the Room's results above the list of saved games.">
+  <img src="/images/room-statistics.png" alt="Room Statistics for Blackwood Manor showing success rate, average time left and record time left above the saved games" />
 </Frame>
 
-The overview shows the Room's success rate, average saved time remaining, and
-record time. The table lists each Room Session's date, Game Master, time
-remaining, reported Clues (when the Room collects them), and player counts.
+## Read a Room's results
 
-## Edit a Room Session
+The summary cards cover the games in the chosen **Period**: **All time**,
+**Last 30 days**, **Last 90 days**, or **Last 12 months**.
 
-From a row's actions, you can edit the team name, Game Master, Clue count,
-player counts, notes, and whether the game is excluded from public Leaderboards.
-The date, result, Room, and time remaining can't be changed.
+| Card | What it shows |
+| --- | --- |
+| **Success rate** | The share of games that escaped, with how many escaped and how many ran out of time. |
+| **Average time left** | The average time left on the clock, on a bar from zero to the full game length, with the record marked. |
+| **Record time left** | The most time left in any game, with the team, date, and Game Master. **Open report** shows that game. |
 
-<Warning>
-Deleting a Room Session removes it for good. To keep a game for review but out
-of public rankings, use **Exclude from public leaderboards** instead.
-</Warning>
+## Find a game
 
-## Review a Room Session
+The table lists each game's date and time, team, Game Master, time left,
+reported Clues (when the Room collects them), and player counts. Escaped games
+show their time left in green. A notes icon marks games with notes; hover over
+it to read them.
 
-Choose **View report** from a row's actions to see how the game went: the
-result, time left, Clues, Puzzles solved, and any pauses or time changes. The
-chart shows time left on the clock across the game, with what was sent and every
-clock change underneath. Hover over or tap a mark to see what it was. Sessions
-imported from a CSV file have no timeline, so their report shows the totals
-only.
+- Select a column heading to sort every game in the Period by that column.
+- The table shows 25 games per page.
+- On a phone, games show as a list instead of a table.
+
+## Review a game
+
+Select a game's row, or choose **Open report** from its ⋮ menu, to see how the
+game went.
+
+| Stat | What it counts |
+| --- | --- |
+| **Result** | **Escaped** or **Didn't escape**. |
+| **Time left** | Time on the clock when the game ended. |
+| **Messages** | Clues and typed messages sent to players during the game. |
+| **Puzzles solved** | Puzzles marked solved during the game. |
+| **Clock changes** | Pauses and time added or removed. |
+
+The game's notes show under the stats. The chart shows time left on the clock
+across the game, with what was sent and every clock change underneath. Hover
+over or tap a mark to see what it was.
+
+Games imported from a CSV file have no Session Log, so their report shows the
+totals only, with the reported **Clues** count in place of **Messages**.
 
 Switch to **Session Log** to see every event in order. Its filter starts with
 everything shown. The session start, time changes, and outcome always show. An
 older record may keep a Game Master's earlier name after the profile is renamed
 or archived.
 
-**View notes** shows the notes saved with the session. Choose **Edit notes** to
-change them.
+## Correct or delete a game
+
+Choose **Edit game** from a game's ⋮ menu, in the table or in its report. You
+can change the team name, Game Master, reported Clues, player counts, notes,
+and **Exclude from public leaderboards**. The date, result, Room, and time left
+can't be changed.
+
+<Warning>
+**Delete game** removes the game for good, and asks you to confirm first. To
+keep a game for review but out of public rankings, use **Exclude from public
+leaderboards** instead.
+</Warning>
 
 ## Import or export CSV
 
-- **Export Statistics** downloads the Room's Room Sessions as a CSV file.
-- **Import Statistics** checks the file before adding its Room Sessions to the
-  selected Room. If anything needs fixing, nothing is imported and Escape
-  Director tells you which row and column to correct.
+- **Export CSV** downloads every game for the selected Room as a CSV file,
+  whatever Period is chosen.
+- **Import CSV** checks the file before adding its games to the selected Room.
+  If anything needs fixing, nothing is imported and Escape Director tells you
+  which row and column to correct.
 
 Before importing:
 
@@ -84,7 +114,7 @@ Write dates with the time zone, as exports do, so sessions keep the right day an
 
 ### Older exports
 
-Files exported before the current format have six columns: Date, Game Master, Time Remaining, Clues Used, Total Players and Experienced Players. Import Statistics still accepts them. Each session is recorded as a failure when Time Remaining is `00:00.00`, and as a success otherwise.
+Files exported before the current format have six columns: Date, Game Master, Time Remaining, Clues Used, Total Players and Experienced Players. **Import CSV** still accepts them. Each session is recorded as a failure when Time Remaining is `00:00.00`, and as a success otherwise.
 
 ## Next
 
