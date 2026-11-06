@@ -26,7 +26,16 @@ prop firmware with the Device SDK. The product's code lives in separate reposito
 5. Open a pull request to `main`; link the issue. Pull request descriptions follow `.github/PULL_REQUEST_TEMPLATE.md`; fill every section.
 
 Merging to `main` publishes at once, so merge a guide only when what it
-describes is in production.
+describes is in production. For a guide about unreleased work, open a draft
+pull request with a line naming the product pull requests it describes:
+
+```text
+Ships with: directorhq/escape-director-backend#325, directorhq/escape-director-frontend#726
+```
+
+The frontend's production release merges it once that release includes every
+pull request named, or comments when it can't. Use only frontend and backend
+pull requests, separated by commas; a line it can't read is never published.
 
 ## Writing guides
 
