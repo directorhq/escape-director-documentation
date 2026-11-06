@@ -33,9 +33,12 @@ pull request with a line naming the product pull requests it describes:
 Ships with: directorhq/escape-director-backend#325, directorhq/escape-director-frontend#726
 ```
 
-The frontend's production release merges it once that release includes every
-pull request named, or comments when it can't. Use only frontend and backend
-pull requests, separated by commas; a line it can't read is never published.
+Once that release is live in production, the frontend's release merges the
+guide if the release includes every pull request named, or comments when it
+can't. Use only frontend and backend pull requests, separated by commas, on
+one line; a line it can't read is never published. Only pull requests from
+this repository's own branches qualify, never forks. If a pull request it
+names is reverted, edit the line or close the guide.
 
 ## Writing guides
 
