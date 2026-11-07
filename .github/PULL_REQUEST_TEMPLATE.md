@@ -8,6 +8,11 @@ Write in plain language, and keep each section to the few sentences it needs.
 <!-- What a customer could not find, or what a guide got wrong, in a sentence
 or two. -->
 
+<!-- For a guide about unreleased work, keep this pull request a draft and
+add a line here, outside this comment, naming the product pull requests it
+describes. The production release that includes them all merges it:
+Ships with: directorhq/escape-director-backend#325, directorhq/escape-director-frontend#726 -->
+
 ## Change
 
 <!-- Which guides changed and what they now say. -->
