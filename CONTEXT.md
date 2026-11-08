@@ -55,7 +55,7 @@ The player-facing presentation of a running Room, including its timer, Clues, me
 _Avoid_: Display page, player dashboard
 
 **Room Station**:
-The one Windows or Mac computer, using Google Chrome or Microsoft Edge, that runs an escape-room game, including its Room Dashboard and Live View. It can sign in as a person or on its own, locked to one Location until an owner or Manager unlocks it.
+The one Windows, Mac or Chromebook computer, using Google Chrome or Microsoft Edge, that runs an escape-room game, including its Room Dashboard and Live View. It can sign in as a person or on its own, locked to one Location until an owner or Manager unlocks it. A Room with props needs a Mac or a Windows 11 PC, because Room Connector runs only there.
 _Avoid_: Device fleet, multi-device room
 
 **Room Connector**:
